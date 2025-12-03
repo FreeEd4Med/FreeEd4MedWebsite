@@ -62,6 +62,7 @@ header.site-header h1 { font-size:1.15rem; margin:0; color: #fff; text-shadow: 0
     margin-top: 1.5rem;
     box-shadow: 0 12px 40px rgba(2,6,23,0.6);
     border: 1px solid rgba(255,255,255,0.03);
+    color: #333;
 }
 
 /* Accessibility helpers */
@@ -109,7 +110,7 @@ header.site-header h1 { font-size:1.15rem; margin:0; color: #fff; text-shadow: 0
 
 .btn { display:inline-block; padding:10px 14px; border-radius:8px; color:white; text-decoration:none; font-weight:700; margin-right:8px; border:0; background: linear-gradient(90deg,var(--accent-1), var(--accent-2)); box-shadow: 0 8px 26px rgba(122,47,245,0.15); }
 .btn.ghost { background: transparent; color: white; border:1px solid rgba(255,255,255,0.06); }
-.hero { display:flex; gap:2rem; align-items:center; justify-content:space-between; padding:2rem; margin-bottom:1.5rem; }
+.hero { display:flex; gap:2rem; align-items:center; justify-content:space-between; padding:2rem; margin-bottom:1.5rem; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('assets/images/FreeEd4MedBackHm.png') center/cover no-repeat; border-radius: 12px; }
 .hero-left { flex:1 1 56%; }
 .hero-right { flex: 1 1 40%; display:flex; justify-content:center; align-items:center; }
 .lead { font-size:1.1rem; color: rgba(255,255,255,0.9); margin-top:0.6rem; max-width:56ch; }
@@ -151,7 +152,7 @@ header.site-header h1 { font-size:1.15rem; margin:0; color: #fff; text-shadow: 0
 .feature h3 { color: var(--accent-1); margin: 0 0 0.35rem 0; }
 .feature .feature-link { color: inherit; text-decoration:none; display:inline-block; padding:2px 4px; border-radius:6px; transition:all .12s ease; }
 .feature .feature-link:hover{ color: white; background: linear-gradient(90deg,var(--accent-1),var(--accent-2)); transform: translateY(-2px); box-shadow: 0 8px 34px rgba(122,47,245,0.12); }
-.feature p { color: rgba(255, 255, 255, 0.92); margin: 0; }
+.feature p { color: #555; margin: 0; }
 
 /* Research Library styles */
 .research-list {
@@ -176,11 +177,11 @@ header.site-header h1 { font-size:1.15rem; margin:0; color: #fff; text-shadow: 0
 
 .research-list .entry .meta {
     font-size: 0.9rem;
-    color: #5a5a5a;
+    color: #0a0a0a;
     margin-bottom: 0.5rem;
 }
 
-.research-list .entry p { line-height: 1.45; color: #333; }
+.research-list .entry p { line-height: 1.45; color: #111111; }
 
 .research-list .entry .breakdown { margin-top: 0.75rem; background: #ffffff; padding: 0.75rem; border-radius: 6px; border: 1px solid rgba(0,0,0,0.04); }
 .research-list .entry .breakdown h4 { margin: 0 0 0.35rem 0; font-size: 1rem; color: #3b157a; }
