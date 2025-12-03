@@ -38,6 +38,8 @@ header.site-header {
     backdrop-filter: blur(6px) saturate(110%);
 }
 
+header.site-header h1 { font-size:1.15rem; margin:0; color: #fff; text-shadow: 0 6px 28px rgba(122,47,245,0.35); letter-spacing: .6px; }
+
 .logo {
     height: 64px;
     margin-bottom: 0.25rem;
