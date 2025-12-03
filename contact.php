@@ -67,9 +67,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <h1>Thank you for reaching out to FreeEd4Med!</h1>
   <p>Your message has been sent successfully. We appreciate your time and will get back to you as soon as possible.</p>
 
-  <div class="nav-links">
+    <div class="nav-links">
     <a href="index.html">Home</a> |
-    <a href="education.html">Healthcare Education</a> |
     <a href="public.html">Public Info</a> |
     <a href="donate.html">Donate</a> |
     <a href="about.html">About Us</a>
