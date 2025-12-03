@@ -90,6 +90,37 @@ document.addEventListener('DOMContentLoaded', function () {
     entries.push(item);
   });
 
+  // Add optional image tiles for glossary terms when an asset exists.
+  // We create a filename from the term (slug) and attach an <img> if available.
+  function termToSlug(s){
+    return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
+  }
+  entries.forEach(({el, title})=>{
+    if (!title) return;
+    // create a container for the body if not present
+    let body = el.querySelector('.entry-body');
+    if (!body) {
+      body = document.createElement('div');
+      body.className = 'entry-body';
+      // move all children except h3 into entry-body
+      Array.from(el.children).forEach(ch => { if (ch.tagName.toLowerCase() !== 'h3') body.appendChild(ch); });
+      el.appendChild(body);
+    }
+
+    const slug = termToSlug(title);
+    const imgSrc = 'assets/glossary_images/' + slug + '.svg';
+    const imgWrap = document.createElement('div');
+    imgWrap.className = 'term-art';
+    const img = document.createElement('img');
+    img.src = imgSrc;
+    // hide the tile if the asset isn't present (onerror)
+    img.onerror = function(){ imgWrap.remove(); };
+    img.alt = title + ' — image';
+    imgWrap.appendChild(img);
+    // insert at start of the entry
+    el.insertBefore(imgWrap, el.firstChild);
+  });
+
   const alphaDiv = document.getElementById('glossary-alpha');
   // Create letter sections and collapsible containers
   Object.keys(alphaMap).sort().forEach(letter => {
