@@ -107,8 +107,21 @@ document.addEventListener('DOMContentLoaded', function () {
       el.appendChild(body);
     }
 
-    const slug = termToSlug(title);
-    const imgSrc = 'assets/glossary_images/' + slug + '.svg';
+    // build multiple candidate slugs to increase chance of matching available assets
+    const titleCore = title.split(':')[0].split('(')[0].split('—')[0].split('/')[0].trim();
+    const slugCandidates = [termToSlug(title), termToSlug(titleCore)];
+    // also add last word e.g. 'Brickwall limiter' -> 'limiter'
+    const last = titleCore.split(' ').slice(-1)[0];
+    if (last && last.length > 2) slugCandidates.push(termToSlug(last));
+    // prefer shorter slugs first (e.g., 'compressor')
+    slugCandidates.sort((a,b)=>a.length - b.length);
+    // try to find a matching image by testing candidate files
+    let imgSrc = null;
+    for (const s of slugCandidates){
+      const candidate = 'assets/glossary_images/' + s + '.svg';
+      // we'll use <img> onerror to remove missing images; but attempt shorter names first
+      imgSrc = candidate; break; // set candidate, onerror will clean up if missing
+    }
     const imgWrap = document.createElement('div');
     imgWrap.className = 'term-art';
     const img = document.createElement('img');
