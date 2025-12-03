@@ -28,9 +28,26 @@
       <h2>Research Library — Music for Healing (Open Access only)</h2>
       <p>Selected open‑access research relevant to music‑for‑healing. Each entry links to the DOI and the full OA text when available. Curated two‑paragraph synopsis + short critical appraisal included.</p>
 
-      <section class="research-list">
+      <div class="library-controls">
+        <div class="filters">
+          <strong>Filter by tag:</strong>
+          <button class="tag" data-tag="all">All</button>
+          <button class="tag" data-tag="neuroscience">Neuroscience</button>
+          <button class="tag" data-tag="learning">Reinforcement / Learning</button>
+          <button class="tag" data-tag="anxiety">Preoperative / Anxiety</button>
+          <button class="tag" data-tag="pain">Pain / Analgesia</button>
+          <button class="tag" data-tag="movement">Movement / Sensorimotor</button>
+        </div>
 
-        <article class="entry">
+        <div class="export">
+          <button id="downloadJSON">Download JSON</button>
+          <button id="downloadCSV">Download CSV</button>
+        </div>
+      </div>
+
+      <section class="research-list" id="researchList">
+
+        <article class="entry" data-authors="Mas‑Herrero et al." data-year="2021" data-journal="J Neurosci" data-doi="10.1523/JNEUROSCI.0727-20.2020" data-pmc="PMC8084325" data-tags="neuroscience,reward,TMS,fMRI">
           <h3>Mas‑Herrero, et al. — A causal role for the prefrontal cortex in music‑induced reward (J. Neuroscience, 2021)</h3>
           <p class="meta">DOI: <a href="https://doi.org/10.1523/JNEUROSCI.0727-20.2020" target="_blank">10.1523/JNEUROSCI.0727-20.2020</a> • Full text: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8084325/" target="_blank">PMC8084325 (Free)</a></p>
           <p>This combined TMS + fMRI study probed the causal role of left dorsolateral prefrontal cortex (dlPFC) in music‑induced pleasure and motivation. Stimulation of dlPFC produced bidirectional changes in music reward responses and modulated nucleus accumbens activation and fronto‑auditory functional connectivity.</p>
@@ -58,7 +75,7 @@
           </div>
         </article>
 
-        <article class="entry">
+        <article class="entry" data-authors="Gold, Pearce, et al." data-year="2013" data-journal="Frontiers in Psychology" data-doi="10.3389/fpsyg.2013.00541" data-pmc="PMC3748532" data-tags="learning,reinforcement,behavior,music">
           <h3>Gold, Pearce, et al. — Pleasurable music modulates reinforcement learning (Frontiers in Psychology, 2013)</h3>
           <p class="meta">DOI: <a href="https://doi.org/10.3389/fpsyg.2013.00541" target="_blank">10.3389/fpsyg.2013.00541</a> • Full text: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3748532/" target="_blank">PMC3748532 (Free)</a></p>
           <p>Behavioral experiments showed that listening to pleasurable music can bias reinforcement learning performance in a probabilistic selection task. Effects varied with musical experience, supporting a link between music reward and dopaminergic learning processes.</p>
@@ -84,7 +101,7 @@
           </div>
         </article>
 
-        <article class="entry">
+        <article class="entry" data-authors="Bradt & Dileo" data-year="2013" data-journal="Cochrane Database" data-doi="10.1002/14651858.CD006908.pub2" data-pmc="PMC9758540" data-tags="anxiety,preoperative,meta-analysis,perioperative">
           <h3>Bradt & Dileo — Music interventions for preoperative anxiety (Cochrane Review, 2013 update)</h3>
           <p class="meta">DOI: <a href="https://doi.org/10.1002/14651858.CD006908.pub2" target="_blank">10.1002/14651858.CD006908.pub2</a> • Full text: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9758540/" target="_blank">PMC9758540 (Free)</a></p>
           <p>The Cochrane meta‑analysis pooled 26 randomized trials (N≈2,051) and found a moderate reduction in preoperative anxiety with music listening versus standard care. While heterogeneity existed across studies, the overall effect supports music as a low‑risk anxiolytic adjunct in perioperative settings.</p>
@@ -110,7 +127,7 @@
           </div>
         </article>
 
-        <article class="entry">
+        <article class="entry" data-authors="Palmer et al." data-year="2015" data-journal="J Clin Oncol" data-doi="10.1200/JCO.2014.59.6049" data-pmc="PMC4979095" data-tags="anxiety,preoperative,RCT,patient-preferred">
           <h3>Palmer, et al. — Brief music intervention reduces preoperative anxiety (J Clin Oncol, 2015)</h3>
           <p class="meta">DOI: <a href="https://doi.org/10.1200/JCO.2014.59.6049" target="_blank">10.1200/JCO.2014.59.6049</a> • Full text: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4979095/" target="_blank">PMC4979095 (Free)</a></p>
           <p>In a pragmatic randomized trial (n≈201) a single 5‑minute patient‑preferred music session (live or recorded) reduced preoperative anxiety vs usual care, with live music also linked to quicker immediate recovery. The trial demonstrates that very brief, preference‑matched music has measurable perioperative benefits.</p>
@@ -136,7 +153,7 @@
           </div>
         </article>
 
-        <article class="entry">
+        <article class="entry" data-authors="Werner et al." data-year="2023" data-journal="PLOS One" data-doi="10.1371/journal.pone.0287950" data-pmc="PMC10381080" data-tags="pain,sensorimotor,movement,synchronization">
           <h3>Werner, et al. — Sensorimotor synchronization to music reduces pain (PLOS One, 2023)</h3>
           <p class="meta">DOI: <a href="https://doi.org/10.1371/journal.pone.0287950" target="_blank">10.1371/journal.pone.0287950</a> • Full text: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10381080/" target="_blank">PMC10381080 (Free)</a></p>
           <p>Experimental evidence shows that active sensorimotor synchronization to music (moving in time with music) yields larger pain reductions than passive listening or silence, indicating that embodied music engagement develops distinct analgesic effects beyond auditory exposure.</p>
@@ -163,6 +180,55 @@
         </article>
 
       </section>
+
+      <script>
+        // filtering and export for the research library
+        (function(){
+          const buttons = document.querySelectorAll('.library-controls .tag');
+          const entries = [...document.querySelectorAll('#researchList .entry')];
+
+          function showTag(tag){
+            entries.forEach(e=>{
+              if (tag==='all') { e.style.display='block'; return; }
+              const tags = (e.dataset.tags||'').split(',');
+              e.style.display = tags.includes(tag) ? 'block' : 'none';
+            });
+          }
+
+          buttons.forEach(b=> b.addEventListener('click', ()=>{ showTag(b.dataset.tag); }));
+
+          // Export helpers
+          function entriesToJSON(){
+            return entries.map(e=>({
+              title: e.querySelector('h3').innerText.trim(),
+              authors: e.dataset.authors || '',
+              year: e.dataset.year || '',
+              journal: e.dataset.journal || '',
+              doi: e.dataset.doi || '',
+              pmc: e.dataset.pmc || '',
+              tags: (e.dataset.tags||'').split(',')
+            }));
+          }
+
+          document.getElementById('downloadJSON').addEventListener('click', ()=>{
+            const data = JSON.stringify(entriesToJSON(), null, 2);
+            const blob = new Blob([data], {type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a'); a.href=url; a.download='research-library.json'; a.click(); URL.revokeObjectURL(url);
+          });
+
+          document.getElementById('downloadCSV').addEventListener('click', ()=>{
+            const arr = entriesToJSON();
+            const header = ['title','authors','year','journal','doi','pmc','tags'];
+            const csv = [header.join(',')].concat(arr.map(row=>{
+              return [row.title.replace(/"/g,'""'), row.authors, row.year, row.journal, row.doi, row.pmc, '"'+row.tags.join(';')+'"'].map(v=> '"'+String(v).replace(/"/g,'""')+'"').join(',');
+            })).join('\n');
+            const blob = new Blob([csv], {type:'text/csv'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a'); a.href=url; a.download='research-library.csv'; a.click(); URL.revokeObjectURL(url);
+          });
+        })();
+      </script>
 
     </main>
 

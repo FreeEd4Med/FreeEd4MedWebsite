@@ -132,6 +132,13 @@ header.site-header {
 .research-list .entry .key-findings li { margin: 0.35rem 0; padding-left: 0.25rem; }
 .research-list .entry .breakdown ul { margin-top: 0.25rem; }
 
+.library-controls { display:flex; justify-content:space-between; gap:1rem; align-items:center; margin-top:10px; }
+.library-controls .filters { display:flex; gap:0.5rem; align-items:center; flex-wrap:wrap; }
+.library-controls .tag { padding:0.3rem 0.5rem; background:#efe7ff; border-radius:5px; border:1px solid rgba(108,79,161,0.08); cursor:pointer; color:#3b157a; font-weight:600; }
+.library-controls .tag:hover { background:#f6eaff; }
+.library-controls .export button { background:#6c4fa1; color:white; border:none; padding:0.4rem 0.65rem; border-radius:5px; cursor:pointer; }
+.library-controls .export button:hover { opacity:0.92; }
+
 /* Tools page styles */
 .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
 .tool-card { background: linear-gradient(135deg,#fff8ff, #f0f0ff); padding: 1rem; border-radius: 8px; border: 1px solid rgba(108,79,161,0.08); }
