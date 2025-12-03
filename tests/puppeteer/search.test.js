@@ -24,10 +24,17 @@ const puppeteer = require('puppeteer');
 
     // type a search term we know exists (case-insensitive) and test
     await page.type('#glossary-search', 'air');
-    await page.waitForTimeout(400);
+
+    // Wait until at least one visible entry contains the search term (robust across Puppeteer versions)
+    await page.waitForFunction(() => {
+      const items = Array.from(document.querySelectorAll('.entry'));
+      return items.some(e => getComputedStyle(e).display !== 'none' && /air/i.test(e.textContent));
+    }, { timeout: 4000 });
 
     const visibleAfterSearch = await page.evaluate(() => {
-      return Array.from(document.querySelectorAll('.entry')).filter(e => getComputedStyle(e).display !== 'none').map(e => e.textContent.trim()).slice(0,10);
+      return Array.from(document.querySelectorAll('.entry'))
+        .filter(e => getComputedStyle(e).display !== 'none')
+        .map(e => e.textContent.trim()).slice(0,10);
     });
 
     console.log('Visible entries after search:', visibleAfterSearch.length);
