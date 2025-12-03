@@ -1,0 +1,2 @@
+This is a placeholder for 03_perc_stem.wav (light percussion)
+Replace this file with a real WAV/FLAC stem when ready.

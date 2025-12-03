@@ -1,0 +1,5 @@
+Copyright (c) 2025 MadMoozeMusic
+
+This sample stems pack is provided as a demonstration only. All actual audio content is subject to your normal copyrights and licenses. For any commercial or clinical use, please contact the artist or label for licensing terms.
+
+Permitted use for demo files: non-commercial evaluation, internal testing and prototyping. Contact MadMoozeMusic to request different licensing options and to obtain original stems.

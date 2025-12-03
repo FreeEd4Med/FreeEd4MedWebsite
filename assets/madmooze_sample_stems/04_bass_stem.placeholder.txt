@@ -1,0 +1,2 @@
+This is a placeholder for 04_bass_stem.wav (subtle bass / low pad)
+Replace this file with a real WAV/FLAC stem when ready.

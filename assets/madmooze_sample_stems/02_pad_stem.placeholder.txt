@@ -1,0 +1,2 @@
+This is a placeholder for 02_pad_stem.wav (sustained pad)
+Replace this file with a real WAV/FLAC stem when ready.
