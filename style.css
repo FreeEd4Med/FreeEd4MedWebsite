@@ -190,7 +190,7 @@ header.site-header h1 { font-size:1.15rem; margin:0; color: #fff; text-shadow: 0
 .research-list .entry .breakdown ul { margin-top: 0.25rem; }
 
 /* Glossary term image tile */
-.entry { display:block; }
+.entry { display:block; color: white; }
 .entry .term-art { float:left; width:90px; height:90px; margin-right:0.9rem; border-radius:8px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06)); display:inline-flex; align-items:center; justify-content:center; border:1px solid rgba(255,255,255,0.03); box-shadow: 0 8px 30px rgba(2,6,23,0.6); }
 .entry .term-art img { max-width:78px; max-height:78px; display:block; }
 .entry .entry-body { overflow:hidden; }
