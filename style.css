@@ -126,6 +126,12 @@ header.site-header {
 
 .research-list .entry p { line-height: 1.45; color: #333; }
 
+.research-list .entry .breakdown { margin-top: 0.75rem; background: #ffffff; padding: 0.75rem; border-radius: 6px; border: 1px solid rgba(0,0,0,0.04); }
+.research-list .entry .breakdown h4 { margin: 0 0 0.35rem 0; font-size: 1rem; color: #3b157a; }
+.research-list .entry .key-findings { margin-left: 1.1rem; margin-bottom: 0.5rem; }
+.research-list .entry .key-findings li { margin: 0.35rem 0; padding-left: 0.25rem; }
+.research-list .entry .breakdown ul { margin-top: 0.25rem; }
+
 footer.footer {
     text-align: center;
     margin-top: 2rem;
