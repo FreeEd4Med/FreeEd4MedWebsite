@@ -1,0 +1,14 @@
+{
+  "package": "madmooze_sample_stems",
+  "version": "0.1",
+  "author": "MadMoozeMusic",
+  "bpm": 60,
+  "files": [
+    {"name":"01_drone_vocals_stem.wav","role":"lead vocal","duration":"03:45"},
+    {"name":"02_pad_stem.wav","role":"ambient pad","duration":"03:45"},
+    {"name":"03_perc_stem.wav","role":"light percussion","duration":"03:45"},
+    {"name":"04_bass_stem.wav","role":"low bass/pad","duration":"03:45"},
+    {"name":"mix_preview.mp3","role":"preview low bitrate mp3","duration":"02:00"}
+  ],
+  "notes": "These are placeholder filenames for a demo package. Replace with real stems in WAV/FLAC for production use. Include a README and explicit licensing details for clinical use."
+}

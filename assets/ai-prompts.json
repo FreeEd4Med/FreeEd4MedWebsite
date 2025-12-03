@@ -1,0 +1,44 @@
+{
+  "calm_grounding": [
+    "Create a 3 minute ambient track, 60 BPM, warm pad bed, sparse piano motif repeating every bar, long reverb, minimal dynamics.",
+    "Soft orchestral pad at 55 BPM, light cello drones, slow-moving arpeggiated piano, avoid sudden transients.",
+    "Calm grounding piece, 65 BPM, gentle acoustic guitar with soft reverb, long sustain, no harsh high frequencies.",
+    "Minimal piano + pad soundscape, 50 BPM, focus on consonant harmonies, shallow modulation.",
+    "Ambient drone track, low-pass filtered synths, 60 BPM pulse, warm analog saturation, peaceful resolution.",
+    "Slow sonic textures: bell-like piano with soft pad underneath, 64 BPM, simple four-bar loop.",
+    "Hushed synth choir and pad, 56 BPM, intentional spaces between phrases to encourage slower breathing.",
+    "Gently evolving pad piece with field-recording textures (soft rain), 58 BPM, avoid percussion peaks.",
+    "Ambient lull, 65 BPM, sparse harmonic changes, long note tails to support relaxation.",
+    "Soft harmonic drone with occasional melodic motif, 50–60 BPM, balanced stereo field for calming immersion.",
+    "Minimalist track for sleeping/relaxation: low dynamics, 55 BPM, gentle pad and breath-like synth swells.",
+    "Warm pastel pad, slow modulation, single piano motif with a 5–8 second sustain per note, 60 BPM."
+  ],
+  "breath_centered": [
+    "Create a 4 minute ambient track where phrasing guides a 4–6 second inhale/exhale rhythm, 60 BPM with long swells on the pad.",
+    "Breath-centered background: soft flute-like lead, 60 BPM, swells timed to 4s inhale/4s exhale, low reverb.",
+    "Slow cinematic pad with crescendo/decrescendo shaped to 4-second cycles; add subtle bell at phrase start.",
+    "Breath-friendly ambient: 5-second inhale swells, 5-second exhale decay; sparse harp arpeggios.",
+    "Gentle piano with hold sustain timed to 4s breathing, low-frequency grounding sub pad, 58 BPM equivalent.",
+    "Guide breathing track—soft vocal hums in background timed for 6-second cycles; no lyrics, simple harmonic progression.",
+    "Minimal percussion (soft shakers) placed at exhale to ease the release, 60 BPM, pads with long attack and release.",
+    "Create an audio signal with rising contours (inhale) and falling contours (exhale) that lasts 3–5 minutes, 4s inhale 6s exhale optional.",
+    "Ambient field recording (ocean) blended with pad swells shaped to breath pacing; mix low to avoid startling dynamics.",
+    "Sustained string pad with slow LFO amplitude shaping at 0.1–0.2 Hz to roughly match slow breathing.",
+    "Simple guided music background: soft voice count cues (optional) with padded chords timed to breaths.",
+    "Low-mid emphasis on the mix with gentle binaural width to create intimate breathing space."
+  ],
+  "movement_pain_modulation": [
+    "Create a 3 minute gentle rhythmic track, 70 BPM, soft kick on 1 & 3, hand percussion (shakers), warm pad, strong pulse for easy synchronization.",
+    "A movement piece at 60 BPM with 16-bar sections, gentle bass groove, light snare brushes, loopable 30s excerpt for repetitive exercises.",
+    "Slow syncopated groove at 58 BPM, swing like a gentle rocking — emphasize consistent downbeat for safe movement.",
+    "Tap-friendly motif, 64 BPM, focused on a short 20–40s extract with clear rhythmic markers and steady tempo.",
+    "Soft electronic pulsing at 65 BPM with small crescendos to cue movement, provide BPM and stems.",
+    "Gentle walking pulse, 70 BPM, percussive elements low in mix, round tonal center to avoid abrupt changes.",
+    "Minimal voice-count percussion cues with subtle melodic underpinning to guide simple motion at 60 BPM.",
+    "Use a steady 1–2 per bar motif that’s easy for non-musicians to follow when tapping or swaying.",
+    "Create a loopable 30s section with strong, soft beat and a clear 4/4 structure for mobile app synchronization.",
+    "Tone-based movement track: bass pulse at 60 BPM, light melodic counterpoint, designed for movement rehabilitation.",
+    "Bedside movement music: 68 BPM, warm acoustic rhythm guitar, low percussion, stems provided for app integration.",
+    "Synchronized group movement track: 64 BPM, clear downbeat markers, gentle crescendo markers for guided sessions."
+  ]
+}

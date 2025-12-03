@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Apps & Scripts — FreeEd4Med</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <header class="site-header" style="display: flex; align-items: center; justify-content: space-between; gap: 2rem;">
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <img src="images/logo.png" alt="FreeEd4Med Logo" class="logo" />
+        <h1>FreeEd4Med.org</h1>
+      </div>
+      <nav class="navbar" role="navigation" aria-label="Main site navigation">
+        <a href="index.html">Home</a>
+        <a href="education.html">Healthcare Education</a>
+        <a href="research-library.html">Research Library</a>
+        <a href="tools.html">Tools / How I Create</a>
+        <a href="apps.html">Apps & Scripts</a>
+        <a href="ai-prompts.html">AI Prompt Guide</a>
+        <a href="public.html#multimedia">Multimedia</a>
+        <a href="public.html">Public Info</a>
+        <a href="donate.html">Donate</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <h2>Apps & Scripts — Developer resources</h2>
+      <p>This page shares scripts, small utilities, and guides that support our music-for-healing pipelines. Use or adapt but check licensing and test before production use.</p>
+
+      <section class="tools-grid">
+        <div class="tool-card">
+          <h3>Ardour utilities</h3>
+          <p>Our small utility <code>ardour_fixer</code> helps automate common Ardour project fixes (placeholder). Replace with your project-specific version or contact us to add the real script.</p>
+          <ul>
+            <li><a href="assets/madmooze_sample_stems_demo.zip">Download sample stems (demo)</a></li>
+            <li><a href="assets/madmooze_sample_stems/stems_info.json">Stem metadata (stems_info.json)</a></li>
+            <li><a href="assets/madmooze_sample_stems/README.txt">Stems README</a></li>
+          </ul>
+        </div>
+
+        <div class="tool-card">
+          <h3>Utilities</h3>
+          <ul>
+            <li><a href="tools/make_pdfs.py">make_pdfs.py — simple PDF generator</a></li>
+            <li><a href="assets/streaming_checklist.txt">Streaming checklist (txt)</a></li>
+            <li><a href="assets/streaming_checklist.pdf">Streaming checklist (PDF)</a></li>
+            <li><a href="docs/clinical-streaming-guide.md">Clinical streaming guide</a> • <a href="assets/clinical-streaming-guide.pdf">PDF</a></li>
+          </ul>
+        </div>
+
+        <div class="tool-card">
+          <h3>Scripts (installed / examples)</h3>
+          <ul>
+            <li><a href="assets/scripts/ardour_fixer.py">ardour_fixer.py — Python utility (preferred)</a></li>
+            <li><a href="assets/scripts/README.md">scripts README</a></li>
+            <li><a href="assets/scripts/install_unix.sh">install_unix.sh — unix setup helper</a></li>
+            <li><a href="assets/scripts/install_windows.bat">install_windows.bat — Windows setup helper</a></li>
+            <li><a href="assets/scripts/requirements.txt">requirements.txt — Python deps (colorama)</a></li>
+          </ul>
+        </div>
+
+      </section>
+
+      <p>If you'd like these packaged as a small NPM/Pip project or Docker image for reproducible builds, I can prepare a minimal repository and README.</p>
+
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2025 FreeEd4Med.org — MadMoozeMusic</p>
+    </footer>
+  </div>
+</body>
+</html>

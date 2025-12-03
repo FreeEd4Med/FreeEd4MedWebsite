@@ -1,0 +1,42 @@
+<div id="news-ticker" style="margin: 2rem 0;">
+  <h3>Medical Headlines</h3>
+  <div id="ticker-container">
+    <ul id="ticker-slide" style="list-style: none; padding-left: 0;"></ul>
+  </div>
+</div>
+
+<script>
+const container = document.getElementById("ticker-slide");
+let currentSlide = 0;
+let slides = [];
+
+fetch("rss-headlines.php")
+  .then(res => res.json())
+  .then(data => {
+    if (!Array.isArray(data) || data.length === 0) {
+      container.innerHTML = "<li>No headlines available.</li>";
+      return;
+    }
+
+    for (let i = 0; i < data.length; i += 5) {
+      const group = data.slice(i, i + 5);
+      const slide = "<li>" + group.map(item => 
+        `<a href="\${item.link}" target="_blank">\${item.title}</a>`
+      ).join("<br>") + "</li>";
+      slides.push(slide);
+    }
+
+    function showSlide(index) {
+      container.innerHTML = slides[index];
+    }
+
+    showSlide(currentSlide);
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }, 5000);
+  })
+  .catch(err => {
+    container.innerHTML = "<li>Error loading headlines.</li>";
+  });
+</script>

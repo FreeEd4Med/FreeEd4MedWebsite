@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Donate - FreeEd4Med</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <header class="site-header"
+            style="display: flex; align-items: center; justify-content: space-between; gap: 2rem;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <img src="images/logo.png" alt="FreeEd4Med Logo" class="logo" />
+                <h1>FreeEd4Med.org</h1>
+            </div>
+            <nav class="navbar" role="navigation" aria-label="Main site navigation">
+                <a href="index.html">Home</a>
+                <a href="education.html">Healthcare Education</a>
+                <a href="research-library.html">Research Library</a>
+                <a href="tools.html">Tools / How I Create</a>
+                <a href="apps.html">Apps &amp; Scripts</a>
+                <a href="ai-prompts.html">AI Prompt Guide</a>
+                <a href="public.html#multimedia">Multimedia</a>
+                <a href="public.html">Public Info</a>
+                <a href="donate.html" class="active">Donate</a>
+                <a href="contact.html">Contact</a>
+                <a href="about.html">About</a>
+                <a href="glossary.html">Glossary</a>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <section class="donate-options"
+                style="text-align: center; margin: 2rem auto; padding: 2rem; max-width: 600px; background-color: #f3edff; border-radius: 10px;">
+                <h2 style="color: #4a148c; margin-bottom: 1rem;">Support FreeEd4Med</h2>
+                <p style="margin-bottom: 2rem;">Your generous donation helps us provide free, high-quality education for
+                    healthcare professionals and the public.</p>
+
+                <!-- Stripe Donate Button -->
+                <a href="https://donate.stripe.com/cNi3cuazL6L72u0fLyfEk01" target="_blank" style="display: block; padding: 12px 24px; margin: 0 auto 1.5rem;
+                          font-size: 1.1rem; background-color: #6772e5; color: #fff;
+                          text-align: center; text-decoration: none;
+                          border-radius: 6px; max-width: 300px; box-sizing: border-box;">
+                    Donate by Credit Card<br>(via Stripe)
+                </a>
+
+                <!-- PayPal Donate Button -->
+            <form action="https://www.paypal.com/donate" method="post" target="_blank" style="margin: 0 auto; max-width: 300px;">
+                <input type="hidden" name="business" value="freeed4med@freeed4med.org" />
+                <input type="hidden" name="no_recurring" value="0" />
+                <input type="hidden" name="item_name" value="Support Free Medical Education" />
+                <input type="hidden" name="currency_code" value="USD" />
+                <button type="submit"
+                      style="width: 100%; padding: 12px 24px; font-size: 1.1rem;
+                             background-color: #0070ba; color: white;
+                             border: none; border-radius: 6px;
+                             white-space: normal; box-sizing: border-box; cursor: pointer;">
+                Donate by PayPal<br>(Credit, Debit, or e-Check)
+              </button>
+            </form>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 FreeEd4Med.org | <a href="https://www.interserver.net" target="_blank">Powered by
+                    InterServer</a></p>
+        </footer>
+    </div>
+</body>
+
+</html>

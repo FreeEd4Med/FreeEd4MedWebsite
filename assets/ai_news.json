@@ -1,0 +1,19 @@
+{
+  "articles": [
+    {
+      "title": "AI model detects silent arrhythmia with 94% precision"
+    },
+    {
+      "title": "Machine learning boosts diabetic care predictions"
+    },
+    {
+      "title": "New NLP engine helps triage ER visits faster"
+    },
+    {
+      "title": "AI helps reduce false positives in lung cancer screenings"
+    },
+    {
+      "title": "Deep learning enables early stroke risk detection"
+    }
+  ]
+}

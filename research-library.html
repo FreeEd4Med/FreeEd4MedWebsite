@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Research Library — FreeEd4Med</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <header class="site-header" style="display: flex; align-items: center; justify-content: space-between; gap: 2rem;">
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <img src="images/logo.png" alt="FreeEd4Med Logo" class="logo" />
+        <h1>FreeEd4Med.org</h1>
+      </div>
+      <nav class="navbar" role="navigation" aria-label="Main site navigation">
+        <a href="index.html">Home</a>
+        <a href="education.html">Healthcare Education</a>
+        <a href="research-library.html">Research Library</a>
+        <a href="tools.html">Tools / How I Create</a>
+        <a href="apps.html">Apps &amp; Scripts</a>
+        <a href="ai-prompts.html">AI Prompt Guide</a>
+        <a href="public.html">Public Info</a>
+        <a href="donate.html">Donate</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="glossary.html">Glossary</a>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <h2>Research Library — Music for Healing (Open Access only)</h2>
+      <p>Selected open‑access research relevant to music‑for‑healing (focus: <strong>assuagement</strong> — reducing the intensity of pain, anxiety, and grief). Each entry links to the DOI and the full OA text when available. Curated two‑paragraph synopsis + short critical appraisal included.</p>
+
+      <div class="library-controls">
+        <div class="filters">
+          <strong>Filter by tag:</strong>
+          <button class="tag" data-tag="all">All</button>
+          <button class="tag" data-tag="neuroscience">Neuroscience</button>
+          <button class="tag" data-tag="learning">Reinforcement / Learning</button>
+          <button class="tag" data-tag="anxiety">Preoperative / Anxiety</button>
+          <button class="tag" data-tag="pain">Pain / Analgesia</button>
+          <button class="tag" data-tag="movement">Movement / Sensorimotor</button>
+        </div>
+
+        <div class="export">
+          <a href="assets/research-library.json" class="download-link">Download JSON (permanent)</a>
+          <a href="assets/research-library.csv" class="download-link">Download CSV (permanent)</a>
+          <button id="downloadJSON">Generate JSON</button>
+          <button id="downloadCSV">Generate CSV</button>
+        </div>
+      </div>
+
+      <section class="research-list" id="researchList">
+
+        <article class="entry" data-authors="Mas‑Herrero et al." data-year="2021" data-journal="J Neurosci" data-doi="10.1523/JNEUROSCI.0727-20.2020" data-pmc="PMC8084325" data-tags="neuroscience,reward,TMS,fMRI">
+          <h3>Mas‑Herrero, et al. — A causal role for the prefrontal cortex in music‑induced reward (J. Neuroscience, 2021)</h3>
+          <p class="meta">DOI: <a href="https://doi.org/10.1523/JNEUROSCI.0727-20.2020" target="_blank">10.1523/JNEUROSCI.0727-20.2020</a> • Full text: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8084325/" target="_blank">PMC8084325 (Free)</a></p>
+          <p>This combined TMS + fMRI study probed the causal role of left dorsolateral prefrontal cortex (dlPFC) in music‑induced pleasure and motivation. Stimulation of dlPFC produced bidirectional changes in music reward responses and modulated nucleus accumbens activation and fronto‑auditory functional connectivity.</p>
+
+          <div class="breakdown">
+            <h4>Key findings</h4>
+            <ul class="key-findings">
+              <li>dlPFC stimulation bidirectionally changed subjective pleasure and motivation to listen.</li>
+              <li>Nucleus accumbens responses dissociated phasic 'liking' from motivational 'wanting'.</li>
+              <li>Functional connectivity between auditory regions and reward circuitry predicted individual reward sensitivity.</li>
+            </ul>
+
+            <h4>Statistical methods</h4>
+            <p>fMRI analyses (ROI and whole‑brain), mixed‑effects models, psychophysiological interaction/connectivity analyses, paired comparisons across stimulation conditions; multiple comparison corrections applied.</p>
+
+            <h4>Limitations</h4>
+            <p>Moderate sample size and short experimental sessions; TMS effects are localized and may not map directly onto naturalistic listening or long‑term therapy.</p>
+
+            <h4>Recommendations for musical artists (digital & streaming focus)</h4>
+            <ul>
+              <li>Produce recordings with emotionally salient moments (predictable builds and peaks) to engage listeners on streaming platforms.</li>
+              <li>Make multiple edits: a 3–5 minute primary track, a loopable segment, and an extended mix for background use — this helps playlists and clinical use-cases.</li>
+              <li>Provide clear metadata (title, artist, ISRC if available), and short artist notes on intended use (e.g., relaxation, grounding) so clinicians/curators can match tracks to patient needs.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="entry" data-authors="Gold, Pearce, et al." data-year="2013" data-journal="Frontiers in Psychology" data-doi="10.3389/fpsyg.2013.00541" data-pmc="PMC3748532" data-tags="learning,reinforcement,behavior,music">
+          <h3>Gold, Pearce, et al. — Pleasurable music modulates reinforcement learning (Frontiers in Psychology, 2013)</h3>
+          <p class="meta">DOI: <a href="https://doi.org/10.3389/fpsyg.2013.00541" target="_blank">10.3389/fpsyg.2013.00541</a> • Full text: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3748532/" target="_blank">PMC3748532 (Free)</a></p>
+          <p>Behavioral experiments showed that listening to pleasurable music can bias reinforcement learning performance in a probabilistic selection task. Effects varied with musical experience, supporting a link between music reward and dopaminergic learning processes.</p>
+
+          <div class="breakdown">
+            <h4>Key findings</h4>
+            <ul class="key-findings">
+              <li>Pleasurable music altered reinforcement learning performance (biasing approach/avoidance choices).</li>
+              <li>Effects were moderated by participants’ musical training and listening habits.</li>
+            </ul>
+
+            <h4>Statistical methods</h4>
+            <p>Probabilistic selection task analysis using repeated‑measures comparisons and mixed ANOVAs; correlation of learning metrics with self‑reported music pleasure.</p>
+
+            <h4>Limitations</h4>
+            <p>No direct imaging or neurochemical measures — mechanisms are inferred. Short lab sessions reduce ecological validity for therapeutic settings.</p>
+
+            <h4>Recommendations for musical artists (digital & streaming focus)</h4>
+            <ul>
+              <li>Design short cue tracks and micro‑loops for reinforcement contexts (e.g., 10–30s motifs that can be paired with exercises or cues in apps).</li>
+              <li>Tune complexity and arrangement for non‑expert listeners; provide both 'full' and 'stripped' versions to increase placement opportunities on playlists or apps.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="entry" data-authors="Bradt & Dileo" data-year="2013" data-journal="Cochrane Database" data-doi="10.1002/14651858.CD006908.pub2" data-pmc="PMC9758540" data-tags="anxiety,preoperative,meta-analysis,perioperative">
+          <h3>Bradt & Dileo — Music interventions for preoperative anxiety (Cochrane Review, 2013 update)</h3>
+          <p class="meta">DOI: <a href="https://doi.org/10.1002/14651858.CD006908.pub2" target="_blank">10.1002/14651858.CD006908.pub2</a> • Full text: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9758540/" target="_blank">PMC9758540 (Free)</a></p>
+          <p>The Cochrane meta‑analysis pooled 26 randomized trials (N≈2,051) and found a moderate reduction in preoperative anxiety with music listening versus standard care. While heterogeneity existed across studies, the overall effect supports music as a low‑risk anxiolytic adjunct in perioperative settings.</p>
+
+          <div class="breakdown">
+            <h4>Key findings</h4>
+            <ul class="key-findings">
+              <li>Moderate, clinically relevant reduction in preoperative anxiety across trials.</li>
+              <li>Patient preference and live music sometimes showed stronger effects than standardized playback.</li>
+            </ul>
+
+            <h4>Statistical methods</h4>
+            <p>Random‑effects meta‑analysis; standardized mean differences (SMD) for anxiety outcomes; heterogeneity assessed with I²; study quality and risk of bias considered in sensitivity analyses.</p>
+
+            <h4>Limitations</h4>
+            <p>Marked heterogeneity (differences in music protocols, timing, measures), and several small trials with unclear or high risk of bias.</p>
+
+            <h4>Recommendations for musical artists (digital & streaming focus)</h4>
+            <ul>
+              <li>Create short, calming playlists tailored to preoperative or waiting areas; make them available on streaming services and as downloadable playlists for clinical use (public domain/ licensed appropriately).</li>
+              <li>Provide multiple file formats and clear usage rights so hospitals can integrate tracks into patient music systems, relaxation apps, or preoperative video content.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="entry" data-authors="Palmer et al." data-year="2015" data-journal="J Clin Oncol" data-doi="10.1200/JCO.2014.59.6049" data-pmc="PMC4979095" data-tags="anxiety,preoperative,RCT,patient-preferred">
+          <h3>Palmer, et al. — Brief music intervention reduces preoperative anxiety (J Clin Oncol, 2015)</h3>
+          <p class="meta">DOI: <a href="https://doi.org/10.1200/JCO.2014.59.6049" target="_blank">10.1200/JCO.2014.59.6049</a> • Full text: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4979095/" target="_blank">PMC4979095 (Free)</a></p>
+          <p>In a pragmatic randomized trial (n≈201) a single 5‑minute patient‑preferred music session (live or recorded) reduced preoperative anxiety vs usual care, with live music also linked to quicker immediate recovery. The trial demonstrates that very brief, preference‑matched music has measurable perioperative benefits.</p>
+
+          <div class="breakdown">
+            <h4>Key findings</h4>
+            <ul class="key-findings">
+              <li>A single 5‑minute patient‑preferred music exposure produced immediate, significant anxiety reduction.</li>
+              <li>Live music sometimes outperformed recorded playback for short‑term recovery metrics.</li>
+            </ul>
+
+            <h4>Statistical methods</h4>
+            <p>Randomized controlled design, between‑group comparisons using t‑tests/ANOVA and validated anxiety scales (like STAI); intent‑to‑treat principles used for outcome analyses.</p>
+
+            <h4>Limitations</h4>
+            <p>Immediate outcomes only (no long‑term follow‑up); possible expectancy/placebo effects because full blinding is infeasible with live music.</p>
+
+            <h4>Recommendations for musical artists (digital & streaming focus)</h4>
+            <ul>
+              <li>Prepare short (3–5 minute) recorded pieces optimized for calm and familiarity; provide instrumental and vocal‑light versions for wider clinical use.</li>
+              <li>Include stems or isolated mixes (vocals/instrumental) and explicit licensing details so tracks can be repurposed for apps, in‑hospital music programs, and remote delivery to patients.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="entry" data-authors="Werner et al." data-year="2023" data-journal="PLOS One" data-doi="10.1371/journal.pone.0287950" data-pmc="PMC10381080" data-tags="pain,sensorimotor,movement,synchronization">
+          <h3>Werner, et al. — Sensorimotor synchronization to music reduces pain (PLOS One, 2023)</h3>
+          <p class="meta">DOI: <a href="https://doi.org/10.1371/journal.pone.0287950" target="_blank">10.1371/journal.pone.0287950</a> • Full text: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10381080/" target="_blank">PMC10381080 (Free)</a></p>
+          <p>Experimental evidence shows that active sensorimotor synchronization to music (moving in time with music) yields larger pain reductions than passive listening or silence, indicating that embodied music engagement develops distinct analgesic effects beyond auditory exposure.</p>
+
+          <div class="breakdown">
+            <h4>Key findings</h4>
+            <ul class="key-findings">
+              <li>Sensorimotor synchrony (moving with music) produced larger reductions in perceived pain vs passive listening or silence.</li>
+              <li>Embodied engagement appears to add distinct analgesic benefit above auditory stimulation alone.</li>
+            </ul>
+
+            <h4>Statistical methods</h4>
+            <p>Within‑subject experimental design, repeated measures ANOVA on self‑reported pain scores and post‑hoc contrasts across conditions; effect sizes reported for comparison.</p>
+
+            <h4>Limitations</h4>
+            <p>Laboratory induced pain and short outcomes — careful translation is needed for complex chronic or palliative pain populations.</p>
+
+            <h4>Recommendations for musical artists (digital & streaming focus)</h4>
+            <ul>
+              <li>Create rhythmic, participatory tracks that include easily extractable 20–40s synchronizable segments (for app exercises or guided movement sessions).</li>
+              <li>Provide high-quality stems and tempo markings (BPM) so app developers and clinicians can synchronize audio with movement cues reliably.</li>
+            </ul>
+          </div>
+        </article>
+
+      </section>
+
+      <script>
+        // filtering and export for the research library
+        (function(){
+          const buttons = document.querySelectorAll('.library-controls .tag');
+          const entries = [...document.querySelectorAll('#researchList .entry')];
+
+          function showTag(tag){
+            entries.forEach(e=>{
+              if (tag==='all') { e.style.display='block'; return; }
+              const tags = (e.dataset.tags||'').split(',');
+              e.style.display = tags.includes(tag) ? 'block' : 'none';
+            });
+          }
+
+          buttons.forEach(b=> b.addEventListener('click', ()=>{ showTag(b.dataset.tag); }));
+
+          // Export helpers
+          function entriesToJSON(){
+            return entries.map(e=>({
+              title: e.querySelector('h3').innerText.trim(),
+              authors: e.dataset.authors || '',
+              year: e.dataset.year || '',
+              journal: e.dataset.journal || '',
+              doi: e.dataset.doi || '',
+              pmc: e.dataset.pmc || '',
+              tags: (e.dataset.tags||'').split(',')
+            }));
+          }
+
+          document.getElementById('downloadJSON').addEventListener('click', ()=>{
+            const data = JSON.stringify(entriesToJSON(), null, 2);
+            const blob = new Blob([data], {type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a'); a.href=url; a.download='research-library.json'; a.click(); URL.revokeObjectURL(url);
+          });
+
+          document.getElementById('downloadCSV').addEventListener('click', ()=>{
+            const arr = entriesToJSON();
+            const header = ['title','authors','year','journal','doi','pmc','tags'];
+            const csv = [header.join(',')].concat(arr.map(row=>{
+              return [row.title.replace(/"/g,'""'), row.authors, row.year, row.journal, row.doi, row.pmc, '"'+row.tags.join(';')+'"'].map(v=> '"'+String(v).replace(/"/g,'""')+'"').join(',');
+            })).join('\n');
+            const blob = new Blob([csv], {type:'text/csv'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a'); a.href=url; a.download='research-library.csv'; a.click(); URL.revokeObjectURL(url);
+          });
+        })();
+      </script>
+
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2025 FreeEd4Med.org — in partnership with MadMoozeMusic</p>
+    </footer>
+  </div>
+</body>
+</html>

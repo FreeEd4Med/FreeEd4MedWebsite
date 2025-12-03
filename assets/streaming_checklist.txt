@@ -1,0 +1,11 @@
+Clinical Streaming — Artist Checklist (MadMoozeMusic / FreeEd4Med)
+
+1) Master: WAV/FLAC, 44.1 or 48 kHz, 24-bit
+2) Preview: MP3 (128–192 kbps)
+3) Loudness: aim for -14 LUFS integrated, true peak < -1 dBTP
+4) Stems: vocals / pads / percussion / bass — labeled clearly (e.g., 01_vocals.wav)
+5) Provide BPM (e.g., 60 BPM) and suggested sync timestamps
+6) Provide a README with intended use & licensing terms
+7) Include a small low-bitrate preview file and a zip of the stems
+
+Thank you — contact FreeEd4Med for integration support.

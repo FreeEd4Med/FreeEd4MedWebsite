@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tools — How I Create | FreeEd4Med</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <header class="site-header" style="display: flex; align-items: center; justify-content: space-between; gap: 2rem;">
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <img src="images/logo.png" alt="FreeEd4Med Logo" class="logo" />
+        <h1>FreeEd4Med.org</h1>
+      </div>
+      <nav class="navbar" role="navigation" aria-label="Main site navigation">
+        <a href="index.html">Home</a>
+        <a href="education.html">Healthcare Education</a>
+        <a href="research-library.html">Research Library</a>
+        <a href="tools.html">Tools / How I Create</a>
+        <a href="apps.html">Apps &amp; Scripts</a>
+        <a href="ai-prompts.html">AI Prompt Guide</a>
+        <a href="public.html#multimedia">Multimedia</a>
+        <a href="public.html">Public Info</a>
+        <a href="donate.html">Donate</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <h2>Tools — How I Create (Music for Healing)</h2>
+      <p>Below I describe my practical creative workflow for making songs for healing: software/hardware tools, step‑by‑step workflows, example code and an interactive demo you can try in your browser.</p>
+
+      <section class="tools-grid">
+        <div class="tool-card">
+          <h3>1) Tools I use (my current toolchain)</h3>
+          <ul>
+            <li>DAW (primary): <strong>Ardour</strong> on Linux (Ubuntu) — main composition, recording, mixing and session work</li>
+            <li>Plugins: x42, Calf Studio, and <strong>LSP (Linux Studio Plugins)</strong> for synths, effects and processing on Linux</li>
+            <li>Audio utilities: <strong>ffmpeg</strong> (command‑line) for batch conversion, mastering automation, renders; <code>ardour_fixer</code> script for Ardour project fixes and automation</li>
+            <li>Quick editing / audition: <strong>Audacity</strong> for small edits, quick exports and waveform inspection (local installs)</li>
+            <li>Web tools: <strong>SUNO Studio</strong> (web‑based creative AI and mastering/production workflows)</li>
+            <li>Field recording: small recorders and binaural setups for textural layers and patient‑centred audio captures</li>
+            <li>Coding/editing: <strong>VS Code</strong> (Trae when using Windows), <strong>RStudio</strong> for any analytics, and lightweight <strong>gedit</strong> for quick edits.</li>
+          </ul>
+        </div>
+
+        <div class="tool-card">
+          <h3>2) Workflow (high level)</h3>
+          <ol>
+            <li>Define intention: relaxation, grounding, pain reduction, anxiety relief.</li>
+            <li>Create a short motif or sonic palette (3–5 minutes max for bedside use).</li>
+            <li>Use warm timbres, slow attack envelopes, sustained pads and gentle dynamic range.</li>
+            <li>Test with non-musician listeners for preference and comfort; iterate.</li>
+          </ol>
+        </div>
+
+        <div class="tool-card">
+          <h3>3) Reproducible snippet — WebAudio calming drone</h3>
+          <p>Try a minimalist calming drone (generated in your browser). Use headphones for best effect.</p>
+          <div class="demo-controls">
+            <button id="playDemo">Play demo</button>
+            <button id="stopDemo" disabled>Stop</button>
+          </div>
+          <pre class="code">// WebAudio calming drone — simplified
+const ctx = new AudioContext();
+const osc = ctx.createOscillator();
+const gain = ctx.createGain();
+osc.type = 'sine';
+osc.frequency.value = 220; // A3
+gain.gain.value = 0.0001;
+osc.connect(gain).connect(ctx.destination);
+osc.start();
+// ramp to a gentle amplitude
+gain.gain.linearRampToValueAtTime(0.02, ctx.currentTime + 4);
+// experiment: add slow tremolo, stereo width, and warm reverb</pre>
+        </div>
+        <div class="tool-card">
+          <h3>4) Preparing tracks for digital delivery</h3>
+          <ul>
+            <li>Export masters at 44.1 or 48 kHz / 24‑bit, create a -14 LUFS integrated master for streaming (or provide stems for mastering).</li>
+            <li>Provide multiple edits: short (3–5 min), loopable segment, and a long mix for background contexts.</li>
+            <li>Include metadata: filename conventions, Title — Intended Use, ISRC (if available), composer credits, and suggested tags (e.g., 'preoperative', 'relaxation').</li>
+            <li>Package stems in clearly labeled folders (vocals, pads, percussion) and include a README.txt with licensing terms and recommended uses.</li>
+            <li>Consider offering instrumental-only or vocal-light mixes to increase placement in clinical playlists and apps.</li>
+          </ul>
+        </div>
+
+          <div class="tool-card">
+            <h3>5) Ardour — Master bus & drum 'glue' workflow (Ubuntu)</h3>
+            <p>My go‑to Ardour master‑bus chain when preparing WAV masters:</p>
+            <ol>
+              <li>Fader</li>
+              <li>Calf Equalizer — 12 band (broad tonal shaping)</li>
+              <li>Calf Saturator — gentle harmonic warmth</li>
+              <li>Calf Compressor — quick transparent dynamics control</li>
+              <li>LSP Loudness Compensator (Stereo) — group loudness smoothing</li>
+              <li>VU Meter (Stereo) — visual level check</li>
+              <li>LoudMax (Stereo) — transparent limiter to control peaks</li>
+              <li>DR-14-Crest Loudness Range Meter (Stereo) — check dynamic range</li>
+              <li>EBU R128 Meter — final compliance and program loudness check</li>
+            </ol>
+            <p>For drum bus 'glue' when multiple drum stems exist I use <strong>LSP Multiband Compressor (8-band)</strong> on the drum bus — gentle ratios and slower attack/release for cohesion without killing transients.</p>
+            <p>Notes: save an Ardour session version with stems routed to separate buses (drums, pads, vocals) to make stems exporting and master revision easier.</p>
+          </div>
+
+        <div class="tool-card">
+          <h3>Downloads & checklist</h3>
+          <ul>
+            <li><a href="docs/clinical-streaming-guide.md">How I prepare tracks for clinical streaming (guide)</a></li>
+            <li><a href="assets/streaming_checklist.txt">Streaming checklist (downloadable)</a></li>
+            <li><a href="assets/madmooze_sample_stems_demo.zip">Sample stems pack (MadMooze demo ZIP)</a></li>
+          </ul>
+        </div>
+
+      </section>
+
+      <h3>Video / deeper demos</h3>
+      <p>Embedding full walkthrough videos and DAW session stems is a priority — if you'd like, I can prepare an example Ableton/REAPER stem download and a short screen‑recorded tutorial for the site.</p>
+
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2025 FreeEd4Med.org — MadMoozeMusic</p>
+    </footer>
+
+    <script>
+      // very small demo controller (keeps OS friendly) — uses WebAudio on user activation
+      (function(){
+        let ctx, osc, gain;
+        const play = document.getElementById('playDemo');
+        const stop = document.getElementById('stopDemo');
+        play.addEventListener('click', ()=>{
+          if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();
+          osc = ctx.createOscillator();
+          gain = ctx.createGain();
+          const trem = ctx.createOscillator();
+          const tremGain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.value = 220;
+          gain.gain.value = 0.0001;
+          trem.type = 'sine';
+          trem.frequency.value = 0.15; // slow tremolo
+          tremGain.gain.value = 0.01;
+          trem.connect(tremGain);
+          tremGain.connect(gain.gain);
+          osc.connect(gain).connect(ctx.destination);
+          osc.start(); trem.start();
+          gain.gain.linearRampToValueAtTime(0.02, ctx.currentTime + 3);
+          play.disabled = true; stop.disabled = false;
+        });
+        stop.addEventListener('click', ()=>{
+          if (!ctx) return;
+          gain.gain.linearRampToValueAtTime(0.0001, ctx.currentTime + 2);
+          setTimeout(()=>{ try{ osc.stop(); }catch(e){} }, 2100);
+          play.disabled = false; stop.disabled = true;
+        });
+      })();
+    </script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "freeed4med-glossary-tests",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "puppeteer": "^24.15.0",
+    "http-server": "^14.1.1"
+  },
+  "scripts": {
+    "test:puppeteer": "node ./tests/puppeteer/search.test.js",
+    "serve": "http-server -p 8000 ./ -c-1"
+  }
+}
