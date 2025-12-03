@@ -9,11 +9,12 @@
 <body>
   <div class="container">
     <header class="site-header" style="display: flex; align-items: center; justify-content: space-between; gap: 2rem;">
+      <a class="skip-link" href="#glossary-main" style="position:absolute;left:-999px;top:auto;">Skip to glossary</a>
       <div style="display: flex; align-items: center; gap: 1rem;">
         <img src="images/logo.png" alt="FreeEd4Med Logo" class="logo" />
         <h1>FreeEd4Med.org</h1>
       </div>
-      <nav class="navbar">
+      <nav class="navbar" role="navigation" aria-label="Main site navigation">
         <a href="index.html">Home</a>
         <a href="education.html">Healthcare Education</a>
         <a href="research-library.html">Research Library</a>
@@ -26,7 +27,13 @@
       </nav>
     </header>
 
-    <main class="main-content">
+    <main id="glossary-main" class="main-content" role="main" aria-labelledby="glossary-heading">
+      <div style="display:flex;align-items:center;gap:1rem;justify-content:space-between;">
+        <div></div>
+        <div style="display:flex;gap:1rem;align-items:center;">
+          <a href="assets/glossary.pdf" class="btn" download aria-label="Download glossary as PDF">Download PDF</a>
+        </div>
+      </div>
       <h2>Glossary — mixing, mastering, and clinical audio</h2>
 
       <section class="research-list">
@@ -282,6 +289,9 @@
         </article>
 
       </section>
+
+      <!-- include glossary UI script -->
+      <script src="assets/glossary.js" defer></script>
         <article class="entry">
           <h3>Clipping (hard / soft)</h3>
           <p>When a signal exceeds the maximum level and the waveform is flattened. Hard clipping produces harsh distortion; soft clipping introduces gentler harmonics that can sometimes be used musically but risk damaging quality if overdone.</p>
