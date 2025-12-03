@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """Simple single-page PDF generator for small text files.
 
+Copyright (c) 2025 FreeEd4Med
+
+This tool is released under the MIT License. See /LICENSE at the repository root.
+
 This is a tiny helper to create readable PDF downloads for short textual assets.
 It uses the standard PDF Type1 font Helvetica (no embedding) and writes lines top-down.
 Not a full featured renderer, but good for short plain text documents (checklist, guides).

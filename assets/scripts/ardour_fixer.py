@@ -1,3 +1,11 @@
+"""
+ardour_fixer.py — Ardour Mastering Assistant
+
+Copyright (c) 2025 FreeEd4Med
+
+This script (code) is licensed under the MIT License - see /LICENSE in the repo root.
+"""
+
 import os
 import subprocess
 import re

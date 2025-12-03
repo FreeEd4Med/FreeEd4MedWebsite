@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """Export the glossary HTML to a readable plain-text file.
 
+Copyright (c) 2025 FreeEd4Med
+
+This tool is released under the MIT License. See /LICENSE at the repository root.
+
 This script extracts the <main> section of `glossary.html`, converts headings
 and definition lists to plain text and writes to assets/glossary.txt for
 PDF conversion with `make_pdfs.py`.

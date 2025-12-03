@@ -1,4 +1,7 @@
 // Simple helper that uses Puppeteer to render the site's glossary page to PDF.
+//
+// Copyright (c) 2025 FreeEd4Med
+// Licensed under the MIT License — see /LICENSE at the repo root.
 // This is a best-effort, print-style PDF and may not produce fully tagged/accessibility-compliant PDFs.
 // Usage (from WebSite/V7):
 //   node tools/generate_accessible_pdf.js ./glossary.html ./assets/glossary-print.pdf
