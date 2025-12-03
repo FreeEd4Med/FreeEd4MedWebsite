@@ -140,14 +140,18 @@ header.site-header h1 { font-size:1.15rem; margin:0; color: #fff; text-shadow: 0
 }
 
 .feature {
-    background-color: #f0eaff;
+    background-color: rgba(255,255,255,0.06);
     border-radius: 6px;
     padding: 1rem;
     flex: 1 1 30%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 12px 30px rgba(2,6,23,0.45);
+    color: #0f0f16;
 }
 
-.feature h3 { color: var(--accent-1); }
+.feature h3 { color: var(--accent-1); margin: 0 0 0.35rem 0; }
+.feature .feature-link { color: inherit; text-decoration:none; display:inline-block; padding:2px 4px; border-radius:6px; transition:all .12s ease; }
+.feature .feature-link:hover{ color: white; background: linear-gradient(90deg,var(--accent-1),var(--accent-2)); transform: translateY(-2px); box-shadow: 0 8px 34px rgba(122,47,245,0.12); }
+.feature p { color: rgba(16,16,18,0.92); margin: 0; }
 
 /* Research Library styles */
 .research-list {

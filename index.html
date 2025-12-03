@@ -55,91 +55,111 @@
 
       <section class="features" aria-label="Core features">
         <div class="feature">
-          <h3>Evidence-first</h3>
+          <h3><a class="feature-link" href="research-library.html">Evidence-first</a></h3>
           <p>Curated open access research and clinical guidance for using music intentionally in healthcare settings.</p>
         </div>
         <div class="feature">
-          <h3>Artist-forward</h3>
+          <h3><a class="feature-link" href="tools.html">Artist-forward</a></h3>
           <p>Tools, templates, and workflow notes that make it easy for artists to contribute high-quality stems and therapeutically useful tracks.</p>
         </div>
         <div class="feature">
-          <h3>AI-enabled workflows</h3>
+          <h3><a class="feature-link" href="ai-prompts.html">AI-enabled workflows</a></h3>
           <p>Generative prompts, sample stems, and curated playlists — amplified by modern AI tools to accelerate safe, thoughtful music creation.</p>
         </div>
       </section>
     </main>
 
     <style>
-        #news-grid-wrapper {
-            background-color: #f4f4f9;
-            padding: 20px 10px;
-            border-top: 2px solid #ccc;
-            width: 100%;
-            font-family: 'Segoe UI', sans-serif;
-        }
-    
-        #news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 15px;
-            justify-items: center;
-            text-align: center;
-        }
-    
-        #news-grid a {
-            text-decoration: none;
-            color: #4a148c;
-            font-weight: 500;
-            display: block;
-            padding: 6px 10px;
-        }
-    
-        #news-grid a:hover {
-            text-decoration: underline;
-        }
+      /* news ticker bar */
+      #news-ticker-wrapper { margin-top: 2rem; padding: 14px; border-radius: 10px; background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.03); box-shadow: 0 22px 60px rgba(2,6,23,0.6); display:flex; align-items:center; gap:12px; }
+      #news-ticker-label { color: rgba(255,255,255,0.9); font-weight:700; padding: 6px 10px; background: linear-gradient(90deg,var(--accent-1),var(--accent-2)); border-radius:999px; font-size:0.95rem; box-shadow: 0 8px 30px rgba(122,47,245,0.14); }
+      #news-ticker { flex:1 1 auto; min-height:36px; position:relative; overflow:hidden; }
+      .ticker-item { position:absolute; left:0; right:0; top:0; bottom:0; display:flex; align-items:center; gap:12px; padding:6px 10px; opacity:0; transform: translateY(6px); transition: opacity .45s ease, transform .45s ease; }
+      .ticker-item.is-visible { opacity:1; transform: translateY(0); }
+      .ticker-item a { color: #fff; font-weight:700; text-decoration:none; font-size:1rem; }
+      .ticker-item .meta { color: var(--muted); font-size:0.9rem; margin-left:10px; }
+      .ticker-controls { display:flex; gap:8px; align-items:center; }
+      .ticker-dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.06); }
+      .ticker-dot.active { background: linear-gradient(90deg,var(--accent-1),var(--accent-2)); box-shadow:0 6px 18px rgba(122,47,245,0.12); }
+
+      @media (max-width:880px){ #news-ticker-label{display:none;} .ticker-item a{font-size:0.95rem;} }
     </style>
-    
-    <div id="news-grid-wrapper">
-        <h3 style="text-align:center; margin-bottom:10px;">Medical Headlines</h3>
-        <div id="news-grid">
-            <span>Loading headlines...</span>
-        </div>
+
+    <div id="news-ticker-wrapper">
+      <div id="news-ticker-label">Medical Headlines</div>
+      <div id="news-ticker"><div class="ticker-loading">Loading headlines…</div></div>
+      <div class="ticker-controls" aria-hidden="true" id="ticker-dots"></div>
     </div>
-    
+
     <script>
-        const grid = document.getElementById("news-grid");
-      let currentSlide = 0;
-      let slides = [];
-    
-      fetch("rss-headlines.php")
-        .then(res => res.json())
-        .then(data => {
-          if (!Array.isArray(data) || data.length === 0) {
-            grid.innerHTML = "<span>No headlines available.</span>";
+      // News ticker: fetches /rss-headlines.php (JSON with title/link/date), shows only recent items (server filters), rotates with dissolve and auto-refresh.
+      (function(){
+        const ticker = document.getElementById('news-ticker');
+        const dots = document.getElementById('ticker-dots');
+        let items = [];
+        let idx = -1;
+        let intervalId = null;
+
+        function timeAgoISO(iso){
+          if (!iso) return ''; 
+          const d = new Date(iso);
+          const ms = Date.now() - d.getTime();
+          const days = Math.floor(ms / (1000*60*60*24));
+          if (days === 0) return 'today';
+          if (days === 1) return '1 day ago';
+          return days + ' days ago';
+        }
+
+        function renderItems(list){
+          ticker.innerHTML = '';
+          dots.innerHTML = '';
+          if (!list || list.length === 0) {
+            ticker.innerHTML = '<div class="ticker-item is-visible"><span>No recent headlines available.</span></div>';
             return;
           }
-    
-          for (let i = 0; i < data.length; i += 5) {
-            const group = data.slice(i, i + 5);
-            const slide = group.map(item =>
-              `<a href="${item.link}" target="_blank">${item.title}</a>`
-            ).join("");
-            slides.push(slide);
-          }
-    
-          function showSlide(index) {
-            grid.innerHTML = slides[index];
-          }
-    
-          showSlide(currentSlide);
-          setInterval(() => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-          }, 10000);
-        })
-        .catch(err => {
-          grid.innerHTML = "<span>Error loading headlines.</span>";
-        });
+          list.forEach((it, n) => {
+            const el = document.createElement('div'); el.className = 'ticker-item';
+            el.innerHTML = `<a href="${it.link}" target="_blank" rel="noopener noreferrer">${it.title}</a><span class="meta">${timeAgoISO(it.date)}</span>`;
+            ticker.appendChild(el);
+
+            const dot = document.createElement('div'); dot.className = 'ticker-dot'; dot.dataset.index = n;
+            dot.addEventListener('click', ()=>{ showItem(Number(dot.dataset.index)); resetInterval(); });
+            dots.appendChild(dot);
+          });
+          items = Array.from(ticker.querySelectorAll('.ticker-item'));
+          showItem(0);
+        }
+
+        function showItem(i){
+          if (!items || items.length === 0) return;
+          items.forEach((el, j)=> el.classList.toggle('is-visible', j===i));
+          Array.from(dots.children).forEach((d,j)=> d.classList.toggle('active', j===i));
+          idx = i;
+        }
+
+        function nextItem(){ if (!items || items.length === 0) return; showItem((idx+1) % items.length); }
+        function resetInterval(){ if (intervalId) clearInterval(intervalId); intervalId = setInterval(nextItem, 8000); }
+
+        async function fetchHeadlines(){
+          try{
+            const res = await fetch('rss-headlines.php', {cache:'no-store'});
+            const json = await res.json();
+            // server will have filtered recent items; but ensure array is valid
+            if (!Array.isArray(json) || json.length === 0) {
+              renderItems([]);
+              return;
+            }
+            // sort newest first (by date if present)
+            json.sort((a,b)=> (b.date || '').localeCompare(a.date || ''));
+            renderItems(json.slice(0, 12));
+            resetInterval();
+          }catch(e){ console.error('Failed to fetch headlines',e); renderItems([]); }
+        }
+
+        // initial fetch and then refresh every 5 minutes
+        fetchHeadlines();
+        setInterval(fetchHeadlines, 1000*60*5);
+      })();
     </script>
 </body>
 </html>
