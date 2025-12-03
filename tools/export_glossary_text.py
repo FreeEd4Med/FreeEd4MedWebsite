@@ -40,6 +40,10 @@ def format_text(main_html):
     text = re.sub(r'<h3[^>]*>(.*?)</h3>', r'\n\n-- \1 --\n', text, flags=re.I|re.S)
     # convert dt/dd to lines
     text = re.sub(r'<dt[^>]*>(.*?)</dt>\s*<dd[^>]*>(.*?)</dd>', r'\n\1:\n  \2\n', text, flags=re.I|re.S)
+    # also handle the flattened format where glossary items are article.entry
+    # entries (created by the client-side transform) — convert <article class="entry"><h3>Term</h3><p>Definition</p></article>
+    text = re.sub(r'<article[^>]*class=["\']?entry["\']?[^>]*>.*?<h3[^>]*>(.*?)</h3>.*?<p[^>]*>(.*?)</p>.*?</article>',
+                  r'\n\1:\n  \2\n', text, flags=re.I|re.S)
 
     # remove any leftover html tags
     out = strip_tags(text)

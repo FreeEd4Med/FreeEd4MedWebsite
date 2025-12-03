@@ -13,55 +13,55 @@ document.addEventListener('DOMContentLoaded', function () {
   `;
   container.insertBefore(controls, container.firstChild);
 
-  // Convert any <dt>/<dd> pairs into individual article.entry elements so every
-  // glossary term becomes its own searchable entry (this flattens grouped <dl>s
-  // into a unified list and preserves term ids/definitions).
-  const dlList = Array.from(container.querySelectorAll('dl'));
-  dlList.forEach(dl => {
-    // move through child nodes and transform dt/dd pairs into article.entry
-    const children = Array.from(dl.children);
-    for (let i = 0; i < children.length; i++) {
-      const el = children[i];
-      if (!el) continue;
-      if (el.tagName.toLowerCase() === 'dt') {
-        const dt = el;
-        // find the next dd sibling (might not be immediate if comments/whitespace present)
-        let dd = dt.nextElementSibling;
-        if (!dd || dd.tagName.toLowerCase() !== 'dd') {
-          // No definition found — create an empty one
-          dd = document.createElement('dd');
-          dd.textContent = '';
-        }
-
-        // Create a standalone article entry
-        const article = document.createElement('article');
-        article.className = 'entry';
-
-        const h3 = document.createElement('h3');
-        // Move id if present on dt (keep anchors)
-        if (dt.id) { h3.id = dt.id; }
-        h3.textContent = dt.textContent.trim();
-
-        const p = document.createElement('p');
-        // keep innerHTML from dd so formatting is preserved
-        p.innerHTML = dd.innerHTML.trim();
-
-        article.appendChild(h3);
-        article.appendChild(p);
-
-        // Insert the article after the <dl> and remove original dt/dd
-        dl.parentNode.insertBefore(article, dl);
-        // Advance index: remove dt and dd and adjust i accordingly
-        dd.remove();
-        dt.remove();
-        // children array is static; loop will continue
+  // Robustly convert any <dt>/<dd> pairs across the page into individual
+  // article.entry elements so every glossary term is turned into its own
+  // searchable item. This function pairs dt elements with their nearest dd
+  // sibling (forward preferred) and preserves id attributes for anchors.
+  (function flattenDlPairs() {
+    const dtNodes = Array.from(container.querySelectorAll('dt'));
+    dtNodes.forEach(dt => {
+      // find the dd sibling: prefer the nextElementSibling, else search forward,
+      // as a fallback search backward for a previous dd.
+      let dd = dt.nextElementSibling;
+      while (dd && dd.tagName && dd.tagName.toLowerCase() !== 'dd') {
+        dd = dd.nextElementSibling;
       }
-    }
-    // when dl is empty remove it
-    if (dl.children.length === 0) dl.remove();
-  });
+      if (!dd) {
+        // fallback: look backward
+        dd = dt.previousElementSibling;
+        while (dd && dd.tagName && dd.tagName.toLowerCase() !== 'dd') {
+          dd = dd.previousElementSibling;
+        }
+      }
 
-  const entryEls = Array.from(container.querySelectorAll('.entry'));
+      const article = document.createElement('article');
+      article.className = 'entry';
+
+      const h3 = document.createElement('h3');
+      if (dt.id) h3.id = dt.id;
+      h3.textContent = dt.textContent.trim();
+
+      const p = document.createElement('p');
+      p.innerHTML = dd ? dd.innerHTML.trim() : '';
+
+      article.appendChild(h3);
+      article.appendChild(p);
+
+      // Insert the article right after the dt node's parent <dl> if present,
+      // otherwise insert after dt itself.
+      const parentDl = dt.closest('dl');
+      if (parentDl && parentDl.parentNode) parentDl.parentNode.insertBefore(article, parentDl);
+      else dt.parentNode.insertBefore(article, dt.nextSibling);
+
+      // Remove dt and paired dd if they exist
+      if (dd && dd.parentNode) dd.parentNode.removeChild(dd);
+      if (dt && dt.parentNode) dt.parentNode.removeChild(dt);
+    });
+
+    // Remove any now-empty <dl> containers
+    Array.from(container.querySelectorAll('dl')).forEach(dl => { if (dl.children.length === 0) dl.remove(); });
+  })();
+
 
   // Remove group header entries (section titles) so the page is a unified list.
   // We target entries whose H3 looks like a section label rather than a single term.
@@ -74,6 +74,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  // Build index from entries (re-read entries after transformations / header removal)
+  const entryEls = Array.from(container.querySelectorAll('.entry'));
   // Build index from entries
   const alphaMap = {};
   const entries = []; // structured index: {el, title}
