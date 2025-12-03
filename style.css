@@ -1,0 +1,135 @@
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f8fc;
+    color: #2c2c2c;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+}
+
+header.site-header {
+    text-align: center;
+    padding: 1rem;
+    background: #6c4fa1;
+    color: white;
+}
+
+.logo {
+    height: 80px;
+    margin-bottom: 0.5rem;
+}
+
+.navbar {
+    margin-top: 1rem;
+}
+
+.navbar a {
+    text-decoration: none;
+    margin: 0 10px;
+    color: #f9f9f9;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.main-content {
+    padding: 2rem 1rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.intro h2 {
+    font-size: 2rem;
+    color: #6c4fa1;
+}
+
+.intro p {
+    font-size: 1.1rem;
+    color: #444;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.donate-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 1rem;
+    background-color: #8a6dc1;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.donate-btn:hover {
+    background-color: #764cb5;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.feature {
+    background-color: #f0eaff;
+    border-radius: 6px;
+    padding: 1rem;
+    flex: 1 1 30%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.feature h3 {
+    color: #6c4fa1;
+}
+
+/* Research Library styles */
+.research-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.research-list .entry {
+    background: #faf7ff;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(108,79,161,0.08);
+}
+
+.research-list .entry h3 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.05rem;
+    color: #4a148c;
+}
+
+.research-list .entry .meta {
+    font-size: 0.9rem;
+    color: #5a5a5a;
+    margin-bottom: 0.5rem;
+}
+
+.research-list .entry p { line-height: 1.45; color: #333; }
+
+footer.footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #eee;
+    color: #666;
+}

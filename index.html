@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Home - FreeEd4Med</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <header class="site-header" style="display: flex; align-items: center; justify-content: space-between; gap: 2rem;">
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <img src="images/logo.png" alt="FreeEd4Med Logo" class="logo" />
+        <h1>FreeEd4Med.org</h1>
+      </div>
+      <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="education.html">Healthcare Education</a>
+        <a href="research-library.html">Research Library</a>
+        <a href="public.html">Public Info</a>
+        <a href="donate.html">Donate</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+    <main class="main-content">
+      <section class="intro">
+        <h2>Empowering Medical Professionals & the Public</h2>
+        <p>FreeEd4Med.org is a nonprofit offering free, high-quality medical education for healthcare professionals and the public.</p>
+        <a class="donate-btn" href="donate.html">Donate Now</a>
+      </section>
+      <section class="features">
+        <div class="feature">
+          <h3>Free Lessons</h3>
+          <p>Access video lessons and downloadable content designed by healthcare professionals.</p>
+        </div>
+        <div class="feature">
+          <h3>Public Resources</h3>
+          <p>Learn how to protect your health and understand the healthcare system.</p>
+        </div>
+        <div class="feature">
+          <h3>Medical News</h3>
+          <p>Stay current with AI-curated headlines and health research updates.</p>
+        </div>
+      </section>
+    </main>
+
+    <style>
+        #news-grid-wrapper {
+            background-color: #f4f4f9;
+            padding: 20px 10px;
+            border-top: 2px solid #ccc;
+            width: 100%;
+            font-family: 'Segoe UI', sans-serif;
+        }
+    
+        #news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            justify-items: center;
+            text-align: center;
+        }
+    
+        #news-grid a {
+            text-decoration: none;
+            color: #4a148c;
+            font-weight: 500;
+            display: block;
+            padding: 6px 10px;
+        }
+    
+        #news-grid a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    
+    <div id="news-grid-wrapper">
+        <h3 style="text-align:center; margin-bottom:10px;">Medical Headlines</h3>
+        <div id="news-grid">
+            <span>Loading headlines...</span>
+        </div>
+    </div>
+    
+    <script>
+        const grid = document.getElementById("news-grid");
+      let currentSlide = 0;
+      let slides = [];
+    
+      fetch("rss-headlines.php")
+        .then(res => res.json())
+        .then(data => {
+          if (!Array.isArray(data) || data.length === 0) {
+            grid.innerHTML = "<span>No headlines available.</span>";
+            return;
+          }
+    
+          for (let i = 0; i < data.length; i += 5) {
+            const group = data.slice(i, i + 5);
+            const slide = group.map(item =>
+              `<a href="${item.link}" target="_blank">${item.title}</a>`
+            ).join("");
+            slides.push(slide);
+          }
+    
+          function showSlide(index) {
+            grid.innerHTML = slides[index];
+          }
+    
+          showSlide(currentSlide);
+          setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+          }, 10000);
+        })
+        .catch(err => {
+          grid.innerHTML = "<span>Error loading headlines.</span>";
+        });
+    </script>
+</body>
+</html>

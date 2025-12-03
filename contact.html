@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <header class="site-header" style="display: flex; align-items: center; justify-content: space-between; gap: 2rem;">
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <img src="images/logo.png" alt="FreeEd4Med Logo" class="logo" />
+        <h1>FreeEd4Med.org</h1>
+      </div>
+      <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="education.html">Healthcare Education</a>
+        <a href="research-library.html">Research Library</a>
+        <a href="public.html">Public Info</a>
+        <a href="donate.html">Donate</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+    <main class="main-content">
+
+<h2>Contact Us</h2>
+<p>Have questions or feedback? Fill out the form below or email <a href="mailto:contact@freeed4med.org">contact@freeed4med.org</a>.</p>
+<form id="contact-form" method="post" action="contact.php" style="max-width: 600px; margin: 0 auto;">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required
+         style="width: 100%; padding: 10px; margin-bottom: 1rem; font-size: 1rem;" /><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required
+         style="width: 100%; padding: 10px; margin-bottom: 1rem; font-size: 1rem;" /><br>
+
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message" rows="8" required
+            style="width: 100%; padding: 10px; margin-bottom: 1rem; font-size: 1rem;"></textarea><br>
+
+    <!-- reCAPTCHA -->
+    <div class="g-recaptcha" data-sitekey="6LcB_4orAAAAAKebHF3Soj2OwT5Yv2UYfu4gxpmP" style="margin-bottom: 1rem;"></div>
+
+    <button type="submit" style="padding: 12px 24px; font-size: 1.1rem;
+          background-color: #4CAF50; color: white; border: none; border-radius: 6px; cursor: pointer;">
+    Send Message
+  </button>
+</form>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    </main>
+    
+<div style="margin-top:2rem">
+  <h3>Medical Headlines</h3>
+  <marquee behavior="scroll" direction="left" scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();">
+    <a href="https://www.medicalnewstoday.com/" target="_blank">Medical News Today</a> |
+    <a href="https://www.nih.gov/news-events/news-releases" target="_blank">NIH News</a> |
+    <a href="https://www.webmd.com/news" target="_blank">WebMD Headlines</a> |
+    <a href="https://www.cdc.gov/media/index.html" target="_blank">CDC Newsroom</a>
+  </marquee>
+</div>
+
+    <footer class="footer">
+      <p>&copy; 2025 FreeEd4Med.org | <a href="https://www.interserver.net" target="_blank">Powered by InterServer</a></p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Medical News - FreeEd4Med</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <header class="site-header" style="display: flex; align-items: center; justify-content: space-between; gap: 2rem;">
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <img src="images/logo.png" alt="FreeEd4Med Logo" class="logo" />
+        <h1>FreeEd4Med.org</h1>
+      </div>
+      <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="education.html">Healthcare Education</a>
+        <a href="research-library.html">Research Library</a>
+        <a href="public.html">Public Info</a>
+        <a href="donate.html">Donate</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <h2>Latest Medical News</h2>
+      <p>Explore curated updates across key healthcare topics:</p>
+
+      <section>
+        <h3>🧬 Cutting-Edge Research</h3>
+        <p>Stay updated on the latest scientific studies and medical breakthroughs from top journals and institutions.</p>
+      </section>
+
+      <section>
+        <h3>🦠 Disease Outbreaks</h3>
+        <p>Track current disease outbreaks and emerging health concerns from trusted sources like the CDC and WHO.</p>
+      </section>
+
+      <section>
+        <h3>💡 Advances in Healthcare Technology</h3>
+        <p>Discover innovations in medical devices, diagnostics, robotics, and telehealth.</p>
+      </section>
+
+      <section>
+        <h3>📋 Treatment Guidelines & Policy Updates</h3>
+        <p>Keep current with updated clinical guidelines, protocols, and health policy developments.</p>
+      </section>
+
+      <section>
+        <h3>📰 Curated Headlines</h3>
+        <div id="newsHeadlines">Loading headlines...</div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2025 FreeEd4Med.org | <a href="https://www.interserver.net" target="_blank">Powered by InterServer</a></p>
+    </footer>
+  </div>
+
+  <script>
+    fetch("rss-headlines.php")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("newsHeadlines").innerHTML = data.trim() || "No headlines available at the moment.";
+      })
+      .catch(error => {
+        document.getElementById("newsHeadlines").innerText = "Failed to load headlines.";
+        console.error(error);
+      });
+  </script>
+</body>
+</html>
