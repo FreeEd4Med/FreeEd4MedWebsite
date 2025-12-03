@@ -1,0 +1,49 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 823 >>
+stream
+BT
+/F1 12 Tf
+50 760 Td (Clinical Streaming - Artist Checklist \(MadMoozeMusic / FreeEd4Med\)) Tj
+0 -14 Td
+50 746 Td () Tj
+0 -14 Td
+50 732 Td (1\) Master: WAV/FLAC, 44.1 or 48 kHz, 24-bit) Tj
+0 -14 Td
+50 718 Td (2\) Preview: MP3 \(128-192 kbps\)) Tj
+0 -14 Td
+50 704 Td (3\) Loudness: aim for -14 LUFS integrated, true peak < -1 dBTP) Tj
+0 -14 Td
+50 690 Td (4\) Stems: vocals / pads / percussion / bass - labeled clearly \(e.g., 01_vocals.wav\)) Tj
+0 -14 Td
+50 676 Td (5\) Provide BPM \(e.g., 60 BPM\) and suggested sync timestamps) Tj
+0 -14 Td
+50 662 Td (6\) Provide a README with intended use & licensing terms) Tj
+0 -14 Td
+50 648 Td (7\) Include a small low-bitrate preview file and a zip of the stems) Tj
+0 -14 Td
+50 634 Td () Tj
+0 -14 Td
+50 620 Td (Thank you - contact FreeEd4Med for integration support.) Tj
+0 -14 Td
+ET
+endstream
+endobj
+xref0 60000000000 65535 f 0000000009 00000 n 0000000058 00000 n 0000000115 00000 n 0000000241 00000 n 0000000311 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1185
+%%EOF
