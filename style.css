@@ -108,7 +108,8 @@ header.site-header h1 { font-size:1.15rem; margin:0; color: #fff; text-shadow: 0
     box-shadow: 0 4px 14px rgba(255,92,156,0.25);
 }
 
-.btn { display:inline-block; padding:10px 14px; border-radius:8px; color:white; text-decoration:none; font-weight:700; margin-right:8px; border:0; background: linear-gradient(90deg,var(--accent-1), var(--accent-2)); box-shadow: 0 8px 26px rgba(122,47,245,0.15); }
+.btn { display:inline-block; padding:8px 12px; border-radius:8px; color:white; text-decoration:none; font-weight:700; margin-right:8px; border:0; background: linear-gradient(90deg,var(--accent-1), var(--accent-2)); box-shadow: 0 8px 26px rgba(122,47,245,0.15); transition: all 0.2s ease; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(122,47,245,0.25); }
 .btn.ghost { background: transparent; color: white; border:1px solid rgba(255,255,255,0.06); }
 .hero { display:flex; gap:2rem; align-items:center; justify-content:space-between; padding:2rem; margin-bottom:1.5rem; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('assets/images/FreeEd4MedBackHm.png') center/cover no-repeat; border-radius: 12px; }
 .hero-left { flex:1 1 56%; }
