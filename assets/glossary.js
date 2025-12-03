@@ -13,17 +13,20 @@ document.addEventListener('DOMContentLoaded', function () {
   `;
   container.insertBefore(controls, container.firstChild);
 
-  const entries = Array.from(container.querySelectorAll('.entry'));
+  const entryEls = Array.from(container.querySelectorAll('.entry'));
 
   // Build index from entries
   const alphaMap = {};
-  entries.forEach(el => {
+  const entries = []; // structured index: {el, title}
+  entryEls.forEach(el => {
     let titleEl = el.querySelector('h3');
     let title = titleEl ? titleEl.textContent.trim() : (el.querySelector('dt') ? el.querySelector('dt').textContent.trim() : '');
     const first = (title[0] || '#').toUpperCase();
     const letter = /[A-Z]/.test(first) ? first : '#';
     alphaMap[letter] = alphaMap[letter] || [];
-    alphaMap[letter].push({el, title});
+    const item = {el, title};
+    alphaMap[letter].push(item);
+    entries.push(item);
   });
 
   const alphaDiv = document.getElementById('glossary-alpha');
