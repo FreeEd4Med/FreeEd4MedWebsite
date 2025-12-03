@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" rx="14" fill="#0a0712" opacity="0.12"/>
+  <g transform="translate(18,20)" fill="#fff" opacity="0.95">
+    <path d="M10 64 L34 30 L58 64 L82 30 L106 64" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <text x="60" y="92" font-size="10" fill="#fff" opacity="0.6" text-anchor="middle">Clipping</text>
+  </g>
+</svg>
