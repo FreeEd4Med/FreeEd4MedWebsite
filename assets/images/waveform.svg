@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="160" viewBox="0 0 600 160">
+  <rect width="100%" height="100%" fill="#0f1724" rx="8" />
+  <g transform="translate(0,80)">
+    <polyline fill="none" stroke="#06b6d4" stroke-width="3" points="0,0 30,-18 60,10 90,-20 120,18 150,-30 180,15 210,-10 240,20 270,-5 300,0 330,6 360,-12 390,14 420,-20 450,15 480,-6 510,12 540,-10 570,16 600,0" />
+  </g>
+  <text x="12" y="22" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="12">Waveform (sample)</text>
+</svg>
