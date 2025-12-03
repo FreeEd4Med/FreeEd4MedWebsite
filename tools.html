@@ -85,6 +85,24 @@ gain.gain.linearRampToValueAtTime(0.02, ctx.currentTime + 4);
           </ul>
         </div>
 
+          <div class="tool-card">
+            <h3>5) Ardour — Master bus & drum 'glue' workflow (Ubuntu)</h3>
+            <p>My go‑to Ardour master‑bus chain when preparing WAV masters:</p>
+            <ol>
+              <li>Fader</li>
+              <li>Calf Equalizer — 12 band (broad tonal shaping)</li>
+              <li>Calf Saturator — gentle harmonic warmth</li>
+              <li>Calf Compressor — quick transparent dynamics control</li>
+              <li>LSP Loudness Compensator (Stereo) — group loudness smoothing</li>
+              <li>VU Meter (Stereo) — visual level check</li>
+              <li>LoudMax (Stereo) — transparent limiter to control peaks</li>
+              <li>DR-14-Crest Loudness Range Meter (Stereo) — check dynamic range</li>
+              <li>EBU R128 Meter — final compliance and program loudness check</li>
+            </ol>
+            <p>For drum bus 'glue' when multiple drum stems exist I use <strong>LSP Multiband Compressor (8-band)</strong> on the drum bus — gentle ratios and slower attack/release for cohesion without killing transients.</p>
+            <p>Notes: save an Ardour session version with stems routed to separate buses (drums, pads, vocals) to make stems exporting and master revision easier.</p>
+          </div>
+
         <div class="tool-card">
           <h3>Downloads & checklist</h3>
           <ul>
