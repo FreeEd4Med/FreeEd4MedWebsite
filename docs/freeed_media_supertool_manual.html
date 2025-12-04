@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FreeEd4Med Media SuperTool v10.19 — Complete User Manual</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../style.css" rel="stylesheet" />
+  <style>
+    /* Manual-specific styles */
+    .manual-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      position: relative;
+    }
+    .manual-container::before {
+      content: '';
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      height: 400px;
+      background: url('../images/logo.png') center/contain no-repeat;
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: -1;
+    }
+    .manual-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 2px solid var(--accent-purple, #9b59b6);
+      margin-bottom: 2rem;
+      position: sticky;
+      top: 0;
+      background: rgba(20, 20, 30, 0.95);
+      z-index: 100;
+    }
+    .manual-header a {
+      color: #f1c40f;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border: 2px solid #f1c40f;
+      border-radius: 5px;
+      transition: all 0.3s;
+    }
+    .manual-header a:hover {
+      background: #f1c40f;
+      color: #1a1a2e;
+    }
+    .toc {
+      background: rgba(155, 89, 182, 0.1);
+      border-left: 4px solid #9b59b6;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .toc h3 { margin-top: 0; color: #9b59b6; }
+    .toc ul { list-style: none; padding-left: 0; }
+    .toc li { margin: 0.5rem 0; }
+    .toc a { color: #3498db; }
+    .section { margin: 3rem 0; }
+    .section h2 {
+      color: #9b59b6;
+      border-bottom: 1px solid rgba(155, 89, 182, 0.3);
+      padding-bottom: 0.5rem;
+    }
+    .section h3 { color: #3498db; }
+    .section h4 { color: #1abc9c; }
+    .code-block {
+      background: #1e1e2e;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      margin: 1rem 0;
+    }
+    .code-block code {
+      color: #e0e0e0;
+      white-space: pre;
+    }
+    .code-comment { color: #6a9955; }
+    .code-string { color: #ce9178; }
+    .code-keyword { color: #569cd6; }
+    .code-variable { color: #9cdcfe; }
+    .image-placeholder {
+      background: linear-gradient(135deg, #2c2c3e 0%, #1a1a2e 100%);
+      border: 2px dashed #9b59b6;
+      border-radius: 8px;
+      padding: 3rem;
+      text-align: center;
+      margin: 1.5rem 0;
+      color: #888;
+    }
+    .image-placeholder .img-name {
+      font-family: monospace;
+      color: #f1c40f;
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+    }
+    .tip-box {
+      background: rgba(26, 188, 156, 0.1);
+      border-left: 4px solid #1abc9c;
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+    .tip-box::before {
+      content: '💡 TIP: ';
+      font-weight: bold;
+      color: #1abc9c;
+    }
+    .warning-box {
+      background: rgba(231, 76, 60, 0.1);
+      border-left: 4px solid #e74c3c;
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+    .warning-box::before {
+      content: '⚠️ WARNING: ';
+      font-weight: bold;
+      color: #e74c3c;
+    }
+    .note-box {
+      background: rgba(52, 152, 219, 0.1);
+      border-left: 4px solid #3498db;
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+    .note-box::before {
+      content: '📝 NOTE: ';
+      font-weight: bold;
+      color: #3498db;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    th, td {
+      border: 1px solid #444;
+      padding: 0.75rem;
+      text-align: left;
+    }
+    th {
+      background: rgba(155, 89, 182, 0.2);
+      color: #9b59b6;
+    }
+    tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+    .keyboard-key {
+      background: #333;
+      border: 1px solid #555;
+      border-radius: 4px;
+      padding: 0.2rem 0.5rem;
+      font-family: monospace;
+      font-size: 0.85rem;
+    }
+    .menu-path {
+      color: #f1c40f;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="manual-header">
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <img src="../images/logo.png" alt="FreeEd4Med Logo" style="height: 40px;" />
+        <span style="font-size: 1.2rem; font-weight: bold;">Media SuperTool Manual</span>
+      </div>
+      <div>
+        <a href="../donate.html">💜 Support FreeEd4Med</a>
+        <a href="../index.html" style="margin-left: 1rem; border-color: #9b59b6; color: #9b59b6;">← Back to Site</a>
+      </div>
+    </div>
+
+    <div class="manual-container">
+      <h1 style="text-align: center; color: #9b59b6;">FreeEd4Med Media SuperTool v10.19</h1>
+      <p style="text-align: center; font-size: 1.2rem; color: #888;">Complete User Manual — Evidence-Based Med Ed + Music For Healing</p>
+
+      <!-- Table of Contents -->
+      <nav class="toc">
+        <h3>📖 Table of Contents</h3>
+        <ul>
+          <li><a href="#introduction">1. Introduction & Overview</a></li>
+          <li><a href="#installation">2. Installation & Dependencies</a></li>
+          <li><a href="#getting-started">3. Getting Started</a></li>
+          <li><a href="#module1-creation">4. Module 1: Creation & Lyric Videos</a>
+            <ul>
+              <li><a href="#ai-whisper">4.1 AI Whisper Subtitle Generation</a></li>
+              <li><a href="#aegisub">4.2 Subtitle Editing with Aegisub</a></li>
+              <li><a href="#lyric-render">4.3 Rendering Lyric Videos</a></li>
+              <li><a href="#static-loop">4.4 Static Image & Loop Videos</a></li>
+            </ul>
+          </li>
+          <li><a href="#module2-visualizer">5. Module 2: Visualizer Lab</a>
+            <ul>
+              <li><a href="#portal">5.1 The Portal (Circular Waveform)</a></li>
+              <li><a href="#symmetrical">5.2 Symmetrical Waves</a></li>
+              <li><a href="#madmooze-master">5.3 MadMooze Master Visualizer</a></li>
+              <li><a href="#spectrum">5.4 Scrolling Spectrum</a></li>
+              <li><a href="#mandelbrot">5.5 Mandelbrot Fractal</a></li>
+              <li><a href="#thumbnails">5.6 Static Thumbnails</a></li>
+            </ul>
+          </li>
+          <li><a href="#module3-branding">6. Module 3: Branding & Metadata</a>
+            <ul>
+              <li><a href="#stitch">6.1 Video Stitching</a></li>
+              <li><a href="#metadata">6.2 Pro Metadata Editor</a></li>
+              <li><a href="#watermark">6.3 Smart Logo/Watermark</a></li>
+            </ul>
+          </li>
+          <li><a href="#module5-social">7. Module 5: Social Media Batch</a></li>
+          <li><a href="#module6-diagnostics">8. Module 6: Diagnostics</a></li>
+          <li><a href="#module7-notation">9. Module 7: Notation Studio</a></li>
+          <li><a href="#typography">10. Typography & Alignment Engine</a></li>
+          <li><a href="#troubleshooting">11. Troubleshooting</a></li>
+          <li><a href="#appendix-ffmpeg">Appendix A: FFmpeg Cheat Sheet</a></li>
+          <li><a href="#appendix-colors">Appendix B: Color Codes Reference</a></li>
+        </ul>
+      </nav>
+
+      <!-- Section 1: Introduction -->
+      <section class="section" id="introduction">
+        <h2>1. Introduction & Overview</h2>
+        
+        <p>The <strong>FreeEd4Med Media SuperTool</strong> is a comprehensive bash-based media production toolkit designed specifically for creating therapeutic music content, lyric videos, audio visualizations, and properly formatted media for streaming platforms.</p>
+
+        <div class="image-placeholder">
+          <p>📸 Screenshot: Main Menu Overview</p>
+          <p class="img-name">main_menu.png</p>
+        </div>
+
+        <h3>Key Features</h3>
+        <ul>
+          <li><strong>AI-Powered Transcription:</strong> Generate synchronized lyrics using OpenAI Whisper</li>
+          <li><strong>Professional Typography:</strong> Full control over fonts, colors, positioning, and alignment</li>
+          <li><strong>Audio Visualizers:</strong> Create stunning circular waveforms, spectrum analyzers, and fractal backgrounds</li>
+          <li><strong>Metadata Management:</strong> Format-aware tagging for MP3, FLAC, WAV files</li>
+          <li><strong>Social Media Export:</strong> One-click batch generation for TikTok, YouTube, and X (Twitter)</li>
+          <li><strong>Notation Studio:</strong> AI-powered audio-to-MIDI-to-sheet-music workflow</li>
+          <li><strong>DistroKid Validation:</strong> Check files meet streaming platform requirements</li>
+        </ul>
+
+        <h3>System Requirements</h3>
+        <table>
+          <tr><th>Component</th><th>Requirement</th></tr>
+          <tr><td>Operating System</td><td>Linux (Ubuntu 20.04+ recommended)</td></tr>
+          <tr><td>Shell</td><td>Bash 4.0+</td></tr>
+          <tr><td>FFmpeg</td><td>4.0+ with libx264, aac codecs</td></tr>
+          <tr><td>Python</td><td>3.8+ (for Whisper, Demucs, Basic-Pitch)</td></tr>
+          <tr><td>RAM</td><td>8GB minimum (16GB for AI features)</td></tr>
+          <tr><td>GPU</td><td>CUDA-compatible (optional, speeds up AI)</td></tr>
+        </table>
+      </section>
+
+      <!-- Section 2: Installation -->
+      <section class="section" id="installation">
+        <h2>2. Installation & Dependencies</h2>
+
+        <h3>2.1 Core Dependencies</h3>
+        <p>Install the essential tools first:</p>
+        
+        <div class="code-block"><code><span class="code-comment"># Update package list and install core tools</span>
+sudo apt update
+sudo apt install ffmpeg bc
+
+<span class="code-comment"># Verify installation</span>
+ffmpeg -version
+ffprobe -version
+bc --version</code></div>
+
+        <div class="image-placeholder">
+          <p>📸 Screenshot: Terminal showing successful ffmpeg installation</p>
+          <p class="img-name">install_ffmpeg.png</p>
+        </div>
+
+        <h3>2.2 Optional Dependencies</h3>
+
+        <h4>Aegisub (Subtitle Editor)</h4>
+        <div class="code-block"><code>sudo apt install aegisub</code></div>
+
+        <h4>OpenAI Whisper (AI Transcription)</h4>
+        <div class="code-block"><code><span class="code-comment"># Create conda environment (recommended)</span>
+conda create -n audio_tools python=3.10
+conda activate audio_tools
+
+<span class="code-comment"># Install Whisper</span>
+pip install openai-whisper
+
+<span class="code-comment"># For GPU acceleration (optional)</span>
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118</code></div>
+
+        <h4>BBC Audiowaveform (High-Quality Thumbnails)</h4>
+        <div class="code-block"><code>sudo apt install audiowaveform</code></div>
+
+        <h4>Notation Studio Dependencies</h4>
+        <div class="code-block"><code><span class="code-comment"># Stem separation</span>
+pip install demucs
+
+<span class="code-comment"># Audio to MIDI</span>
+pip install basic-pitch
+
+<span class="code-comment"># PDF rendering</span>
+sudo apt install musescore3
+
+<span class="code-comment"># Guitar tabs</span>
+sudo apt install tuxguitar</code></div>
+
+        <div class="tip-box">
+          The script automatically activates the <code>audio_tools</code> conda environment on startup. Make sure your environment is named accordingly or modify line 21 of the script.
+        </div>
+
+        <h3>2.3 Making the Script Executable</h3>
+        <div class="code-block"><code><span class="code-comment"># Navigate to the script location</span>
+cd /path/to/freeed_media_super_tool.sh
+
+<span class="code-comment"># Make executable</span>
+chmod +x freeed_media_super_tool.sh
+
+<span class="code-comment"># Run the script</span>
+./freeed_media_super_tool.sh</code></div>
+
+        <div class="image-placeholder">
+          <p>📸 Screenshot: Script launching with dependency check</p>
+          <p class="img-name">script_launch.png</p>
+        </div>
+      </section>
+
+      <!-- Section 3: Getting Started -->
+      <section class="section" id="getting-started">
+        <h2>3. Getting Started</h2>
+
+        <h3>3.1 Launching the Tool</h3>
+        <p>When you run the script, you'll see the main menu with 8 options:</p>
+
+        <div class="code-block"><code>=======================================
+   FreeEd4Med Media SuperTool v10.19      
+=======================================
+1. Creation Module (Lyrics, AI Whisper, Loop)
+2. Visualizer Lab (Color Picker, Circular, etc.)
+3. Branding & Metadata (Smart Logo, Tags)
+4. Audio Lab (Convert, Normalize)
+5. Social Media Batch (TikTok + YT + X)
+6. Diagnostics (DistroKid Check)
+7. Notation Studio (AI Transcription)
+8. Exit
+
+Enter choice [1-8]:</code></div>
+
+        <h3>3.2 File Input Methods</h3>
+        <p>Throughout the tool, you'll be prompted to provide file paths. You can:</p>
+        <ul>
+          <li><strong>Drag and Drop:</strong> Simply drag a file from your file manager into the terminal</li>
+          <li><strong>Type the Path:</strong> Enter the full path manually (e.g., <code>/home/user/music/song.mp3</code>)</li>
+          <li><strong>Use Tab Completion:</strong> Start typing and press <kbd class="keyboard-key">Tab</kbd> to autocomplete</li>
+        </ul>
+
+        <div class="note-box">
+          The script automatically strips quotes from drag-and-drop paths. Both single and double quotes are handled.
+        </div>
+
+        <h3>3.3 Understanding Output Locations</h3>
+        <p>By default, output files are saved in the same directory as the input file. When prompted for an output filename, you can:</p>
+        <ul>
+          <li>Enter just a filename: <code>output.mp4</code> (saves next to input)</li>
+          <li>Enter a full path: <code>/home/user/exports/output.mp4</code></li>
+        </ul>
+
+        <div class="image-placeholder">
+          <p>📸 Screenshot: File input prompt with drag-and-drop example</p>
+          <p class="img-name">file_input.png</p>
+        </div>
+      </section>
+
+      <!-- Section 4: Creation Module -->
+      <section class="section" id="module1-creation">
+        <h2>4. Module 1: Creation & Lyric Videos</h2>
+
+        <p>The Creation Module is your primary workspace for generating synchronized lyric videos from audio files.</p>
+
+        <div class="image-placeholder">
+          <p>📸 Screenshot: Creation Module submenu</p>
+          <p class="img-name">creation_menu.png</p>
+        </div>
+
+        <!-- 4.1 AI Whisper -->
+        <h3 id="ai-whisper">4.1 AI Whisper Subtitle Generation</h3>
+        <p>This feature uses OpenAI's Whisper model to automatically transcribe audio and generate synchronized .SRT subtitle files.</p>
+
+        <h4>How It Works</h4>
+        <ol>
+          <li>Select option <code>1</code> from the Creation Module menu</li>
+          <li>Drag your audio file (vocals work best for lyrics)</li>
+          <li>Whisper analyzes the audio and generates timestamps</li>
+          <li>An .SRT file is created in the same directory as your audio</li>
+        </ol>
+
+        <div class="code-block"><code><span class="code-comment"># Behind the scenes, the script runs:</span>
+whisper "<span class="code-variable">$input_file</span>" --model small --output_format srt --output_dir "<span class="code-variable">$output_dir</span>"</code></div>
+
+        <div class="image-placeholder">
+          <p>📸 Screenshot: Whisper transcription in progress</p>
+          <p class="img-name">whisper_progress.png</p>
+        </div>
+
+        <h4>Model Options</h4>
+        <table>
+          <tr><th>Model</th><th>Speed</th><th>Accuracy</th><th>VRAM Required</th></tr>
+          <tr><td>tiny</td><td>Fastest</td><td>Basic</td><td>~1 GB</td></tr>
+          <tr><td>base</td><td>Fast</td><td>Good</td><td>~1 GB</td></tr>
+          <tr><td>small</td><td>Medium</td><td>Very Good</td><td>~2 GB</td></tr>
+          <tr><td>medium</td><td>Slow</td><td>Excellent</td><td>~5 GB</td></tr>
+          <tr><td>large</td><td>Slowest</td><td>Best</td><td>~10 GB</td></tr>
+        </table>
+
+        <div class="tip-box">
+          The script uses the "small" model by default for a good balance of speed and accuracy. For isolated vocal tracks, this typically achieves 95%+ accuracy.
+        </div>
+
+        <!-- 4.2 Aegisub -->
+        <h3 id="aegisub">4.2 Subtitle Editing with Aegisub</h3>
+        <p>After generating subtitles, you'll often need to make corrections. Option <code>2</code> launches Aegisub for professional subtitle editing.</p>
+
+        <div class="image-placeholder">
+          <p>📸 Screenshot: Aegisub interface with subtitle timeline</p>
+          <p class="img-name">aegisub_interface.png</p>
+        </div>
+
+        <h4>Common Aegisub Tasks</h4>
+        <ul>
+          <li><strong>Fix timing:</strong> Drag subtitle blocks on the timeline</li>
+          <li><strong>Correct lyrics:</strong> Double-click to edit text</li>
+          <li><strong>Merge lines:</strong> Select multiple and use Edit → Join Lines</li>
+          <li><strong>Split lines:</strong> Position cursor and use Edit → Split Line</li>
+        </ul>
+
+        <div class="warning-box">
+          Save your Aegisub project as .ASS format for maximum styling control, or .SRT for universal compatibility.
+        </div>
+
+        <!-- 4.3 Lyric Render -->
+        <h3 id="lyric-render">4.3 Rendering Lyric Videos</h3>
+        <p>Option <code>3</code> combines your background image, audio, and subtitle file into a finished lyric video.</p>
+
+        <h4>Step-by-Step Workflow</h4>
+        <ol>
+          <li>Select a background image (1920x1080 recommended)</li>
+          <li>Select your audio file</li>
+          <li>Select your .SRT or .ASS subtitle file</li>
+          <li>Configure typography settings (see <a href="#typography">Section 10</a>)</li>
+          <li>Enter output filename</li>
+          <li>Wait for rendering to complete</li>
+        </ol>
+
+        <div class="image-placeholder">
+          <p>📸 Screenshot: Typography customization menu</p>
+          <p class="img-name">typography_menu.png</p>
+        </div>
+
+        <h4>Typography Options Available</h4>
+        <ul>
+          <li><strong>Font Family:</strong> Arial, Times New Roman, Courier New, Comic Sans MS, Impact, or custom</li>
+          <li><strong>Font Color:</strong> White, Yellow, Cyan, Purple, Black</li>
+          <li><strong>Effects:</strong> Standard (outline + shadow), Clean, Hard Outline, Soft Shadow</li>
+          <li><strong>Position:</strong> Bottom/Middle/Top vertical, Left/Center/Right horizontal</li>
+          <li><strong>Justification:</strong> Left, Center, Right, or Justified text</li>
+        </ul>
+
+        <div class="image-placeholder">
+          <p>📸 Screenshot: Final rendered lyric video frame</p>
+          <p class="img-name">lyric_video_result.png</p>
+        </div>
+
+        <!-- 4.4 Static & Loop -->
+        <h3 id="static-loop">4.4 Static Image & Loop Videos</h3>
+
+        <h4>Static Image + Song (Option 4)</h4>
+        <p>Creates a video from a single image that plays for the full duration of your audio:</p>
+        <div class="code-block"><code>ffmpeg -loop 1 -i "<span class="code-variable">$image</span>" -i "<span class="code-variable">$audio</span>" \
+  -c:v libx264 -tune stillimage \
+  -c:a aac -b:a 320k \
+  -pix_fmt yuv420p -shortest "<span class="code-variable">$output</span>"</code></div>
+
+        <h4>Loop Short Clip + Song (Option 5)</h4>
+        <p>Takes a short video clip and loops it to match your audio duration:</p>
+        <div class="code-block"><code><span class="code-comment"># Calculate loop count</span>
+loop_count=$(echo "<span class="code-variable">$audio_duration</span> / <span class="code-variable">$video_duration</span>" | bc)
+
+ffmpeg -stream_loop "<span class="code-variable">$loop_count</span>" -i "<span class="code-variable">$video</span>" -i "<span class="code-variable">$audio</span>" \
+  -map 0:v -map 1:a \
+  -c:v libx264 -shortest -pix_fmt yuv420p "<span class="code-variable">$output</span>"</code></div>
+
+        <div class="tip-box">
+          For seamless loops, use video clips that are designed to loop (matching first/last frames) or use abstract/slowly moving content where cuts won't be noticeable.
+        </div>
+      </section>
+
+      <!-- Section 5: Visualizer Lab -->
+      <section class="section" id="module2-visualizer">
+        <h2>5. Module 2: Visualizer Lab</h2>
+
+        <p>The Visualizer Lab creates stunning audio-reactive videos using FFmpeg's powerful filter system.</p>
+
+        <div class="image-placeholder">
+          <p>📸 Screenshot: Visualizer Lab menu</p>
+          <p class="img-name">visualizer_menu.png</p>
+        </div>
+
+        <!-- 5.1 The Portal -->
+        <h3 id="portal">5.1 The Portal (Circular Waveform)</h3>
+        <p>Creates a mesmerizing circular waveform effect that radiates from the center of your background image.</p>
+
+        <div class="image-placeholder">
+          <p>📸 Screenshot: Portal visualizer output frame</p>
+          <p class="img-name">portal_visualizer.png</p>
+        </div>
+
+        <h4>Technical Details</h4>
+        <p>This visualizer uses polar coordinate transformation to wrap a standard waveform into a circle:</p>
+        <div class="code-block"><code>[0:a]aformat=channel_layouts=mono,showwaves=s=1280x720:mode=cline:colors=<span class="code-variable">${wave_color}</span>:draw=full,
+geq='p(mod(W/PI*(PI+atan2(H/2-Y,X-W/2)),W), H-2*hypot(H/2-Y,X-W/2))':
+    a='alpha(mod(W/PI*(PI+atan2(H/2-Y,X-W/2)),W), H-2*hypot(H/2-Y,X-W/2))'[a]</code></div>
+
+        <h4>Color Options</h4>
+        <ul>
+          <li>White (default)</li>
+          <li>Black</li>
+          <li>MadMooze Purple (violet)</li>
+          <li>Cyan</li>
+          <li>Custom (enter color name or hex code)</li>
+        </ul>
+
+        <!-- 5.2 Symmetrical -->
+        <h3 id="symmetrical">5.2 Symmetrical Waves (Cline Mode)</h3>
+        <p>A horizontally-centered waveform overlay using FFmpeg's "cline" (center line) mode for symmetrical visualization.</p>
+
+        <div class="image-placeholder">
+          <p>📸 Screenshot: Symmetrical wave visualizer</p>
+          <p class="img-name">symmetrical_waves.png</p>
+        </div>
+
+        <div class="code-block"><code>[0:a]aformat=channel_layouts=mono,
+showwaves=s=1280x720:mode=cline:rate=30:colors=<span class="code-variable">${wave_color}</span>[waveform]</code></div>
+
+        <!-- 5.3 MadMooze Master -->
+        <h3 id="madmooze-master">5.3 MadMooze Master Visualizer</h3>
+        <p>A multi-panel professional visualizer combining vectorscope, spectrum analyzer, and waveform with artist/title overlay.</p>
+
+        <div class="image-placeholder">
+          <p>📸 Screenshot: MadMooze Master three-panel visualizer</p>
+          <p class="img-name">madmooze_master.png</p>
+        </div>
+
+        <h4>Panel Layout</h4>
+        <table>
+          <tr><th>Panel</th><th>Position</th><th>Size</th></tr>
+          <tr><td>Vectorscope</td><td>Top-Left</td><td>640x518</td></tr>
+          <tr><td>Spectrum</td><td>Top-Right</td><td>640x518</td></tr>
+          <tr><td>Waveform</td><td>Bottom</td><td>1280x202</td></tr>
+        </table>
+
+        <div class="code-block"><code>[0:a]avectorscope=s=640x518,pad=1280:720[vs];
+[0:a]showspectrum=mode=separate:color=magma:scale=cbrt:s=640x518[ss];
+[0:a]showwaves=s=1280x202:mode=line:colors=violet[sw];
+[vs][ss]overlay=w[bg];
+[bg][sw]overlay=0:H-h,
+drawtext=fontcolor=white:fontsize=24:x=20:y=20:text='<span class="code-variable">${title}</span> - <span class="code-variable">${artist}</span>'[out]</code></div>
+
+        <!-- 5.4 Spectrum -->
+        <h3 id="spectrum">5.4 Scrolling Spectrum (Heatmap)</h3>
+        <p>A full-screen scrolling spectrogram using the "magma" color palette, ideal for detailed frequency analysis videos.</p>
+
+        <div class="image-placeholder">
+          <p>📸 Screenshot: Scrolling spectrum heatmap</p>
+          <p class="img-name">spectrum_heatmap.png</p>
+        </div>
+
+        <div class="code-block"><code>[0:a]showspectrum=slide=scroll:mode=combined:color=magma:fscale=log:scale=sqrt:legend=1:s=1920x1080[v]</code></div>
+
+        <!-- 5.5 Mandelbrot -->
+        <h3 id="mandelbrot">5.5 Mandelbrot Zoom (Fractal)</h3>
+        <p>Combines a continuously zooming Mandelbrot fractal background with audio-reactive waveforms.</p>
+
+        <div class="image-placeholder">
+          <p>📸 Screenshot: Mandelbrot fractal with waveform overlay</p>
+          <p class="img-name">mandelbrot_fractal.png</p>
+        </div>
+
+        <div class="warning-box">
+          Fractal rendering is CPU-intensive. Expect longer render times compared to other visualizers.
+        </div>
+
+        <!-- 5.6 Thumbnails -->
+        <h3 id="thumbnails">5.6 Static Thumbnails (BBC & FFmpeg)</h3>
+        <p>Generates high-quality static waveform images for use as album art, social media posts, or video thumbnails.</p>
+
+        <div class="image-placeholder">
+          <p>📸 Screenshot: Generated waveform thumbnail examples</p>
+          <p class="img-name">waveform_thumbnails.png</p>
+        </div>
+
+        <h4>Two Methods Available</h4>
+        <ul>
+          <li><strong>BBC Audiowaveform:</strong> Higher quality, more options, saves as <code>*_bbc_wave.png</code></li>
+          <li><strong>FFmpeg showwavespic:</strong> Universal, transparent background, saves as <code>*_transparent.png</code></li>
+        </ul>
+
+        <div class="code-block"><code><span class="code-comment"># BBC Audiowaveform command</span>
+audiowaveform -i "<span class="code-variable">$input</span>" -o "<span class="code-variable">${base}_bbc_wave.png</span>" \
+  -w 1280 -h 720 --no-axis-labels \
+  --background-color 00000000 --waveform-color "<span class="code-variable">$hex_color</span>"
+
+<span class="code-comment"># FFmpeg showwavespic command</span>
+ffmpeg -i "<span class="code-variable">$input</span>" \
+  -filter_complex "aformat=channel_layouts=mono,showwavespic=s=1280x720:colors=<span class="code-variable">${wave_color}</span>" \
+  -frames:v 1 "<span class="code-variable">${base}_transparent.png</span>"</code></div>
+      </section>
+
+      <!-- Section 6: Branding & Metadata -->
+      <section class="section" id="module3-branding">
+        <h2>6. Module 3: Branding & Metadata</h2>
+
+        <div class="image-placeholder">
+          <p>📸 Screenshot: Branding module menu</p>
+          <p class="img-name">branding_menu.png</p>
+        </div>
+
+        <!-- 6.1 Stitch -->
+        <h3 id="stitch">6.1 Video Stitching (Intro + Main + Outro)</h3>
+        <p>Concatenates three video segments with automatic scaling and padding to ensure consistent 1920x1080 output.</p>
+
+        <h4>Process</h4>
+        <ol>
+          <li>Select your INTRO video</li>
+          <li>Select your MAIN video</li>
+          <li>Select your OUTRO video</li>
+          <li>All videos are scaled, padded, and concatenated</li>
+        </ol>
+
+        <div class="code-block"><code>[0:v]scale=1920:1080:force_original_aspect_ratio=decrease,
+     pad=1920:1080:(ow-iw)/2:(oh-ih)/2,setsar=1[v0];
+<span class="code-comment"># Repeated for each input, then:</span>
+[v0][0:a][v1][1:a][v2][2:a]concat=n=3:v=1:a=1[v][a]</code></div>
+
+        <!-- 6.2 Metadata -->
+        <h3 id="metadata">6.2 Pro Metadata Editor</h3>
+        <p>A format-aware metadata editor that handles MP3, FLAC, WAV, and other formats with appropriate tag systems.</p>
+
+        <div class="image-placeholder">
+          <p>📸 Screenshot: Metadata editor prompts</p>
+          <p class="img-name">metadata_editor.png</p>
+        </div>
+
+        <h4>Supported Fields</h4>
+        <table>
+          <tr><th>Field</th><th>Description</th></tr>
+          <tr><td>Title</td><td>Track title</td></tr>
+          <tr><td>Artist</td><td>Performer name</td></tr>
+          <tr><td>Album</td><td>Album or release name</td></tr>
+          <tr><td>Year</td><td>Release year (stored as "date")</td></tr>
+          <tr><td>Composer</td><td>Producer/songwriter</td></tr>
+          <tr><td>Copyright</td><td>Rights holder information</td></tr>
+          <tr><td>Comment</td><td>Website, notes, or description</td></tr>
+        </table>
+
+        <div class="warning-box">
+          WAV files have limited metadata support. The tool will offer to convert to FLAC for better tagging capabilities.
+        </div>
+
+        <!-- 6.3 Watermark -->
+        <h3 id="watermark">6.3 Smart Logo/Watermark</h3>
+        <p>Overlay a logo or watermark on your video with precise control over size, position, and opacity.</p>
+
+        <div class="image-placeholder">
+          <p>📸 Screenshot: Watermark position and size options</p>
+          <p class="img-name">watermark_options.png</p>
+        </div>
+
+        <h4>Size Options</h4>
+        <ul>
+          <li>Small (10% of video width)</li>
+          <li>Medium (20% - default)</li>
+          <li>Large (30%)</li>
+          <li>XL (40%)</li>
+          <li>Giant (50%)</li>
+        </ul>
+
+        <h4>Position Options</h4>
+        <ul>
+          <li>Bottom-Right (default)</li>
+          <li>Bottom-Left</li>
+          <li>Top-Right</li>
+          <li>Top-Left</li>
+          <li>Center</li>
+        </ul>
+
+        <h4>Style Options</h4>
+        <ul>
+          <li>Solid (100% visible)</li>
+          <li>Watermark (50% transparent)</li>
+          <li>Ghost (30% transparent)</li>
+        </ul>
+
+        <div class="code-block"><code>[1:v][0:v]scale2ref=w=iw*<span class="code-variable">${scale_factor}</span>:h=-1[logo][main];
+[logo]format=rgba,colorchannelmixer=aa=<span class="code-variable">${opacity}</span>[transp_logo];
+[main][transp_logo]overlay=<span class="code-variable">${position}</span></code></div>
+      </section>
+
+      <!-- Section 7: Social Media Batch -->
+      <section class="section" id="module5-social">
+        <h2>7. Module 5: Social Media Batch Generator</h2>
+
+        <p>Automatically generates platform-optimized versions of your video for major social media platforms.</p>
+
+        <div class="image-placeholder">
+          <p>📸 Screenshot: Social media batch generation in progress</p>
+          <p class="img-name">social_batch.png</p>
+        </div>
+
+        <h4>Output Formats</h4>
+        <table>
+          <tr><th>Platform</th><th>Aspect Ratio</th><th>Video Codec</th><th>Audio</th></tr>
+          <tr><td>TikTok</td><td>9:16 (1080x1920)</td><td>H.264, blurred background fill</td><td>Copy</td></tr>
+          <tr><td>YouTube</td><td>Original</td><td>H.264 slow preset, CRF 18</td><td>AAC 320k</td></tr>
+          <tr><td>X (Twitter)</td><td>Original</td><td>H.264, 3500k bitrate</td><td>AAC 160k</td></tr>
+        </table>
+
+        <h4>TikTok Vertical Conversion</h4>
+        <p>The TikTok version creates a 9:16 vertical video with your original content centered and a blurred version filling the background:</p>
+
+        <div class="code-block"><code>split[original][copy];
+[copy]scale=-1:1920,boxblur=20:20[blurred];
+[blurred]crop=1080:1920[bg];
+[bg][original]overlay=(W-w)/2:(H-h)/2</code></div>
+
+        <div class="image-placeholder">
+          <p>📸 Screenshot: TikTok vertical format example</p>
+          <p class="img-name">tiktok_format.png</p>
+        </div>
+      </section>
+
+      <!-- Section 8: Diagnostics -->
+      <section class="section" id="module6-diagnostics">
+        <h2>8. Module 6: Diagnostics & Validation</h2>
+
+        <div class="image-placeholder">
+          <p>📸 Screenshot: Diagnostics menu</p>
+          <p class="img-name">diagnostics_menu.png</p>
+        </div>
+
+        <h3>8.1 Stream Info (JSON)</h3>
+        <p>Displays complete technical information about any media file in JSON format:</p>
+        <div class="code-block"><code>ffprobe -loglevel quiet -show_format -show_streams -i "<span class="code-variable">$input</span>" -print_format json</code></div>
+
+        <h3>8.2 Silence/Black Frame Detection</h3>
+        <p>Scans your file for silence longer than 2 seconds:</p>
+        <div class="code-block"><code>ffmpeg -i "<span class="code-variable">$input</span>" -af "silencedetect=noise=-50dB:d=2" -f null -</code></div>
+
+        <h3>8.3 DistroKid/Streaming Validator</h3>
+        <p>Checks if your WAV master meets streaming platform requirements:</p>
+
+        <div class="image-placeholder">
+          <p>📸 Screenshot: DistroKid validator output</p>
+          <p class="img-name">distrokid_validator.png</p>
+        </div>
+
+        <h4>Checks Performed</h4>
+        <ul>
+          <li><strong>Sample Rate:</strong> Must be ≥44100 Hz</li>
+          <li><strong>Bit Depth:</strong> 24-bit integer preferred (32-bit float triggers warning)</li>
+        </ul>
+
+        <div class="tip-box">
+          DistroKid and most distributors prefer 44.1kHz or 48kHz sample rates and 16-bit or 24-bit integer WAV files. 32-bit float files may be rejected or converted incorrectly.
+        </div>
+      </section>
+
+      <!-- Section 9: Notation Studio -->
+      <section class="section" id="module7-notation">
+        <h2>9. Module 7: Notation Studio (AI)</h2>
+
+        <p>The Notation Studio provides an AI-powered workflow for converting audio recordings into sheet music.</p>
+
+        <div class="image-placeholder">
+          <p>📸 Screenshot: Notation Studio menu</p>
+          <p class="img-name">notation_menu.png</p>
+        </div>
+
+        <h3>9.1 Full Workflow (Audio → Separate → MIDI → PDF)</h3>
+
+        <h4>Step 1: Stem Separation with Demucs</h4>
+        <p>Demucs separates your audio into individual stems (vocals, drums, bass, other):</p>
+        <div class="code-block"><code>demucs -n htdemucs_ft "<span class="code-variable">$input</span>" -o "<span class="code-variable">$project_dir</span>"</code></div>
+
+        <div class="image-placeholder">
+          <p>📸 Screenshot: Demucs stem separation in progress</p>
+          <p class="img-name">demucs_separation.png</p>
+        </div>
+
+        <h4>Step 2: MIDI Transcription with Basic-Pitch</h4>
+        <p>Basic-Pitch analyzes the selected stem and converts it to MIDI:</p>
+        <div class="code-block"><code>basic-pitch "<span class="code-variable">$output_dir</span>" "<span class="code-variable">$stem_file</span>"</code></div>
+
+        <h4>Step 3: PDF Rendering with MuseScore</h4>
+        <p>MuseScore converts the MIDI file to professional sheet music PDF:</p>
+        <div class="code-block"><code>musescore3 -o "<span class="code-variable">${stem_base}.pdf</span>" "<span class="code-variable">$midi_file</span>"</code></div>
+
+        <div class="image-placeholder">
+          <p>📸 Screenshot: Final sheet music PDF output</p>
+          <p class="img-name">sheet_music_output.png</p>
+        </div>
+
+        <h3>9.2 Quick Convert (MIDI → PDF)</h3>
+        <p>If you already have a MIDI file, this option converts it directly to PDF sheet music.</p>
+
+        <h3>9.3 Guitar Tabs Helper</h3>
+        <p>Launches TuxGuitar for creating and editing guitar tablature.</p>
+      </section>
+
+      <!-- Section 10: Typography Engine -->
+      <section class="section" id="typography">
+        <h2>10. Typography & Alignment Engine</h2>
+
+        <p>The typography engine provides professional control over how lyrics and text appear in your videos.</p>
+
+        <div class="image-placeholder">
+          <p>📸 Screenshot: Full typography customization flow</p>
+          <p class="img-name">typography_full.png</p>
+        </div>
+
+        <h3>10.1 Font Selection</h3>
+        <table>
+          <tr><th>Option</th><th>Font Name</th><th>Style</th></tr>
+          <tr><td>1</td><td>Arial</td><td>Standard Sans-Serif</td></tr>
+          <tr><td>2</td><td>Times New Roman</td><td>Classic Serif</td></tr>
+          <tr><td>3</td><td>Courier New</td><td>Monospace/Typewriter</td></tr>
+          <tr><td>4</td><td>Comic Sans MS</td><td>Casual/Comic</td></tr>
+          <tr><td>5</td><td>Impact</td><td>Bold/Meme</td></tr>
+          <tr><td>6</td><td>Custom</td><td>Enter any installed font name</td></tr>
+        </table>
+
+        <h3>10.2 ASS Alignment Codes</h3>
+        <p>The script uses ASS (Advanced SubStation Alpha) alignment codes based on a numpad layout:</p>
+        
+        <div class="code-block"><code>┌─────────────────────────────┐
+│  7 (Top-Left)    8 (Top)    9 (Top-Right)  │
+│  4 (Mid-Left)    5 (Center) 6 (Mid-Right)  │
+│  1 (Bot-Left)    2 (Bottom) 3 (Bot-Right)  │
+└─────────────────────────────┘</code></div>
+
+        <h3>10.3 Color Codes (ASS Format)</h3>
+        <p>ASS uses &HBBGGRR format (blue-green-red, reversed from RGB):</p>
+        <table>
+          <tr><th>Color</th><th>ASS Code</th></tr>
+          <tr><td>White</td><td>&H00FFFFFF</td></tr>
+          <tr><td>Yellow</td><td>&H0000FFFF</td></tr>
+          <tr><td>Cyan</td><td>&H00FFFF00</td></tr>
+          <tr><td>Purple</td><td>&H00800080</td></tr>
+          <tr><td>Black</td><td>&H00000000</td></tr>
+        </table>
+
+        <h3>10.4 Wrap Styles</h3>
+        <table>
+          <tr><th>Value</th><th>Behavior</th></tr>
+          <tr><td>0</td><td>Smart wrapping, top line wider</td></tr>
+          <tr><td>1</td><td>End-of-line word wrapping (default)</td></tr>
+          <tr><td>2</td><td>No word wrapping</td></tr>
+          <tr><td>3</td><td>Smart wrapping, bottom line wider</td></tr>
+        </table>
+
+        <div class="image-placeholder">
+          <p>📸 Screenshot: Different typography style examples</p>
+          <p class="img-name">typography_examples.png</p>
+        </div>
+      </section>
+
+      <!-- Section 11: Troubleshooting -->
+      <section class="section" id="troubleshooting">
+        <h2>11. Troubleshooting</h2>
+
+        <h3>Common Issues</h3>
+
+        <h4>"ffmpeg is not installed"</h4>
+        <div class="code-block"><code>sudo apt update && sudo apt install ffmpeg</code></div>
+
+        <h4>"whisper: command not found"</h4>
+        <div class="code-block"><code><span class="code-comment"># Make sure conda environment is activated</span>
+conda activate audio_tools
+
+<span class="code-comment"># Reinstall whisper</span>
+pip install --upgrade openai-whisper</code></div>
+
+        <h4>Aegisub Won't Launch</h4>
+        <div class="code-block"><code><span class="code-comment"># Set environment variable to suppress warnings</span>
+export WXSUPPRESS_SIZER_FLAGS_CHECK=1
+
+<span class="code-comment"># Try reinstalling</span>
+sudo apt install --reinstall aegisub</code></div>
+
+        <h4>Subtitle Rendering Shows Wrong Font</h4>
+        <p>Make sure the font is installed system-wide:</p>
+        <div class="code-block"><code><span class="code-comment"># List available fonts</span>
+fc-list | grep -i "FontName"
+
+<span class="code-comment"># Refresh font cache</span>
+fc-cache -fv</code></div>
+
+        <h4>Video Has No Audio</h4>
+        <p>Check that your audio file is valid:</p>
+        <div class="code-block"><code>ffprobe -i your_audio.mp3</code></div>
+
+        <h4>DistroKid Validator Shows 32-bit Float Warning</h4>
+        <p>Convert to 24-bit integer:</p>
+        <div class="code-block"><code>ffmpeg -i input.wav -acodec pcm_s24le -ar 44100 output_24bit.wav</code></div>
+
+        <div class="image-placeholder">
+          <p>📸 Screenshot: Common error messages and solutions</p>
+          <p class="img-name">troubleshooting_errors.png</p>
+        </div>
+      </section>
+
+      <!-- Appendix A: FFmpeg Cheat Sheet -->
+      <section class="section" id="appendix-ffmpeg">
+        <h2>Appendix A: FFmpeg Cheat Sheet</h2>
+        <p>For the comprehensive FFmpeg cheat sheet, see: <a href="ffmpeg_cheatsheet.html">FFmpeg Cheat Sheet (Full Document)</a></p>
+        
+        <h3>Quick Reference</h3>
+        
+        <h4>Basic Conversion</h4>
+        <div class="code-block"><code><span class="code-comment"># Convert MP3 to WAV</span>
+ffmpeg -i input.mp3 output.wav
+
+<span class="code-comment"># Convert WAV to FLAC</span>
+ffmpeg -i input.wav -compression_level 5 output.flac
+
+<span class="code-comment"># Convert video to MP4 (H.264 + AAC)</span>
+ffmpeg -i input.avi -c:v libx264 -c:a aac output.mp4</code></div>
+
+        <h4>Audio Normalization</h4>
+        <div class="code-block"><code><span class="code-comment"># Normalize to -14 LUFS (streaming target)</span>
+ffmpeg -i input.wav -af loudnorm=I=-14:TP=-1:LRA=11 output.wav</code></div>
+
+        <h4>Extract Audio from Video</h4>
+        <div class="code-block"><code>ffmpeg -i video.mp4 -vn -acodec copy audio.aac
+ffmpeg -i video.mp4 -vn -acodec pcm_s16le audio.wav</code></div>
+      </section>
+
+      <!-- Appendix B: Color Codes -->
+      <section class="section" id="appendix-colors">
+        <h2>Appendix B: Color Codes Reference</h2>
+
+        <h3>Terminal Colors (ANSI Codes)</h3>
+        <table>
+          <tr><th>Color</th><th>Code</th><th>Variable</th></tr>
+          <tr><td style="color: #d070d0;">Purple</td><td>\033[1;35m</td><td>$PURPLE</td></tr>
+          <tr><td style="color: #70d0d0;">Cyan</td><td>\033[0;36m</td><td>$CYAN</td></tr>
+          <tr><td style="color: #70d070;">Green</td><td>\033[0;32m</td><td>$GREEN</td></tr>
+          <tr><td style="color: #d07070;">Red</td><td>\033[0;31m</td><td>$RED</td></tr>
+          <tr><td style="color: #d0d070;">Yellow</td><td>\033[1;33m</td><td>$YELLOW</td></tr>
+          <tr><td>No Color (Reset)</td><td>\033[0m</td><td>$NC</td></tr>
+        </table>
+
+        <h3>FFmpeg Named Colors</h3>
+        <p>Common colors accepted by FFmpeg filters:</p>
+        <div class="code-block"><code>white, black, red, green, blue, yellow, cyan, magenta
+violet, orange, pink, purple, brown, gray, navy, teal
+gold, silver, lime, aqua, fuchsia, maroon, olive</code></div>
+
+        <h3>Hex Color Format</h3>
+        <div class="code-block"><code><span class="code-comment"># For audiowaveform (RGB hex without #)</span>
+ffffff  <span class="code-comment"># white</span>
+8A2BE2  <span class="code-comment"># violet/purple</span>
+00FFFF  <span class="code-comment"># cyan</span>
+
+<span class="code-comment"># For FFmpeg (0x prefix or named)</span>
+0xFFFFFF or white
+0x8A2BE2 or violet</code></div>
+      </section>
+
+      <!-- Footer -->
+      <div style="text-align: center; margin-top: 4rem; padding: 2rem; border-top: 1px solid #333;">
+        <img src="../images/logo.png" alt="FreeEd4Med" style="height: 60px; opacity: 0.5; margin-bottom: 1rem;" />
+        <p style="color: #888;">FreeEd4Med Media SuperTool v10.19 User Manual</p>
+        <p style="color: #666;">&copy; 2025 FreeEd4Med.org — Open Source for Healing</p>
+        <p><a href="../donate.html" style="color: #f1c40f;">💜 Support Our Mission</a></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

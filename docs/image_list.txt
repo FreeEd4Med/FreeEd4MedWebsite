@@ -1,0 +1,230 @@
+# FreeEd4Med Media SuperTool v10.19 — Image List for Manual
+# ============================================================
+# Screenshot/image capture guide for the user manual
+# Save all images as PNG at 1280x720 or higher resolution
+# Place in: /WebSite/V7/docs/images/
+# ============================================================
+
+## Main Interface Screenshots
+# ----------------------------
+
+main_menu.png
+  - Capture: Full terminal showing main menu with all 8 options
+  - Show: Clean terminal with version banner visible
+  - Notes: Use a dark terminal theme for consistency
+
+script_launch.png
+  - Capture: Terminal showing script starting with dependency check
+  - Show: The initial launch sequence with "FreeEd4Med Media SuperTool" banner
+
+file_input.png
+  - Capture: File input prompt with drag-and-drop in action
+  - Show: A file being dragged into terminal, path appearing
+  - Notes: Use an example audio file like "song.mp3"
+
+
+## Module 1: Creation Screenshots
+# --------------------------------
+
+creation_menu.png
+  - Capture: The Creation Module submenu (options 1-7)
+  - Show: All options clearly visible
+
+whisper_progress.png
+  - Capture: Whisper transcription running
+  - Show: "Listening and transcribing..." message with progress
+  - Notes: Use a short audio clip (30s-1min) for quick capture
+
+aegisub_interface.png
+  - Capture: Aegisub with a subtitle file loaded
+  - Show: Timeline, waveform, subtitle list, and editing panel
+  - Notes: Load an actual .srt file to show real content
+
+typography_menu.png
+  - Capture: The typography customization prompts
+  - Show: Font selection, color selection visible
+  - Notes: May need multiple captures or a composite image
+
+lyric_video_result.png
+  - Capture: A frame from a rendered lyric video
+  - Show: Background image with styled lyrics overlaid
+  - Notes: Export a single frame using: ffmpeg -i video.mp4 -ss 00:00:30 -frames:v 1 lyric_video_result.png
+
+
+## Module 2: Visualizer Screenshots
+# ----------------------------------
+
+visualizer_menu.png
+  - Capture: Visualizer Lab submenu
+  - Show: All 7 visualizer options
+
+portal_visualizer.png
+  - Capture: A frame from the circular "Portal" visualizer
+  - Show: Circular waveform radiating from center over background
+  - Notes: Choose a contrasting background color
+
+symmetrical_waves.png
+  - Capture: Frame from symmetrical wave visualizer
+  - Show: Cline-mode waves overlaid on background image
+
+madmooze_master.png
+  - Capture: The three-panel MadMooze Master visualizer
+  - Show: Vectorscope (left), Spectrum (right), Waveform (bottom)
+  - Notes: This is a complex visualizer, ensure all panels are visible
+
+spectrum_heatmap.png
+  - Capture: Scrolling spectrum visualization
+  - Show: The magma-colored frequency spectrogram scrolling
+
+mandelbrot_fractal.png
+  - Capture: Mandelbrot zoom with waveform overlay
+  - Show: Fractal background with semi-transparent waves
+
+waveform_thumbnails.png
+  - Capture: Examples of generated waveform images
+  - Show: Both BBC and FFmpeg versions side by side if possible
+  - Notes: Can be a composite image showing multiple outputs
+
+
+## Module 3: Branding Screenshots
+# --------------------------------
+
+branding_menu.png
+  - Capture: Branding & Post-Production menu
+  - Show: All 4 options
+
+metadata_editor.png
+  - Capture: Metadata editor prompts in terminal
+  - Show: Title, Artist, Album, etc. being entered
+
+watermark_options.png
+  - Capture: Logo size and position selection menus
+  - Show: The numbered options for size, position, and style
+
+
+## Module 5: Social Media Screenshots
+# ------------------------------------
+
+social_batch.png
+  - Capture: Social media batch generation in progress
+  - Show: "Generating TikTok Version...", "Generating YouTube Version...", etc.
+
+tiktok_format.png
+  - Capture: Frame from generated TikTok vertical video
+  - Show: 9:16 format with blurred background and centered content
+  - Notes: Show the distinctive vertical format clearly
+
+
+## Module 6: Diagnostics Screenshots
+# ------------------------------------
+
+diagnostics_menu.png
+  - Capture: Diagnostics & Validation menu
+  - Show: All 4 options
+
+distrokid_validator.png
+  - Capture: DistroKid validator output
+  - Show: Sample rate, bit depth, and [OK] or [FAIL] indicators
+  - Notes: Show both a passing and failing example if possible
+
+
+## Module 7: Notation Studio Screenshots
+# ----------------------------------------
+
+notation_menu.png
+  - Capture: Notation Studio menu
+  - Show: All 4 options including AI workflow
+
+demucs_separation.png
+  - Capture: Demucs running stem separation
+  - Show: Progress output showing separation in progress
+
+sheet_music_output.png
+  - Capture: Final PDF sheet music opened in viewer
+  - Show: Musical notation generated from audio
+  - Notes: Use a simple melody for clearest results
+
+
+## Typography Section Screenshots
+# --------------------------------
+
+typography_full.png
+  - Capture: Complete typography customization flow
+  - Show: Font, color, effects, positioning menus
+  - Notes: May be a vertical composite of multiple prompts
+
+typography_examples.png
+  - Capture: Multiple lyric video frames showing different styles
+  - Show: Same text with different fonts, colors, positions
+  - Notes: Create a 2x3 grid composite showing variety
+
+
+## Troubleshooting Section
+# -------------------------
+
+troubleshooting_errors.png
+  - Capture: Common error messages
+  - Show: Examples of "command not found" and recovery
+  - Notes: Intentionally trigger errors for authentic screenshots
+
+
+## Logo and Branding Assets
+# --------------------------
+
+# These should already exist but verify:
+# ../images/logo.png - Main FreeEd4Med logo (used for watermark)
+
+
+# ============================================================
+# CAPTURE TIPS
+# ============================================================
+# 
+# 1. Use a clean terminal with dark theme
+# 2. Set terminal to 100 columns x 30 rows for consistency
+# 3. Use: gnome-screenshot -a (for area selection)
+#    or:  scrot -s filename.png
+#    or:  flameshot gui
+#
+# 4. For video frames: 
+#    ffmpeg -i video.mp4 -ss 00:00:05 -frames:v 1 frame.png
+#
+# 5. For composites, use GIMP or ImageMagick:
+#    montage img1.png img2.png img3.png -tile 3x1 -geometry +5+5 composite.png
+#
+# 6. Optimize PNGs before upload:
+#    optipng -o5 *.png
+#
+# ============================================================
+# CHECKLIST
+# ============================================================
+# [ ] main_menu.png
+# [ ] script_launch.png
+# [ ] file_input.png
+# [ ] creation_menu.png
+# [ ] whisper_progress.png
+# [ ] aegisub_interface.png
+# [ ] typography_menu.png
+# [ ] lyric_video_result.png
+# [ ] visualizer_menu.png
+# [ ] portal_visualizer.png
+# [ ] symmetrical_waves.png
+# [ ] madmooze_master.png
+# [ ] spectrum_heatmap.png
+# [ ] mandelbrot_fractal.png
+# [ ] waveform_thumbnails.png
+# [ ] branding_menu.png
+# [ ] metadata_editor.png
+# [ ] watermark_options.png
+# [ ] social_batch.png
+# [ ] tiktok_format.png
+# [ ] diagnostics_menu.png
+# [ ] distrokid_validator.png
+# [ ] notation_menu.png
+# [ ] demucs_separation.png
+# [ ] sheet_music_output.png
+# [ ] typography_full.png
+# [ ] typography_examples.png
+# [ ] troubleshooting_errors.png
+# ============================================================
+# Total images needed: 28
+# ============================================================
