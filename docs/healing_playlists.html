@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Healing Playlists — Streaming Strategy | FreeEd4Med</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../style.css" rel="stylesheet" />
+  <style>
+    body { background:#0e0d1c; color:#f7f7fb; font-family:'Inter',system-ui,sans-serif; }
+    a { color:#66d9ff; }
+    .page-shell { max-width:1000px; margin:0 auto; padding:2.5rem 1.5rem 4rem; position:relative; }
+    .page-shell::before {
+      content:''; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%);
+      width:420px; height:420px; background:url('../images/logo.png') center/contain no-repeat;
+      opacity:0.04; pointer-events:none; z-index:-1;
+    }
+    header.page-header { display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem; align-items:center; padding-bottom:1rem; border-bottom:2px solid rgba(255,255,255,0.1); position:sticky; top:0; background:rgba(14,13,28,0.92); backdrop-filter:blur(6px); z-index:10; }
+    header.page-header .left { display:flex; gap:0.75rem; align-items:center; }
+    header.page-header img { height:48px; }
+    header.page-header h1 { margin:0; font-size:1.25rem; }
+    header.page-header nav { display:flex; gap:0.5rem; flex-wrap:wrap; }
+    header.page-header nav a {
+      text-decoration:none; border:2px solid #f1c40f; color:#f1c40f; padding:0.45rem 0.9rem;
+      border-radius:6px; font-weight:600; transition:all 0.2s ease;
+    }
+    header.page-header nav a.secondary { border-color:#9b59b6; color:#9b59b6; }
+    header.page-header nav a:hover { background:#f1c40f; color:#0e0d1c; }
+    h2 { color:#f1c40f; margin-top:2.5rem; border-bottom:1px solid rgba(241,196,15,0.35); padding-bottom:0.4rem; }
+    h3 { color:#66d9ff; margin-top:1.5rem; }
+    h4 { color:#1abc9c; margin-bottom:0.4rem; }
+    p { color:#dcdcf0; }
+    .grid { display:grid; gap:1.5rem; }
+    .grid.two { grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); }
+    .card { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07); border-radius:14px; padding:1.5rem; box-shadow:0 10px 30px rgba(0,0,0,0.25); }
+    .card h3 { margin-top:0; }
+    .playlist-links { display:flex; flex-direction:column; gap:0.4rem; margin-top:0.75rem; }
+    .playlist-links a { display:inline-flex; align-items:center; gap:0.4rem; background:rgba(0,0,0,0.2); padding:0.4rem 0.8rem; border-radius:40px; border:1px solid rgba(255,255,255,0.15); width:max-content; }
+    .stat-row { display:flex; gap:1rem; flex-wrap:wrap; margin:1rem 0; }
+    .stat { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); padding:1rem; border-radius:10px; flex:1; min-width:200px; }
+    .callout { background:rgba(26,188,156,0.12); border-left:4px solid #1abc9c; padding:1rem 1.2rem; margin:1.5rem 0; }
+    .social-grid { display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); }
+    footer { text-align:center; margin-top:3rem; font-size:0.9rem; color:#aaa; }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="page-header">
+      <div class="left">
+        <img src="../images/logo.png" alt="FreeEd4Med Logo" />
+        <div>
+          <h1>Healing Playlists & Streaming Strategy</h1>
+          <small>Music-for-healing collections • Hospitals • Schools • Community</small>
+        </div>
+      </div>
+      <nav>
+        <a href="../assets/scripts/freeed_media_super_tool.sh" download>⬇️ Download Script</a>
+        <a href="../docs/freeed_media_supertool_manual.html" class="secondary">Manual</a>
+        <a href="../donate.html">💜 Donate</a>
+        <a href="../index.html" class="secondary">Home</a>
+      </nav>
+    </header>
+
+    <section>
+      <h2>Why playlists matter</h2>
+      <p>Curated playlists let hospitals, community clinics, neurodivergent learning pods, and individual caregivers deploy therapeutic music instantly. By hosting each category on YouTube and Spotify, then cross-posting excerpts on TikTok, X, Facebook, and Shorts/Reels, we generate a sustainable stream revenue channel that keeps FreeEd4Med’s programs funded.</p>
+      <div class="stat-row">
+        <div class="stat">
+          <strong>5 Focus Categories</strong>
+          <p>Grounding, Breath, Movement, ADHD Cognitive Activation, ASD Sensory Safety</p>
+        </div>
+        <div class="stat">
+          <strong>2 Primary Platforms</strong>
+          <p>Mirrored playlists on Spotify + YouTube for universal access (audio + video)</p>
+        </div>
+        <div class="stat">
+          <strong>4 Social Boosters</strong>
+          <p>YouTube Shorts, TikTok, Instagram/Facebook Reels, X clips drive repeat plays</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Playlist index (replace placeholder links)</h2>
+      <p>Update each link below with the live playlist URL as soon as it is published. The anchor text explains the intended use-case so clinical partners can click confidently.</p>
+      <div class="grid two">
+        <div class="card">
+          <h3>Calm & Grounding</h3>
+          <p>Low-tempo ambient pads, soft piano, and warm drones for anxiety reduction and bedside comfort.</p>
+          <div class="playlist-links">
+            <a href="https://youtube.com/playlist?list=TODO_CALM" target="_blank">▶️ YouTube Playlist (Calm)</a>
+            <a href="https://open.spotify.com/playlist/TODO_CALM" target="_blank">🎧 Spotify Playlist (Calm)</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Breath-Centered Relaxation</h3>
+          <p>4-6 second inhale/exhale phrasing cues, gentle swells, and light bells for respiratory pacing.</p>
+          <div class="playlist-links">
+            <a href="https://youtube.com/playlist?list=TODO_BREATH" target="_blank">▶️ YouTube Playlist (Breath)</a>
+            <a href="https://open.spotify.com/playlist/TODO_BREATH" target="_blank">🎧 Spotify Playlist (Breath)</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Movement & Pain Modulation</h3>
+          <p>Gentle rhythmic cues (60–70 BPM) for tapping, PT sessions, and mindful movement routines.</p>
+          <div class="playlist-links">
+            <a href="https://youtube.com/playlist?list=TODO_MOVEMENT" target="_blank">▶️ YouTube Playlist (Movement)</a>
+            <a href="https://open.spotify.com/playlist/TODO_MOVEMENT" target="_blank">🎧 Spotify Playlist (Movement)</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Cognitive Activation (ADHD)</h3>
+          <p>Pink/brown noise layers, Lo-Fi textures (90–120 BPM), subtle beta entrainment for focus blocks.</p>
+          <div class="playlist-links">
+            <a href="https://youtube.com/playlist?list=TODO_ADHD" target="_blank">▶️ YouTube Playlist (ADHD Focus)</a>
+            <a href="https://open.spotify.com/playlist/TODO_ADHD" target="_blank">🎧 Spotify Playlist (ADHD Focus)</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Sensory Safety (ASD)</h3>
+          <p>Brown-noise foundations, predictable phrasing, low-transient instrumentation for sensory-sensitive listeners.</p>
+          <div class="playlist-links">
+            <a href="https://youtube.com/playlist?list=TODO_ASD" target="_blank">▶️ YouTube Playlist (Sensory Safety)</a>
+            <a href="https://open.spotify.com/playlist/TODO_ASD" target="_blank">🎧 Spotify Playlist (Sensory Safety)</a>
+          </div>
+        </div>
+      </div>
+      <div class="callout">
+        Replace each <code>TODO_*</code> token with the actual playlist ID or share URL. After updating, run <code>npm run serve</code> (or your preferred static preview) to confirm the links render correctly before deploying.
+      </div>
+    </section>
+
+    <section>
+      <h2>Distribution workflow</h2>
+      <div class="grid two">
+        <div class="card">
+          <h3>Publishing cadence</h3>
+          <ol>
+            <li>Release mastered track via distributor (ensures ISRC + royalty tracking).</li>
+            <li>Add track to matching Spotify + YouTube playlists within 24 hours.</li>
+            <li>Clip 15–30 second highlights for Shorts/Reels/TikTok with captions.</li>
+            <li>Schedule community posts explaining therapeutic intent + usage tips.</li>
+          </ol>
+        </div>
+        <div class="card">
+          <h3>Revenue routing</h3>
+          <ul>
+            <li>Playlist description includes “Streaming revenue supports FreeEd4Med (501c3).”</li>
+            <li>Link to <a href="../donate.html">donation page</a> and newsletter opt-in inside every description.</li>
+            <li>Tag hospital/education partners when they feature the playlists to boost algorithmic ranking.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Social amplification plan</h2>
+      <p>Every new track gets a coordinated set of short-form posts to drive playlist traffic and monetizable streams.</p>
+      <div class="social-grid">
+        <div class="card">
+          <h3>YouTube Shorts</h3>
+          <ul>
+            <li>15s excerpt with on-screen text describing use-case (e.g., “ADHD study block”).</li>
+            <li>End screen CTA: “Full playlist link in description.”</li>
+            <li>Reuse same asset on Facebook Reels for hospital pages.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>TikTok</h3>
+          <ul>
+            <li>Show quick behind-the-scenes of creation or how patients can use the loop.</li>
+            <li>Pin comment with both Spotify + YouTube links.</li>
+            <li>Add nonprofit support hashtag (#MusicHeals, #ADHDFocus, #ASDCalm).</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>X (Twitter)</h3>
+          <ul>
+            <li>Thread format: research insight + 30s audio clip + playlist link.</li>
+            <li>Tag clinicians, music therapists, and partner orgs.</li>
+            <li>Schedule reposts at different times for global audiences.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Facebook / Instagram</h3>
+          <ul>
+            <li>Square thumbnail with category branding.</li>
+            <li>Caption template: need-state → playlist solution → donate CTA.</li>
+            <li>Encourage supporters to host “listening rooms” and share photos.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>For hospitals, schools, and caregivers</h2>
+      <div class="grid two">
+        <div class="card">
+          <h3>Implementation tips</h3>
+          <ul>
+            <li>Create QR cards linking to the appropriate playlist for waiting rooms.</li>
+            <li>Embed YouTube playlist widget on patient portals or LMS dashboards.</li>
+            <li>Offer headphone loaner carts + signage explaining the therapeutic intent.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Licensing & use</h3>
+          <p>All playlists are cleared for non-commercial therapeutic use inside hospitals, classrooms, and counseling sessions. For broadcast or paid media, contact <a href="mailto:hello@freeed4med.org">hello@freeed4med.org</a> for an expedited license letter.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 FreeEd4Med.org — Healing through music, funded by community streaming.</p>
+      <p><a href="../donate.html">Support FreeEd4Med</a> • <a href="../contact.html">Partner with us</a></p>
+    </footer>
+  </div>
+</body>
+</html>
