@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  supertool:
+    build: .
+    image: freeed-media-tool
+    container_name: freeed_tool
+    # Interactive mode is required for the menu
+    stdin_open: true # -i
+    tty: true        # -t
+    # Mount the current directory (or your media folder) to /data
+    volumes:
+      - ./:/data
+      # Optional: Persist config/history
+      - tool_config:/root/.freeed_media_super_tool
+
+volumes:
+  tool_config:

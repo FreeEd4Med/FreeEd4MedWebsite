@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeEd4Med Media SuperTool v5.0 - User Manual</title>
+    <style>
+        :root {
+            --primary-color: #9D00FF; /* MadMooze Purple */
+            --secondary-color: #00FFFF; /* Cyan */
+            --text-color: #333;
+            --bg-color: #f4f4f9;
+            --sidebar-width: 280px;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            height: 100vh;
+            overflow: hidden;
+        }
+        /* Sidebar */
+        nav {
+            width: var(--sidebar-width);
+            background-color: #2c3e50;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            overflow-y: auto;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        nav h1 {
+            padding: 20px;
+            margin: 0;
+            font-size: 1.2rem;
+            background-color: #1a252f;
+            border-bottom: 1px solid #34495e;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav li a {
+            display: block;
+            padding: 15px 20px;
+            color: #ecf0f1;
+            text-decoration: none;
+            border-bottom: 1px solid #34495e;
+            transition: background 0.3s;
+        }
+        nav li a:hover, nav li a.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        /* Main Content */
+        main {
+            flex: 1;
+            padding: 40px;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+        }
+        section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            max-width: 1000px;
+        }
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        h3 {
+            color: #2c3e50;
+            margin-top: 25px;
+        }
+        code {
+            background-color: #eee;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Consolas', monospace;
+            color: #c7254e;
+        }
+        pre {
+            background-color: #2d2d2d;
+            color: #ccc;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .flag-image {
+            color: red;
+            font-weight: bold;
+            border: 2px dashed red;
+            padding: 20px;
+            margin: 15px 0;
+            text-align: center;
+            background-color: #fff0f0;
+            display: block;
+        }
+        .note {
+            background-color: #e8f4f8;
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            margin: 15px 0;
+        }
+        /* Image Tracker Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <h1>FreeEd4Med SuperTool v3.0</h1>
+    <ul>
+        <li><a href="#intro">1. Introduction & Setup</a></li>
+        <li><a href="#creation">2. Creation Module</a></li>
+        <li><a href="#visualizers">3. Visualizer Lab</a></li>
+        <li><a href="#audio">4. Audio Lab</a></li>
+        <li><a href="#notation">5. Notation Studio</a></li>
+        <li><a href="#branding">6. Branding & Metadata</a></li>
+        <li><a href="#social">7. Social Media Tools</a></li>
+        <li><a href="#settings">8. Settings</a></li>
+        <li><a href="#tracker">9. Image Tracker (Admin)</a></li>
+    </ul>
+</nav>
+
+<main>
+
+    <section id="intro">
+        <h2>1. Introduction & Setup</h2>
+        <p>Welcome to the <strong>FreeEd4Med Media SuperTool v5.0</strong>. This comprehensive CLI (Command Line Interface) suite is designed for musicians, educators, and content creators to streamline media production, from audio mastering to social media distribution.</p>
+        
+        <div class="flag-image">[IMAGE 1.1: Screenshot of the Main Menu v5.0]</div>
+
+        <h3>Quick Start</h3>
+        <ol>
+            <li>Open your terminal.</li>
+            <li>Navigate to the Scripts folder.</li>
+            <li>Run the tool: <code>bash freeed_media_super_tool.sh</code></li>
+        </ol>
+
+        <h3>Prerequisites</h3>
+        <ul>
+            <li><strong>OS:</strong> Linux (Ubuntu/Debian recommended) or WSL on Windows.</li>
+            <li><strong>Dependencies:</strong> <code>ffmpeg</code>, <code>ffprobe</code>, <code>python3</code>, <code>imagemagick</code>.</li>
+            <li><strong>Python Packages:</strong> Run <code>pip install -r requirements.txt</code> to install necessary libraries (like <code>pysubs2</code>, <code>demucs</code>, <code>basic-pitch</code>).</li>
+        </ul>
+    </section>
+
+    <section id="creation">
+        <h2>2. Creation Module & Songwriting Assistant</h2>
+        <p>The Creation Module focuses on lyric videos, subtitle generation, and creative writing.</p>
+        
+        <div class="flag-image">[IMAGE 2.1: Creation Module Sub-menu options]</div>
+
+        <h3>Songwriting Assistant (New in v5.0)</h3>
+        <p>Select <strong>Option 7</strong> to launch the assistant. Features include:</p>
+        <ul>
+            <li><strong>Rhyme Finder:</strong> Finds perfect and near rhymes.</li>
+            <li><strong>Thesaurus:</strong> Finds synonyms and related words.</li>
+            <li><strong>AI Lyric Generator:</strong> Writes full lyrics based on your prompt (supports OpenAI and local Ollama).</li>
+        </ul>
+        <div class="flag-image">[IMAGE 2.2: Screenshot of Songwriting Assistant]</div>
+
+        <h3>Features</h3>
+        <ul>
+            <li><strong>AI Whisper Generator:</strong> Automatically transcribe audio to .SRT subtitles using OpenAI's Whisper model. Supports auto-language detection.</li>
+            <li><strong>Subtitle Composer:</strong> Launches the external <code>subtitlecomposer</code> GUI for fine-tuning timing.</li>
+            <li><strong>Lyric Video (HardSub):</strong> Burns lyrics permanently into the video. Great for Instagram/TikTok where users can't toggle subs.</li>
+            <li><strong>Lyric Video (SoftSub):</strong> Embeds subtitles as a track (mov_text). Viewers can turn them on/off.</li>
+            <li><strong>Lyric Slideshow:</strong> Create a video from a folder of images + audio + subtitles.</li>
+        </ul>
+
+        <div class="flag-image">[IMAGE 2.2: Example of a HardSub Lyric Video output with custom font styling]</div>
+    </section>
+
+    <section id="visualizers">
+        <h2>3. Visualizer Lab (Enhanced)</h2>
+        <p>Turn your audio into stunning videos with 40+ different visualizer styles. Version 5.0 introduces powerful Python-based engines.</p>
+
+        <div class="flag-image">[IMAGE 3.1: Visualizer Lab Menu showing categories]</div>
+
+        <h3>New Python Visualizers (v5.0)</h3>
+        <ul>
+            <li><strong>Radial Spectrum (Option 36):</strong> Professional circular spectrum. Supports <strong>Background Images</strong> and <strong>Logo Overlays</strong> (Front/Back, Scalable).</li>
+            <li><strong>Reactive Text/Logo (Option 38):</strong> Your logo or text pulses to the beat.</li>
+            <li><strong>Realistic Fire (Option 39):</strong> Doom-style procedural fire effect.</li>
+            <li><strong>3D Terrain (Option 37):</strong> Retro wireframe landscape.</li>
+            <li><strong>Static Waveform (Option 40):</strong> High-res waveform image generator.</li>
+        </ul>
+
+        <h3>Categories</h3>
+        <ul>
+            <li><strong>Classic:</strong> Portal, Symmetrical Waves, Scrolling Spectrum.</li>
+            <li><strong>Geometric:</strong> Kaleidoscope, Spiral, Lissajous, Crown Burst.</li>
+            <li><strong>Nature:</strong> WaveFall, Water Ripples, Aurora, Starfield.</li>
+            <li><strong>Retro:</strong> VU Meters, Oscilloscope, Matrix Rain, Pixel Bars.</li>
+            <li><strong>Modern:</strong> Metaballs, Terrain Mesh, Voronoi, Plasma Globe.</li>
+            <li><strong>Scopes:</strong> Vectorscope, Histogram, Frequency Bands.</li>
+        </ul>
+
+        <div class="flag-image">[IMAGE 3.2: Collage of 4 distinct visualizer outputs (e.g., Matrix Rain, Aurora, Terrain, VU Meter)]</div>
+    </section>
+
+    <section id="audio">
+        <h2>4. Audio Lab</h2>
+        <p>A complete suite for audio processing, conversion, and mastering analysis.</p>
+
+        <div class="flag-image">[IMAGE 4.1: Audio Lab Menu options]</div>
+
+        <h3>Key Tools</h3>
+        <ul>
+            <li><strong>Convert/Transcode:</strong> Batch convert to WAV, MP3, FLAC, AAC.</li>
+            <li><strong>Loudness Normalize:</strong> Auto-level audio to -14 LUFS (Standard streaming target).</li>
+            <li><strong>Vocal Cut:</strong> Create instrumentals by phase-canceling the center channel.</li>
+            <li><strong>Mastering Report (Ardour Fixer):</strong>
+                <p>Runs a deep analysis using <code>ardour_fixer.py</code>. Checks LUFS, True Peak, LRA, and Phase correlation.</p>
+                <ul>
+                    <li><strong>Presets:</strong> Spotify, YouTube, Apple Music, CD, Vinyl.</li>
+                    <li><strong>Features:</strong> Reference track comparison, Mid/Side export, Spectrum plotting.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="flag-image">[IMAGE 4.2: Example of a Mastering Report text output or PNG plot]</div>
+    </section>
+
+    <section id="notation">
+        <h2>5. Notation Studio</h2>
+        <p>AI-powered workflow to convert Audio into Sheet Music (PDF).</p>
+
+        <div class="flag-image">[IMAGE 5.1: Notation Studio workflow diagram (Audio -> Demucs -> Basic Pitch -> MuseScore)]</div>
+
+        <h3>Workflow</h3>
+        <ol>
+            <li><strong>Separation:</strong> Uses <code>demucs</code> to isolate the instrument (e.g., piano stem) from a full mix.</li>
+            <li><strong>Transcription:</strong> Uses <code>basic-pitch</code> to convert the audio stem to MIDI.</li>
+            <li><strong>Notation:</strong> Uses <code>MuseScore</code> to render the MIDI into a readable PDF score.</li>
+        </ol>
+    </section>
+
+    <section id="branding">
+        <h2>6. Branding & Metadata</h2>
+        <p>Finalize your content for release.</p>
+
+        <div class="flag-image">[IMAGE 6.1: Branding Menu options]</div>
+
+        <ul>
+            <li><strong>Stitcher:</strong> Combine Intro + Main Video + Outro seamlessly.</li>
+            <li><strong>Metadata Editor:</strong> Add ID3 tags (Artist, Title, Album, Cover Art) to MP3/FLAC/M4A files.</li>
+            <li><strong>Smart Logo:</strong> Overlay a watermark or logo on your video with precise positioning (Corner, Center) and opacity controls.</li>
+        </ul>
+    </section>
+
+    <section id="social">
+        <h2>7. Social Media Tools</h2>
+        <p>The powerhouse module for distribution. Create content for all platforms in one go.</p>
+
+        <div class="flag-image">[IMAGE 7.1: Social Media Batch Generator Menu]</div>
+
+        <h3>Batch Generator</h3>
+        <p>Input one file (Video, Audio, or Image) and automatically generate optimized versions for:</p>
+        <ul>
+            <li><strong>TikTok:</strong> 1080x1920 (Vertical)</li>
+            <li><strong>YouTube:</strong> 1920x1080 (Landscape)</li>
+            <li><strong>Instagram:</strong> 1080x1080 (Square)</li>
+            <li><strong>X (Twitter):</strong> Optimized Landscape</li>
+            <li><strong>Facebook/Meta:</strong> 720p Optimized</li>
+        </ul>
+
+        <h3>AI Captions</h3>
+        <p>Generate viral captions using AI backends (Ollama, OpenAI, Anthropic).</p>
+        <ul>
+            <li><strong>Tone:</strong> Casual, Professional, Funny, Inspiring.</li>
+            <li><strong>Goal:</strong> Viral, Engagement, Promotion.</li>
+            <li><strong>Output:</strong> Generates a JSON file with platform-specific captions and hashtags.</li>
+        </ul>
+
+        <div class="flag-image">[IMAGE 7.2: Example of AI Generated Captions JSON output]</div>
+
+        <h3>Uploads Hub</h3>
+        <p>Directly upload to YouTube (OAuth) and TikTok (Dev API) from the terminal.</p>
+    </section>
+
+    <section id="settings">
+        <h2>8. Settings</h2>
+        <p>Configure your API keys and preferences.</p>
+        <ul>
+            <li><strong>API Keys:</strong> Set OpenAI, Anthropic, TikTok, and YouTube credentials.</li>
+            <li><strong>Defaults:</strong> Set default export folders and quality presets.</li>
+            <li><strong>Reset:</strong> Restore factory settings.</li>
+        </ul>
+    </section>
+
+    <section id="tracker">
+        <h2>9. Image Tracker (Admin)</h2>
+        <p>This table tracks the images required to complete this user manual.</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Section</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1.1</td>
+                    <td>Intro</td>
+                    <td>Main Menu Screenshot (ASCII Art + Options 1-7)</td>
+                    <td><span style="color:red">PENDING</span></td>
+                </tr>
+                <tr>
+                    <td>2.1</td>
+                    <td>Creation</td>
+                    <td>Creation Module Sub-menu options</td>
+                    <td><span style="color:red">PENDING</span></td>
+                </tr>
+                <tr>
+                    <td>2.2</td>
+                    <td>Creation</td>
+                    <td>HardSub Lyric Video output example</td>
+                    <td><span style="color:red">PENDING</span></td>
+                </tr>
+                <tr>
+                    <td>3.1</td>
+                    <td>Visualizers</td>
+                    <td>Visualizer Lab Menu (Categories)</td>
+                    <td><span style="color:red">PENDING</span></td>
+                </tr>
+                <tr>
+                    <td>3.2</td>
+                    <td>Visualizers</td>
+                    <td>Collage of 4 Visualizer outputs</td>
+                    <td><span style="color:red">PENDING</span></td>
+                </tr>
+                <tr>
+                    <td>4.1</td>
+                    <td>Audio Lab</td>
+                    <td>Audio Lab Menu options</td>
+                    <td><span style="color:red">PENDING</span></td>
+                </tr>
+                <tr>
+                    <td>4.2</td>
+                    <td>Audio Lab</td>
+                    <td>Mastering Report output (Text or Plot)</td>
+                    <td><span style="color:red">PENDING</span></td>
+                </tr>
+                <tr>
+                    <td>5.1</td>
+                    <td>Notation</td>
+                    <td>Notation Studio Workflow Diagram</td>
+                    <td><span style="color:red">PENDING</span></td>
+                </tr>
+                <tr>
+                    <td>6.1</td>
+                    <td>Branding</td>
+                    <td>Branding Menu options</td>
+                    <td><span style="color:red">PENDING</span></td>
+                </tr>
+                <tr>
+                    <td>7.1</td>
+                    <td>Social</td>
+                    <td>Social Media Batch Generator Menu</td>
+                    <td><span style="color:red">PENDING</span></td>
+                </tr>
+                <tr>
+                    <td>7.2</td>
+                    <td>Social</td>
+                    <td>AI Generated Captions JSON output example</td>
+                    <td><span style="color:red">PENDING</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+</main>
+
+<script>
+    // Simple active state highlighting for sidebar
+    const links = document.querySelectorAll('nav li a');
+    links.forEach(link => {
+        link.addEventListener('click', function() {
+            links.forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+</script>
+
+</body>
+</html>

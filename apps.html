@@ -32,9 +32,32 @@
       <p>This page shares scripts, small utilities, and guides that support our music-for-healing pipelines. Use or adapt but check licensing and test before production use.</p>
 
       <section class="tools-grid">
+        <div class="tool-card" style="grid-column: 1 / -1;">
+          <h3>FreeEd Media SuperTool v5.0.0</h3>
+          <p>Our comprehensive suite of Python tools for music production, lyric assistance, and visualization. Runs locally on Windows, Mac, and Linux.</p>
+          <p><strong>Includes:</strong></p>
+          <ul>
+            <li><strong>Lyric Assistant:</strong> AI-assisted lyric generation and rhyming.</li>
+            <li><strong>Viz Master:</strong> Audio visualization generator.</li>
+            <li><strong>Ardour Fixer:</strong> Automated project repair and cleanup.</li>
+          </ul>
+          <p><strong>Documentation & Download:</strong></p>
+          <ul>
+            <li><a href="assets/FreeEd4Med_SuperTool_v5.0.0/MANUAL.html" target="_blank"><strong>Read the User Manual (HTML)</strong></a></li>
+            <li><a href="assets/FreeEd4Med_SuperTool_v5.0.0/MANUAL.md">Read Manual (Markdown)</a></li>
+            <li><a href="assets/FreeEd4Med_SuperTool_v5.0.0/">Browse all files</a></li>
+          </ul>
+          <p><strong>Installation:</strong></p>
+          <ul>
+            <li><a href="assets/FreeEd4Med_SuperTool_v5.0.0/install_windows_wsl.bat">Windows Installer (.bat)</a></li>
+            <li><a href="assets/FreeEd4Med_SuperTool_v5.0.0/install_mac.sh">Mac Installer (.sh)</a></li>
+            <li><a href="assets/FreeEd4Med_SuperTool_v5.0.0/install_linux.sh">Linux Installer (.sh)</a></li>
+            <li><a href="assets/FreeEd4Med_SuperTool_v5.0.0/docker-compose.yml">Docker Compose</a></li>
+          </ul>
+        </div>
+
         <div class="tool-card">
-          <h3>Ardour utilities</h3>
-          <p>Our small utility <code>ardour_fixer</code> helps automate common Ardour project fixes (placeholder). Replace with your project-specific version or contact us to add the real script.</p>
+          <h3>Sample Assets</h3>
           <ul>
             <li><a href="assets/madmooze_sample_stems_demo.zip">Download sample stems (demo)</a></li>
             <li><a href="assets/madmooze_sample_stems/stems_info.json">Stem metadata (stems_info.json)</a></li>
@@ -43,26 +66,14 @@
         </div>
 
         <div class="tool-card">
-          <h3>Utilities</h3>
+          <h3>Guides & Checklists</h3>
           <ul>
-            <li><a href="tools/make_pdfs.py">make_pdfs.py — simple PDF generator</a></li>
             <li><a href="assets/streaming_checklist.txt">Streaming checklist (txt)</a></li>
             <li><a href="assets/streaming_checklist.pdf">Streaming checklist (PDF)</a></li>
             <li><a href="docs/clinical-streaming-guide.md">Clinical streaming guide</a> • <a href="assets/clinical-streaming-guide.pdf">PDF</a></li>
+            <li><a href="tools/make_pdfs.py">make_pdfs.py — simple PDF generator</a></li>
           </ul>
         </div>
-
-        <div class="tool-card">
-          <h3>Scripts (installed / examples)</h3>
-          <ul>
-            <li><a href="assets/scripts/ardour_fixer.py">ardour_fixer.py — Python utility (preferred)</a></li>
-            <li><a href="assets/scripts/README.md">scripts README</a></li>
-            <li><a href="assets/scripts/install_unix.sh">install_unix.sh — unix setup helper</a></li>
-            <li><a href="assets/scripts/install_windows.bat">install_windows.bat — Windows setup helper</a></li>
-            <li><a href="assets/scripts/requirements.txt">requirements.txt — Python deps (colorama)</a></li>
-          </ul>
-        </div>
-
       </section>
 
       <p>If you'd like these packaged as a small NPM/Pip project or Docker image for reproducible builds, I can prepare a minimal repository and README.</p>
