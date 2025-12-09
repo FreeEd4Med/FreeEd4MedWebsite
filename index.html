@@ -137,29 +137,16 @@
 
         async function fetchHeadlines(){
           try{
-            // Use rss2json.com to fetch RSS feed as JSON (since we can't use PHP on GitHub Pages)
-            // Using BBC Health feed as a primary source
-            const rssUrl = 'https://feeds.bbci.co.uk/news/health/rss.xml';
-            const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-            
-            const res = await fetch(apiUrl);
-            const data = await res.json();
-            
-            if (data.status !== 'ok' || !Array.isArray(data.items)) {
+            const res = await fetch('rss-headlines.php', {cache:'no-store'});
+            const json = await res.json();
+            // server will have filtered recent items; but ensure array is valid
+            if (!Array.isArray(json) || json.length === 0) {
               renderItems([]);
               return;
             }
-            
-            // Map the API response to our expected format
-            const headlines = data.items.map(item => ({
-              title: item.title,
-              link: item.link,
-              date: item.pubDate // rss2json returns 'pubDate'
-            }));
-
             // sort newest first (by date if present)
-            headlines.sort((a,b)=> (b.date || '').localeCompare(a.date || ''));
-            renderItems(headlines.slice(0, 12));
+            json.sort((a,b)=> (b.date || '').localeCompare(a.date || ''));
+            renderItems(json.slice(0, 12));
             resetInterval();
           }catch(e){ console.error('Failed to fetch headlines',e); renderItems([]); }
         }
