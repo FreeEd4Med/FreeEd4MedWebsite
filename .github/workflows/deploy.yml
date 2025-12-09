@@ -20,7 +20,7 @@ jobs:
         username: freeed4m
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./
-        server-dir: /domains/freeed4med.org/public_html/
+        server-dir: /public_html/
         delete: true
         exclude: |
           **/.git*
