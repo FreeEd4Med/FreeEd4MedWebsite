@@ -30,7 +30,8 @@
 
 <h2>Contact Us</h2>
 <p>Have questions or feedback? Fill out the form below or email <a href="mailto:contact@freeed4med.org">contact@freeed4med.org</a>.</p>
-<form id="contact-form" method="post" action="contact.php" style="max-width: 600px; margin: 0 auto;">
+<!-- NOTE: You must register with Formspree (https://formspree.io) to get a unique form ID and replace "YOUR_FORM_ID" below. -->
+<form id="contact-form" method="post" action="https://formspree.io/f/YOUR_FORM_ID" style="max-width: 600px; margin: 0 auto;">
     <label for="name">Name:</label><br>
     <input type="text" id="name" name="name" required
          style="width: 100%; padding: 10px; margin-bottom: 1rem; font-size: 1rem;" /><br>
@@ -42,9 +43,6 @@
     <label for="message">Message:</label><br>
     <textarea id="message" name="message" rows="8" required
             style="width: 100%; padding: 10px; margin-bottom: 1rem; font-size: 1rem;"></textarea><br>
-
-    <!-- reCAPTCHA -->
-    <div class="g-recaptcha" data-sitekey="6LcB_4orAAAAAKebHF3Soj2OwT5Yv2UYfu4gxpmP" style="margin-bottom: 1rem;"></div>
 
     <button type="submit" style="padding: 12px 24px; font-size: 1.1rem;
           background-color: #4CAF50; color: white; border: none; border-radius: 6px; cursor: pointer;">
