@@ -1,7 +1,0 @@
-# Redirect all traffic to HTTPS
-RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
-
-# Set default index file
-DirectoryIndex index.html index.php
