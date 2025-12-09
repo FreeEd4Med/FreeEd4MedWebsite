@@ -1,48 +1,57 @@
 <?php
 header("Content-Type: application/json; charset=UTF-8");
-require_once __DIR__ . '/libs/simplepie/autoloader.php';
+// No external libraries needed
 
+// RSS Feeds for "AI Music" and "Music in Medicine"
 $feeds = [
-  "https://feeds.bbci.co.uk/news/health/rss.xml",
-  "https://www.who.int/feeds/entity/mediacentre/news/en/rss.xml",
-  "https://news.un.org/feed/subscribe/en/news/topic/health/feed/rss.xml",
-  "https://www.medpagetoday.com/rss.xml"
+    // Google News: AI Music Industry
+    "https://news.google.com/rss/search?q=AI+Music+Industry+OR+Generative+Audio&hl=en-US&gl=US&ceid=US:en",
+    // Google News: Music Therapy / Medicine
+    "https://news.google.com/rss/search?q=Music+Therapy+OR+Music+Medicine+OR+Clinical+Music&hl=en-US&gl=US&ceid=US:en",
+    // ScienceDaily: Music
+    "https://www.sciencedaily.com/rss/mind_brain/music.xml"
 ];
 
 $headlines = [];
-$fallback = [];
-$maxAge = 7 * 24 * 3600; // 7 days
+$max_items_per_feed = 5;
 
 foreach ($feeds as $url) {
-    $feed = new SimplePie();
-    $feed->set_feed_url($url);
-    $feed->enable_cache(false);
-    $feed->init();
+    try {
+        // Suppress warnings for invalid XML
+        $rss = @simplexml_load_file($url);
+        if ($rss === false) continue;
 
-    if ($feed->error()) continue;
+        $count = 0;
+        foreach ($rss->channel->item as $item) {
+            if ($count >= $max_items_per_feed) break;
+            
+            $title = (string)$item->title;
+            $link = (string)$item->link;
+            $pubDate = (string)$item->pubDate;
+            $dateTs = strtotime($pubDate);
+            $dateIso = $dateTs ? date('c', $dateTs) : null;
 
-    $items = $feed->get_items(0, 6);
-    foreach ($items as $item) {
-      $title = htmlspecialchars($item->get_title());
-      $link = htmlspecialchars($item->get_permalink());
-      $dateTs = $item->get_date('U');
-      $dateIso = $dateTs ? date('c', $dateTs) : null;
+            // Filter out very old news (> 30 days)
+            if ($dateTs && (time() - $dateTs) > (30 * 24 * 3600)) continue;
 
-      // accept items that are less than maxAge days old
-      if ($dateTs && (time() - $dateTs) <= $maxAge) {
-        $headlines[] = ["title" => $title, "link" => $link, "date" => $dateIso];
-        if (count($headlines) >= 20) break 2;
-      } else {
-        // keep as fallback if not within timeframe
-        $fallback[] = ["title" => $title, "link" => $link, "date" => $dateIso];
-      }
+            $headlines[] = [
+                "title" => strip_tags($title),
+                "link" => $link,
+                "date" => $dateIso,
+                "timestamp" => $dateTs
+            ];
+            $count++;
+        }
+    } catch (Exception $e) {
+        continue;
     }
 }
 
-  // if no headlines within the time window, fall back to recent items without the filter
-  if (empty($headlines) && !empty($fallback)) {
-    $headlines = array_slice($fallback, 0, 10);
-  }
+// Sort by date (newest first)
+usort($headlines, function($a, $b) {
+    return $b['timestamp'] - $a['timestamp'];
+});
 
-  echo json_encode($headlines);
+// Return top 15
+echo json_encode(array_slice($headlines, 0, 15));
 ?>

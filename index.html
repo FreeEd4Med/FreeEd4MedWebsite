@@ -137,16 +137,15 @@
 
         async function fetchHeadlines(){
           try{
+            // Fetch from our PHP proxy which aggregates Google News & ScienceDaily
             const res = await fetch('rss-headlines.php', {cache:'no-store'});
             const json = await res.json();
-            // server will have filtered recent items; but ensure array is valid
+            
             if (!Array.isArray(json) || json.length === 0) {
               renderItems([]);
               return;
             }
-            // sort newest first (by date if present)
-            json.sort((a,b)=> (b.date || '').localeCompare(a.date || ''));
-            renderItems(json.slice(0, 12));
+            renderItems(json);
             resetInterval();
           }catch(e){ console.error('Failed to fetch headlines',e); renderItems([]); }
         }
