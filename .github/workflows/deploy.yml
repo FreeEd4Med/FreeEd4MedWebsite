@@ -1,0 +1,27 @@
+name: Deploy to InterServer
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  web-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get latest code
+      uses: actions/checkout@v4
+
+    - name: Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: 74.50.79.163
+        username: freeed4m
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./
+        server-dir: /public_html/
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
