@@ -15,8 +15,31 @@ $feeds = [
 $headlines = [];
 $max_items_per_feed = 5;
 
+// Detect User Country (Simple IP Geolocation)
+$user_country = 'US'; // Default
+try {
+    $ip = $_SERVER['REMOTE_ADDR'];
+    // Use a free API (limited rate, but fine for client-side calls)
+    // Set a short timeout to avoid blocking
+    $ctx = stream_context_create(['http'=> ['timeout' => 1]]);
+    $geo = @file_get_contents("http://ip-api.com/json/$ip?fields=countryCode", false, $ctx);
+    if ($geo) {
+        $data = json_decode($geo, true);
+        if (isset($data['countryCode'])) {
+            $user_country = $data['countryCode'];
+        }
+    }
+} catch (Exception $e) {
+    // Fallback to US
+}
+
 foreach ($feeds as $url) {
     try {
+        // Append Geo parameters to Google News URLs
+        if (strpos($url, 'news.google.com') !== false) {
+            $url .= "&gl=$user_country&ceid=$user_country:en";
+        }
+
         // Suppress warnings for invalid XML
         $rss = @simplexml_load_file($url);
         if ($rss === false) continue;
