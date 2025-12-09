@@ -7,11 +7,19 @@
   <link href="../style.css" rel="stylesheet" />
   <style>
     /* Manual-specific styles */
+    body {
+      background-color: #0f0518; /* Deep dark background */
+      color: #f0f0f0; /* High contrast light text */
+    }
     .manual-container {
       max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem;
+      margin: 2rem auto;
+      padding: 3rem;
       position: relative;
+      background-color: #1a0b2e; /* Dark purple canvas */
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border: 1px solid #2d1b4e;
     }
     .manual-container::before {
       content: '';
@@ -35,42 +43,57 @@
       margin-bottom: 2rem;
       position: sticky;
       top: 0;
-      background: rgba(20, 20, 30, 0.95);
+      background: rgba(26, 11, 46, 0.95); /* Match canvas color */
       z-index: 100;
     }
+    .manual-header h1 {
+      color: #fff;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
     .manual-header a {
-      color: #f1c40f;
+      color: #ffd700; /* Gold for high visibility */
       text-decoration: none;
       font-weight: bold;
       padding: 0.5rem 1rem;
-      border: 2px solid #f1c40f;
+      border: 2px solid #ffd700;
       border-radius: 5px;
       transition: all 0.3s;
     }
     .manual-header a:hover {
-      background: #f1c40f;
-      color: #1a1a2e;
+      background: #ffd700;
+      color: #1a0b2e;
     }
     .toc {
-      background: rgba(155, 89, 182, 0.1);
-      border-left: 4px solid #9b59b6;
+      background: rgba(0, 0, 0, 0.2);
+      border-left: 4px solid #d48df0; /* Lighter purple */
       padding: 1.5rem;
       margin: 2rem 0;
+      border-radius: 0 8px 8px 0;
     }
-    .toc h3 { margin-top: 0; color: #9b59b6; }
+    .toc h3 { margin-top: 0; color: #d48df0; }
     .toc ul { list-style: none; padding-left: 0; }
     .toc li { margin: 0.5rem 0; }
-    .toc a { color: #3498db; }
+    .toc a { color: #64b5f6; text-decoration: none; } /* Light blue */
+    .toc a:hover { text-decoration: underline; color: #9be7ff; }
+    
     .section { margin: 3rem 0; }
     .section h2 {
-      color: #9b59b6;
-      border-bottom: 1px solid rgba(155, 89, 182, 0.3);
+      color: #d48df0; /* Lighter purple for headings */
+      border-bottom: 1px solid rgba(212, 141, 240, 0.3);
       padding-bottom: 0.5rem;
     }
-    .section h3 { color: #3498db; }
-    .section h4 { color: #1abc9c; }
+    .section h3 { color: #64b5f6; } /* Light blue */
+    .section h4 { color: #4db6ac; } /* Teal */
+    
+    p, li {
+      line-height: 1.6;
+      color: #e0e0e0;
+    }
+    
+    strong { color: #fff; }
+    
     .code-block {
-      background: #1e1e2e;
+      background: #0a0a12; /* Darker than canvas */
       border: 1px solid #333;
       border-radius: 8px;
       padding: 1rem;
@@ -78,6 +101,7 @@
       font-family: 'Courier New', monospace;
       font-size: 0.9rem;
       margin: 1rem 0;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
     }
     .code-block code {
       color: #e0e0e0;
