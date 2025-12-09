@@ -17,10 +17,10 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: 74.50.79.163
-        username: freeed4m
+        username: FreeEd4MedFTP@freeed4med.org
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./
-        server-dir: /public_html/
+        server-dir: /
         dangerous-clean-slate: true
         exclude: |
           **/.git*
