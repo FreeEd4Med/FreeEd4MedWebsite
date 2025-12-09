@@ -20,7 +20,7 @@ jobs:
         username: FreeEd4MedFTP@freeed4med.org
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./
-        server-dir: /
+        server-dir: /public_html/
         dangerous-clean-slate: true
         exclude: |
           **/.git*
