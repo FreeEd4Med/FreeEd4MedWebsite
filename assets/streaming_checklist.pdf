@@ -1,49 +1,71 @@
 %PDF-1.4
+%‚„œ”
 1 0 obj
 << /Type /Catalog /Pages 2 0 R >>
 endobj
 2 0 obj
-<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+<< /Type /Pages /Kids [5 0 R] /Count 1 >>
 endobj
 3 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
-endobj
-4 0 obj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
 endobj
-5 0 obj
-<< /Length 823 >>
+4 0 obj
+<< /Length 1306 >>
 stream
 BT
-/F1 12 Tf
-50 760 Td (Clinical Streaming - Artist Checklist \(MadMoozeMusic / FreeEd4Med\)) Tj
+/F1 11 Tf
+50 760 Td
+(Clinical Music Delivery - Artist Checklist \(MadMoozeMusic / FreeEd4Med\)) Tj
 0 -14 Td
-50 746 Td () Tj
+() Tj
 0 -14 Td
-50 732 Td (1\) Master: WAV/FLAC, 44.1 or 48 kHz, 24-bit) Tj
+(1\) Master: WAV or FLAC at the receiving service's requested sample rate and bit depth.) Tj
 0 -14 Td
-50 718 Td (2\) Preview: MP3 \(128-192 kbps\)) Tj
+(2\) Preview: include a clearly labeled compressed audition copy if useful.) Tj
 0 -14 Td
-50 704 Td (3\) Loudness: aim for -14 LUFS integrated, true peak < -1 dBTP) Tj
+(3\) Loudness: there is no universal -14 LUFS delivery target. Check the recipient's) Tj
 0 -14 Td
-50 690 Td (4\) Stems: vocals / pads / percussion / bass - labeled clearly \(e.g., 01_vocals.wav\)) Tj
+(current specification; measure and document integrated loudness and maximum true peak.) Tj
 0 -14 Td
-50 676 Td (5\) Provide BPM \(e.g., 60 BPM\) and suggested sync timestamps) Tj
+(4\) Playback level: LUFS is not listening volume. Follow the care team's or facility's) Tj
 0 -14 Td
-50 662 Td (6\) Provide a README with intended use & licensing terms) Tj
+(guidance for patient playback.) Tj
 0 -14 Td
-50 648 Td (7\) Include a small low-bitrate preview file and a zip of the stems) Tj
+(5\) Stems: label files clearly \(for example, 01_vocals.wav, 02_pads.wav,) Tj
 0 -14 Td
-50 634 Td () Tj
+(03_percussion.wav\).) Tj
 0 -14 Td
-50 620 Td (Thank you - contact FreeEd4Med for integration support.) Tj
+(6\) Include BPM and sync points only when relevant to the intended use.) Tj
 0 -14 Td
+(7\) Add a README with title, artist, intended use, attribution, and license/permission) Tj
+0 -14 Td
+(terms.) Tj
+0 -14 Td
+(8\) Package the approved master, stems, metadata, and preview together; check links and) Tj
+0 -14 Td
+(filenames before delivery.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Music is a supportive resource, not a substitute for medical care. Confirm clinical) Tj
+0 -14 Td
+(use and playback requirements with the care team.) Tj
 ET
 endstream
 endobj
-xref0 60000000000 65535 f 0000000009 00000 n 0000000058 00000 n 0000000115 00000 n 0000000241 00000 n 0000000311 00000 n 
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+xref
+0 6
+0000000000 65535 f
+0000000015 00000 n
+0000000064 00000 n
+0000000121 00000 n
+0000000191 00000 n
+0000001549 00000 n
 trailer
 << /Size 6 /Root 1 0 R >>
 startxref
-1185
+1675
 %%EOF

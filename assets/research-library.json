@@ -1,77 +1,360 @@
 [
   {
-    "title": "A causal role for the prefrontal cortex in music-induced reward",
-    "authors": "Mas-Herrero et al.",
-    "year": 2021,
+    "title": "Wang et al. — Music interventions for pain and distress during childhood vaccination (Systematic Review and Meta-analysis, 2025)",
+    "authors": "Wang et al.",
+    "year": "2025",
+    "journal": "Frontiers in Pediatrics",
+    "doi": "10.3389/fped.2025.1699437",
+    "pmc": "N/A",
+    "tags": [
+      "pediatric",
+      "pain",
+      "distress",
+      "vaccination",
+      "meta-analysis"
+    ],
+    "synopsis": "This systematic review and meta-analysis included five randomized trials with 306 children undergoing vaccination. Across the included studies, music interventions were associated with lower pain scores (SMD −0.58, 95% CI −0.92 to −0.24) and distress scores (SMD −0.83, 95% CI −1.12 to −0.54) than routine care.",
+    "appraisal": "Only five small trials were included, and music type and duration varied. Results concern acute vaccination procedures and should not be generalized to other clinical settings without evidence.",
+    "key_findings": [
+      "Five RCTs; 306 children from infancy through age six in the included studies.",
+      "Pooled results favored music for vaccination-related pain and distress.",
+      "Intervention type and duration varied across studies."
+    ],
+    "stat_methods": "PRISMA systematic review; random-effects meta-analysis of standardized mean differences with 95% confidence intervals, heterogeneity assessment, and sensitivity analyses.",
+    "limitations": "Only five small trials were included, and music type and duration varied. Results concern acute vaccination procedures and should not be generalized to other clinical settings without evidence.",
+    "recommendations_for_artists": [],
+    "practical_note": "For pediatric use, offer caregiver- and clinician-approved choices and follow the care team's direction. This evidence does not establish music as a substitute for standard pain-management measures."
+  },
+  {
+    "title": "Ou et al. — Music during painful procedures in preterm infants (Systematic Review and Meta-analysis, 2024)",
+    "authors": "Ou et al.",
+    "year": "2024",
+    "journal": "Frontiers in Pediatrics",
+    "doi": "10.3389/fped.2024.1351401",
+    "pmc": "N/A",
+    "tags": [
+      "pediatric",
+      "neonatal",
+      "pain",
+      "procedural",
+      "meta-analysis"
+    ],
+    "synopsis": "This review pooled four randomized trials of music during painful procedures in preterm infants. The authors reported lower Premature Infant Pain Profile scores during and after procedures and improved oxygen saturation; peak heart-rate changes were not statistically significant.",
+    "appraisal": "The evidence base is small, with only four trials and a need for larger prospective studies. Findings are specific to preterm infants and monitored procedural care.",
+    "key_findings": [
+      "Pain scores favored music during and after procedures.",
+      "Oxygen saturation improved in pooled analyses; peak heart-rate differences were not statistically significant."
+    ],
+    "stat_methods": "Systematic review and meta-analysis of four RCTs, reporting pooled differences and 95% confidence intervals for pain and physiological outcomes.",
+    "limitations": "The evidence base is small, with only four trials and a need for larger prospective studies. Findings are specific to preterm infants and monitored procedural care.",
+    "recommendations_for_artists": [],
+    "practical_note": "Any use in neonatal care should be selected and monitored by the clinical team; this small evidence base does not support unsupervised use."
+  },
+  {
+    "title": "Park et al. — Technology-based music interventions for procedural anxiety and pain (Systematic Review, 2024)",
+    "authors": "Park et al.",
+    "year": "2024",
+    "journal": "JMIR mHealth and uHealth",
+    "doi": "10.2196/48802",
+    "pmc": "PMC11263896",
+    "tags": [
+      "technology",
+      "digital",
+      "anxiety",
+      "pain",
+      "perioperative",
+      "systematic-review"
+    ],
+    "synopsis": "This systematic review examined 21 randomized trials of technology-delivered music interventions for people undergoing surgery or procedures. Nine studies reported reduced anxiety and seven reported reduced pain. More than half allowed participants to choose music themes; the review could not determine whether outcomes differed by device or software.",
+    "appraisal": "Studies and interventions varied, making direct comparisons difficult. The review does not establish which app or device is most effective and its search period predates publication.",
+    "key_findings": [
+      "Smartphones, tablets, apps, and other digital delivery approaches were represented in the trials.",
+      "Intervention method and participant choice were important considerations; device-specific effects remained unclear."
+    ],
+    "stat_methods": "Systematic review of 21 RCTs; risk of bias assessed with the Cochrane Risk of Bias 2 tool. Outcomes were summarized across studies rather than pooled into one overall effect estimate.",
+    "limitations": "Studies and interventions varied, making direct comparisons difficult. The review does not establish which app or device is most effective and its search period predates publication.",
+    "recommendations_for_artists": [],
+    "practical_note": "Digital delivery can make listening easier to offer, but patient preference, clinical workflow, and the care setting still matter; the review does not show that an app itself improves outcomes."
+  },
+  {
+    "title": "Mas‑Herrero, et al. — A causal role for the prefrontal cortex in music‑induced reward (J. Neuroscience, 2021)",
+    "authors": "Mas‑Herrero et al.",
+    "year": "2021",
     "journal": "J Neurosci",
     "doi": "10.1523/JNEUROSCI.0727-20.2020",
     "pmc": "PMC8084325",
-    "tags": ["neuroscience","reward","TMS","fMRI"],
-    "synopsis": "TMS + fMRI showed left dlPFC causally modulates music-induced pleasure and motivation; changes in nucleus accumbens activity and fronto-auditory connectivity explain differences in liking vs wanting.",
-    "appraisal": "Strong causal evidence linking cortical control to subcortical reward circuitry; laboratory setting and short sessions limit direct clinical translation.",
-    "key_findings": ["dlPFC stimulation changed subjective pleasure and motivation","NAcc responses dissociated liking vs wanting","Auditory-reward connectivity predicted reward sensitivity"],
-    "stat_methods": "fMRI ROI and whole-brain analyses, mixed-effects models, PPI/connectivity analyses; multiple comparison corrections.",
-    "limitations": "Moderate sample size, short sessions, localized TMS effects — limited ecological validity.",
-    "recommendations_for_artists": ["Produce recordings with emotionally salient moments","Create multiple edits (3-5 min, loopable segments)","Provide clear metadata and usage notes for clinical curators"]
+    "tags": [
+      "neuroscience",
+      "reward",
+      "TMS",
+      "fMRI"
+    ],
+    "synopsis": "This combined TMS + fMRI study probed the causal role of left dorsolateral prefrontal cortex (dlPFC) in music‑induced pleasure and motivation. Stimulation of dlPFC produced bidirectional changes in music reward responses and modulated nucleus accumbens activation and fronto‑auditory functional connectivity.",
+    "appraisal": "Moderate sample size and short experimental sessions; TMS effects are localized and may not map directly onto naturalistic listening or long‑term therapy.",
+    "key_findings": [
+      "dlPFC stimulation bidirectionally changed subjective pleasure and motivation to listen.",
+      "Nucleus accumbens responses dissociated phasic 'liking' from motivational 'wanting'.",
+      "Functional connectivity between auditory regions and reward circuitry predicted individual reward sensitivity."
+    ],
+    "stat_methods": "fMRI analyses (ROI and whole‑brain), mixed‑effects models, psychophysiological interaction/connectivity analyses, paired comparisons across stimulation conditions; multiple comparison corrections applied.",
+    "limitations": "Moderate sample size and short experimental sessions; TMS effects are localized and may not map directly onto naturalistic listening or long‑term therapy.",
+    "recommendations_for_artists": [],
+    "practical_note": ""
   },
   {
-    "title": "Pleasurable music modulates reinforcement learning",
+    "title": "Gold, Pearce, et al. — Pleasurable music modulates reinforcement learning (Frontiers in Psychology, 2013)",
     "authors": "Gold, Pearce, et al.",
-    "year": 2013,
+    "year": "2013",
     "journal": "Frontiers in Psychology",
     "doi": "10.3389/fpsyg.2013.00541",
     "pmc": "PMC3748532",
-    "tags": ["learning","reinforcement","behavior","music"],
-    "synopsis": "Pleasurable music biased reinforcement learning in a probabilistic selection task; effects depended on musical experience and listening style.",
-    "appraisal": "Clear behavioral evidence linking music reward to learning processes; no direct neurochemical measures and limited ecological validity.",
-    "key_findings": ["Pleasurable music altered approach/avoidance learning","Effects moderated by musical training"],
-    "stat_methods": "Probabilistic selection task analysis using repeated measures and mixed ANOVA; correlations with self-report pleasure.",
-    "limitations": "Inferred mechanisms, short lab sessions; generalization to therapy contexts limited.",
-    "recommendations_for_artists": ["Create short cue tracks for reinforcement contexts (10-30s motifs)","Provide full and stripped versions to improve placement"]
+    "tags": [
+      "learning",
+      "reinforcement",
+      "behavior",
+      "music"
+    ],
+    "synopsis": "Behavioral experiments showed that listening to pleasurable music can bias reinforcement learning performance in a probabilistic selection task. Effects varied with musical experience, supporting a link between music reward and dopaminergic learning processes.",
+    "appraisal": "No direct imaging or neurochemical measures — mechanisms are inferred. Short lab sessions reduce ecological validity for therapeutic settings.",
+    "key_findings": [
+      "Pleasurable music altered reinforcement learning performance (biasing approach/avoidance choices).",
+      "Effects were moderated by participants’ musical training and listening habits."
+    ],
+    "stat_methods": "Probabilistic selection task analysis using repeated‑measures comparisons and mixed ANOVAs; correlation of learning metrics with self‑reported music pleasure.",
+    "limitations": "No direct imaging or neurochemical measures — mechanisms are inferred. Short lab sessions reduce ecological validity for therapeutic settings.",
+    "recommendations_for_artists": [],
+    "practical_note": ""
   },
   {
-    "title": "Music interventions for preoperative anxiety (Cochrane Review)",
+    "title": "Bradt & Dileo — Music interventions for preoperative anxiety (Cochrane Review, 2013 update)",
     "authors": "Bradt & Dileo",
-    "year": 2013,
+    "year": "2013",
     "journal": "Cochrane Database",
     "doi": "10.1002/14651858.CD006908.pub2",
     "pmc": "PMC9758540",
-    "tags": ["anxiety","preoperative","meta-analysis","perioperative"],
-    "synopsis": "Meta-analysis of 26 randomized trials (~2,051 participants) found music listening reduced preoperative anxiety with a moderate effect size compared with standard care.",
-    "appraisal": "Rigorous methodology and clinically relevant findings; heterogeneity across protocols and variable trial quality limit precision.",
-    "key_findings": ["Moderate reduction of preoperative anxiety","Patient-centered choice and live music often stronger"],
-    "stat_methods": "Random-effects meta-analysis, SMD for anxiety outcomes, heterogeneity via I², sensitivity analyses by risk of bias.",
-    "limitations": "Heterogeneity in timing, music types and outcomes; many small trials with unclear bias.",
-    "recommendations_for_artists": ["Create short calming playlists for digital delivery","Provide multiple file formats and licensing info for hospital integration"]
+    "tags": [
+      "anxiety",
+      "preoperative",
+      "meta-analysis",
+      "perioperative"
+    ],
+    "synopsis": "The Cochrane meta‑analysis pooled 26 randomized trials (N≈2,051) and found a moderate reduction in preoperative anxiety with music listening versus standard care. While heterogeneity existed across studies, the overall effect supports music as a low‑risk anxiolytic adjunct in perioperative settings.",
+    "appraisal": "Marked heterogeneity (differences in music protocols, timing, measures), and several small trials with unclear or high risk of bias.",
+    "key_findings": [
+      "Moderate, clinically relevant reduction in preoperative anxiety across trials.",
+      "Patient preference and live music sometimes showed stronger effects than standardized playback."
+    ],
+    "stat_methods": "Random‑effects meta‑analysis; standardized mean differences (SMD) for anxiety outcomes; heterogeneity assessed with I²; study quality and risk of bias considered in sensitivity analyses.",
+    "limitations": "Marked heterogeneity (differences in music protocols, timing, measures), and several small trials with unclear or high risk of bias.",
+    "recommendations_for_artists": [],
+    "practical_note": ""
   },
   {
-    "title": "A brief music intervention reduces preoperative anxiety",
+    "title": "Palmer, et al. — Brief music intervention reduces preoperative anxiety (J Clin Oncol, 2015)",
     "authors": "Palmer et al.",
-    "year": 2015,
+    "year": "2015",
     "journal": "J Clin Oncol",
     "doi": "10.1200/JCO.2014.59.6049",
     "pmc": "PMC4979095",
-    "tags": ["anxiety","preoperative","RCT","patient-preferred"],
-    "synopsis": "Randomized trial (n≈201) where a single 5-minute patient-preferred music session (live or recorded) lowered preoperative anxiety vs usual care; live music shortened immediate recovery time.",
-    "appraisal": "Pragmatic design and clinically meaningful outcomes; short-term effect measurement and difficulty blinding are limitations.",
-    "key_findings": ["5-minute patient-preferred music reduces acute anxiety","Live performances sometimes improved immediate recovery"],
-    "stat_methods": "Randomized design, between-group comparisons with t-tests/ANOVA and validated anxiety scales (e.g., STAI).",
-    "limitations": "No long-term follow-up; potential expectancy effects; blinding is challenging.",
-    "recommendations_for_artists": ["Produce short 3–5 minute recordings optimized for calm","Provide stems and licensing to facilitate clinical use"]
+    "tags": [
+      "anxiety",
+      "preoperative",
+      "RCT",
+      "patient-preferred"
+    ],
+    "synopsis": "In a pragmatic randomized trial (n≈201) a single 5‑minute patient‑preferred music session (live or recorded) reduced preoperative anxiety vs usual care, with live music also linked to quicker immediate recovery. The trial demonstrates that very brief, preference‑matched music has measurable perioperative benefits.",
+    "appraisal": "Immediate outcomes only (no long‑term follow‑up); possible expectancy/placebo effects because full blinding is infeasible with live music.",
+    "key_findings": [
+      "A single 5‑minute patient‑preferred music exposure produced immediate, significant anxiety reduction.",
+      "Live music sometimes outperformed recorded playback for short‑term recovery metrics."
+    ],
+    "stat_methods": "Randomized controlled design, between‑group comparisons using t‑tests/ANOVA and validated anxiety scales (like STAI); intent‑to‑treat principles used for outcome analyses.",
+    "limitations": "Immediate outcomes only (no long‑term follow‑up); possible expectancy/placebo effects because full blinding is infeasible with live music.",
+    "recommendations_for_artists": [],
+    "practical_note": ""
   },
   {
-    "title": "Sensorimotor synchronization to music reduces pain",
+    "title": "Werner, et al. — Sensorimotor synchronization to music reduces pain (PLOS One, 2023)",
     "authors": "Werner et al.",
-    "year": 2023,
+    "year": "2023",
     "journal": "PLOS One",
-    "doi": "10.1371/journal.pone.0287950",
+    "doi": "10.1371/journal.pone.0289302",
     "pmc": "PMC10381080",
-    "tags": ["pain","sensorimotor","movement","synchronization"],
-    "synopsis": "Active synchronization (moving with music) produced larger reductions in perceived pain than passive listening or silence in experimental models, highlighting embodied engagement as an analgesic mechanism.",
-    "appraisal": "Careful experimental design demonstrating an embodied effect; lab pain models may not fully represent chronic or palliative pain.",
-    "key_findings": ["Sensorimotor synchrony amplified pain reduction vs passive listening","Embodied engagement adds analgesic benefit"],
-    "stat_methods": "Within-subject repeated measures ANOVA on pain ratings; contrasts across conditions with reported effect sizes.",
-    "limitations": "Experimentally induced pain and short follow-up; careful translation required for clinical populations.",
-    "recommendations_for_artists": ["Provide 20–40s synchronizable segments with BPM markings","Deliver high-quality stems for app-driven movement programs"]
+    "tags": [
+      "pain",
+      "sensorimotor",
+      "movement",
+      "synchronization"
+    ],
+    "synopsis": "Experimental evidence shows that active sensorimotor synchronization to music (moving in time with music) yields larger pain reductions than passive listening or silence, indicating that embodied music engagement develops distinct analgesic effects beyond auditory exposure.",
+    "appraisal": "Laboratory induced pain and short outcomes — careful translation is needed for complex chronic or palliative pain populations.",
+    "key_findings": [
+      "Sensorimotor synchrony (moving with music) produced larger reductions in perceived pain vs passive listening or silence.",
+      "Embodied engagement appears to add distinct analgesic benefit above auditory stimulation alone."
+    ],
+    "stat_methods": "Within‑subject experimental design, repeated measures ANOVA on self‑reported pain scores and post‑hoc contrasts across conditions; effect sizes reported for comparison.",
+    "limitations": "Laboratory induced pain and short outcomes — careful translation is needed for complex chronic or palliative pain populations.",
+    "recommendations_for_artists": [],
+    "practical_note": ""
+  },
+  {
+    "title": "Söderlund, et al. — Noise and ADHD: Stochastic resonance in inattentive children (Dev Psychol, 2010)",
+    "authors": "Söderlund et al.",
+    "year": "2010",
+    "journal": "Dev Psychol",
+    "doi": "10.1037/a0019476",
+    "pmc": "N/A",
+    "tags": [
+      "adhd",
+      "neuroscience",
+      "stochastic-resonance",
+      "noise"
+    ],
+    "synopsis": "This foundational study demonstrated that children with ADHD actually perform better on cognitive tasks when exposed to moderate auditory noise (white noise at ~80 dB) compared to silence, while typically developing children showed the opposite pattern. The findings support the Moderate Brain Arousal (MBA) model, suggesting that ADHD brains are understimulated at baseline and benefit from external noise to reach optimal arousal for attention.",
+    "appraisal": "Single session design; used artificial white noise rather than structured music; individual differences in optimal noise levels suggest personalization is critical.",
+    "key_findings": [
+      "ADHD children improved cognitive performance under white noise exposure; neurotypical children showed decreased performance.",
+      "Results support stochastic resonance phenomenon — external noise can enhance weak neural signals to cross detection thresholds.",
+      "Optimal noise levels were individualized; too much noise impaired all participants."
+    ],
+    "stat_methods": "Between-group design comparing ADHD vs control children; repeated measures across noise conditions; ANOVA with post-hoc comparisons.",
+    "limitations": "Single session design; used artificial white noise rather than structured music; individual differences in optimal noise levels suggest personalization is critical.",
+    "recommendations_for_artists": [],
+    "practical_note": ""
+  },
+  {
+    "title": "Pickens, Khan, & Berlau — White noise as a possible therapeutic option for children with ADHD (Complementary Therapies in Medicine, 2019)",
+    "authors": "Pickens, Khan, & Berlau",
+    "year": "2019",
+    "journal": "Complementary Therapies in Medicine",
+    "doi": "10.1016/j.ctim.2018.11.012",
+    "pmc": "N/A",
+    "tags": [
+      "adhd",
+      "noise",
+      "attention"
+    ],
+    "synopsis": "This review discusses white noise as a possible nonpharmacological option for children with ADHD. Its conclusions should not be read as proof that noise benefits every child or that white noise is equivalent to music-based interventions.",
+    "appraisal": "The review does not establish a universal benefit or show that white noise and music interventions have equivalent effects.",
+    "key_findings": [
+      "The review considers white noise as a possible option for children with ADHD.",
+      "Auditory noise is distinct from music-based interventions and should not be treated as interchangeable evidence.",
+      "Individual response and the limited evidence base warrant caution."
+    ],
+    "stat_methods": "Review of published research on white noise as a possible therapeutic option for children with ADHD.",
+    "limitations": "The review does not establish a universal benefit or show that white noise and music interventions have equivalent effects.",
+    "recommendations_for_artists": [
+      "Offer optional, low-volume noise choices only when appropriate for the listener and setting.",
+      "Do not present a music or noise track as an ADHD treatment.",
+      "Follow caregiver and clinician guidance for children."
+    ],
+    "practical_note": ""
+  },
+  {
+    "title": "Kalas — Joint attention responses of children with autism spectrum disorder to simple versus complex music (Journal of Music Therapy, 2012)",
+    "authors": "Kalas",
+    "year": "2012",
+    "journal": "Journal of Music Therapy",
+    "doi": "10.1093/jmt/49.4.430",
+    "pmc": "N/A",
+    "tags": [
+      "asd",
+      "joint-attention",
+      "music-therapy"
+    ],
+    "synopsis": "This study compared joint-attention responses of children with autism spectrum disorder to simple versus complex music. It examines musical complexity in a specific study context and does not establish a universally preferred style or treatment.",
+    "appraisal": "Results from a single study and context should not be generalized to all autistic children or all music settings.",
+    "key_findings": [
+      "The study focused on joint attention responses to simple versus complex music.",
+      "Its comparison is specific to the study participants and listening context.",
+      "It does not establish one musical style as best for all autistic children."
+    ],
+    "stat_methods": "Comparison of joint-attention responses across simple and complex music conditions.",
+    "limitations": "Results from a single study and context should not be generalized to all autistic children or all music settings.",
+    "recommendations_for_artists": [
+      "Offer simple and more complex options when exploring an individual's music preferences.",
+      "Ask caregivers and clinicians about sensory preferences and accessibility needs.",
+      "Avoid assuming one arrangement suits every autistic listener."
+    ],
+    "practical_note": ""
+  },
+  {
+    "title": "Rauscher, et al. — Mozart Effect: Music and spatial-temporal reasoning (Nature, 1993)",
+    "authors": "Rauscher et al.",
+    "year": "1993",
+    "journal": "Nature",
+    "doi": "10.1038/365611a0",
+    "pmc": "N/A",
+    "tags": [
+      "neuroscience",
+      "entrainment",
+      "mozart-effect",
+      "cognition"
+    ],
+    "synopsis": "The original Mozart Effect study demonstrated temporary improvement in spatial-temporal reasoning after listening to Mozart's Sonata K.448. While subsequent research has moderated initial claims, the study established that structured, complex tonal music can influence cognitive performance. K.448 remains one of the most studied pieces for neurological effects.",
+    "appraisal": "Effects are temporary (10-15 minutes); overgeneralized in popular media; mechanism debated (arousal vs. specific musical properties).",
+    "key_findings": [
+      "Brief (10-15 min) Mozart K.448 exposure improved spatial-temporal task performance temporarily.",
+      "Effects were modest and short-lived but reliably replicated with structured classical music.",
+      "The harmonic complexity and predictable structure of K.448 may contribute to its efficacy."
+    ],
+    "stat_methods": "Within-subject design comparing conditions (music, silence, relaxation); standardized cognitive assessments.",
+    "limitations": "Effects are temporary (10-15 minutes); overgeneralized in popular media; mechanism debated (arousal vs. specific musical properties).",
+    "recommendations_for_artists": [],
+    "practical_note": ""
+  },
+  {
+    "title": "Thaut & Hoemberg — Neurologic Music Therapy Handbook (Oxford, 2014)",
+    "authors": "Thaut & Hoemberg",
+    "year": "2014",
+    "journal": "Oxford University Press",
+    "doi": "N/A",
+    "pmc": "N/A",
+    "tags": [
+      "movement",
+      "entrainment",
+      "nmt",
+      "rehabilitation"
+    ],
+    "synopsis": "The foundational textbook for Neurologic Music Therapy (NMT), establishing evidence-based protocols including Rhythmic Auditory Stimulation (RAS) for gait rehabilitation. The text synthesizes decades of research on how rhythmic entrainment engages motor cortex and can support movement rehabilitation, attention training, and cognitive processing in neurological populations.",
+    "appraisal": "Clinical protocols require trained therapists for optimal outcomes; self-directed use needs careful adaptation.",
+    "key_findings": [
+      "Rhythmic Auditory Stimulation (RAS) improves gait parameters in stroke and Parkinson's patients.",
+      "Musical Structure Exercise (MUSEX) protocols support attention and executive function training.",
+      "Brainwave entrainment to external rhythms is a well-documented neurological phenomenon with clinical applications."
+    ],
+    "stat_methods": "Comprehensive review of clinical trials; standardized NMT assessment protocols; meta-analytic summaries of RAS efficacy.",
+    "limitations": "Clinical protocols require trained therapists for optimal outcomes; self-directed use needs careful adaptation.",
+    "recommendations_for_artists": [],
+    "practical_note": ""
+  },
+  {
+    "title": "Chaieb, Wilpert, Reber, & Fell — Auditory beat stimulation and its effects on cognition and mood states (Frontiers in Psychiatry, 2015)",
+    "authors": "Chaieb, Wilpert, Reber, & Fell",
+    "year": "2015",
+    "journal": "Frontiers in Psychiatry",
+    "doi": "10.3389/fpsyt.2015.00070",
+    "pmc": "N/A",
+    "tags": [
+      "entrainment",
+      "binaural",
+      "attention",
+      "mood"
+    ],
+    "synopsis": "This review examines auditory beat stimulation and reports contradictory findings across studies of cognition and mood. It highlights stimulation parameters and methodological differences as important when interpreting reported effects.",
+    "appraisal": "The reviewed studies varied in stimulation methods and outcomes; contradictory results limit firm conclusions.",
+    "key_findings": [
+      "The review covers monaural- and binaural-beat stimulation and their reported effects on cognition and mood.",
+      "Findings across studies are contradictory; the review does not establish reliable cognitive enhancement.",
+      "Stimulation parameters and study design matter when interpreting results."
+    ],
+    "stat_methods": "PRISMA-guided literature review; PubMed and MEDLINE searches identified 30 selected articles.",
+    "limitations": "The reviewed studies varied in stimulation methods and outcomes; contradictory results limit firm conclusions.",
+    "recommendations_for_artists": [
+      "Do not market beat-stimulation audio as a proven cognitive or mood treatment.",
+      "Describe the audio characteristics clearly so listeners can make informed choices.",
+      "Use clinical and accessibility guidance when preparing audio for care settings."
+    ],
+    "practical_note": ""
   }
 ]

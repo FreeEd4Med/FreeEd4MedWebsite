@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>FreeEd4Med Media SuperTool v10.19 — Complete User Manual</title>
+  <title>FreeEd4Med Media Station v10.19 — Shell Script Manual</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="../style.css" rel="stylesheet" />
   <style>
@@ -29,7 +29,7 @@
       transform: translate(-50%, -50%);
       width: 400px;
       height: 400px;
-      background: url('../images/logo.png') center/contain no-repeat;
+      background: url('../images/FreeEd4MedLogo2026.png') center/contain no-repeat;
       opacity: 0.03;
       pointer-events: none;
       z-index: -1;
@@ -192,22 +192,23 @@
   <div class="container">
     <div class="manual-header">
       <div style="display: flex; align-items: center; gap: 1rem;">
-        <img src="../images/logo.png" alt="FreeEd4Med Logo" style="height: 40px;" />
-        <span style="font-size: 1.2rem; font-weight: bold;">Media SuperTool Manual</span>
+        <img src="../images/FreeEd4MedLogo2026.png" alt="FreeEd4Med Logo" style="height: 40px;" />
+        <span style="font-size: 1.2rem; font-weight: bold;">Media Station Shell Script Manual</span>
       </div>
       <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:flex-end;">
-        <a href="../assets/scripts/freeed_media_super_tool.sh" download>⬇️ Download Script</a>
+        <a href="../assets/scripts/freeed_media_super_tool.sh" download>⬇️ Download v10.19 Shell Script</a>
         <a href="../donate.html">💜 Support FreeEd4Med</a>
         <a href="../index.html" style="border-color: #9b59b6; color: #9b59b6;">← Back to Site</a>
       </div>
     </div>
 
     <div class="manual-container">
-      <h1 style="text-align: center; color: #9b59b6;">FreeEd4Med Media SuperTool v10.19</h1>
-      <p style="text-align: center; font-size: 1.2rem; color: #888;">Complete User Manual — Evidence-Based Med Ed + Music For Healing</p>
+      <h1 style="text-align: center; color: #9b59b6;">FreeEd4Med Media Station v10.19</h1>
+      <p style="text-align: center; font-size: 1.2rem; color: #888;">Linux shell-script manual — Evidence-Based Med Ed + Music For Healing</p>
+      <div class="note-box">This manual documents the Media Station shell script, not the current v5.2.1 desktop app. <a href="../apps.html">See current desktop app availability</a>.</div>
       <p style="text-align:center; margin-top:1rem;">
         <a href="../assets/scripts/freeed_media_super_tool.sh" download style="display:inline-block;padding:0.75rem 1.5rem;border:2px solid #f1c40f;border-radius:6px;color:#f1c40f;text-decoration:none;">
-          Download latest <code>freeed_media_super_tool.sh</code>
+          Download Media Station v10.19 <code>freeed_media_super_tool.sh</code>
         </a>
       </p>
 
@@ -368,7 +369,7 @@ chmod +x freeed_media_super_tool.sh
         <p>When you run the script, you'll see the main menu with 8 options:</p>
 
         <div class="code-block"><code>=======================================
-   FreeEd4Med Media SuperTool v10.19      
+   FreeEd4Med Media Station v10.19
 =======================================
 1. Creation Module (Lyrics, AI Whisper, Loop)
 2. Visualizer Lab (Color Picker, Circular, etc.)
@@ -971,7 +972,7 @@ ffmpeg -i input.wav -compression_level 5 output.flac
 ffmpeg -i input.avi -c:v libx264 -c:a aac output.mp4</code></div>
 
         <h4>Audio Normalization</h4>
-        <div class="code-block"><code><span class="code-comment"># Normalize to -14 LUFS (streaming target)</span>
+        <div class="code-block"><code><span class="code-comment"># Example only: use the current delivery specification, not a universal target</span>
 ffmpeg -i input.wav -af loudnorm=I=-14:TP=-1:LRA=11 output.wav</code></div>
 
         <h4>Extract Audio from Video</h4>
@@ -1013,8 +1014,8 @@ ffffff  <span class="code-comment"># white</span>
 
       <!-- Footer -->
       <div style="text-align: center; margin-top: 4rem; padding: 2rem; border-top: 1px solid #333;">
-        <img src="../images/logo.png" alt="FreeEd4Med" style="height: 60px; opacity: 0.5; margin-bottom: 1rem;" />
-        <p style="color: #888;">FreeEd4Med Media SuperTool v10.19 User Manual</p>
+        <img src="../images/FreeEd4MedLogo2026.png" alt="FreeEd4Med" style="height: 60px; opacity: 0.5; margin-bottom: 1rem;" />
+        <p style="color: #888;">FreeEd4Med Media Station v10.19 Shell Script Manual</p>
         <p style="color: #666;">&copy; 2025 FreeEd4Med.org — Open Source for Healing</p>
         <p><a href="../donate.html" style="color: #f1c40f;">💜 Support Our Mission</a></p>
       </div>

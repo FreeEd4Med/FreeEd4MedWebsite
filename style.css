@@ -151,7 +151,7 @@ header.site-header h1 { font-size:1.5rem; margin:0; color: #7a2ff5; text-shadow:
 .btn { display:inline-block; padding:8px 12px; border-radius:8px; color:white; text-decoration:none; font-weight:700; margin-right:8px; border:0; background: linear-gradient(90deg,var(--accent-1), var(--accent-2)); box-shadow: 0 8px 26px rgba(122,47,245,0.15); transition: all 0.2s ease; }
 .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(122,47,245,0.25); }
 .btn.ghost { background: transparent; color: white; border:1px solid rgba(255,255,255,0.06); }
-.hero { display:flex; gap:2rem; align-items:center; justify-content:space-between; padding:2rem; margin-bottom:1.5rem; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('assets/images/FreeEd4MedBackHm.png') center/cover no-repeat; border-radius: 12px; position: relative; }
+.hero { display:flex; gap:2rem; align-items:center; justify-content:space-between; padding:2rem; margin-bottom:1.5rem; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('assets/images/FreeEd4MedBackHm.png?v=20261030') center/cover no-repeat; border-radius: 12px; position: relative; }
 .hero-left { flex:1 1 56%; }
 .hero-right { flex: 1 1 40%; display:flex; justify-content:center; align-items:center; }
 .lead { font-size:1.1rem; color: rgba(255,255,255,0.9); margin-top:0.6rem; max-width:56ch; }

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="How MadMoozeMusic / FreeEd4Med prepares tracks for clinical streaming." />
+  <title>Clinical Music Delivery Guide — FreeEd4Med</title>
+  <link href="../style.css" rel="stylesheet" />
+  <style>
+    .readme { max-width: 760px; margin: 2rem auto; padding: 1.5rem; }
+    .readme-actions, .readme-nav { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.25rem 0; }
+    .readme-actions a, .readme-nav a { display: inline-block; padding: 0.65rem 0.9rem; border: 1px solid currentColor; border-radius: 6px; }
+    .notice { padding: 1rem; border-left: 4px solid #f1c40f; background: rgba(241,196,15,0.1); }
+    .readme li { margin: 0.35rem 0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a href="../index.html" aria-label="FreeEd4Med home">
+        <img src="../images/FreeEd4MedLogo2026.png" alt="FreeEd4Med Logo" class="logo" />
+      </a>
+      <nav class="navbar" aria-label="Page navigation">
+        <a href="../index.html">Home</a>
+        <a href="../public.html">Public Info</a>
+        <a href="../apps.html">Apps &amp; Scripts</a>
+      </nav>
+    </header>
+    <main class="main-content readme">
+      <h1>How I prepare tracks for clinical streaming</h1>
+      <p>MadMoozeMusic / FreeEd4Med</p>
+      <p>This guide describes a repeatable workflow for preparing music assets for clinician-approved use and digital distribution. It covers exports, stems, metadata, loudness measurement, and packaging. Music is a supportive resource, not a substitute for medical care; follow the care team&#x27;s direction and the listener&#x27;s preferences.</p>
+      <h2>File formats and sample rates</h2>
+      <ul>
+        <li>Deliver WAV or FLAC (lossless) at 44.1 kHz or 48 kHz and 24-bit depth.</li>
+        <li>Include one low-bitrate preview MP3 (128–192 kbps) for quick auditioning in apps that don&#x27;t need lossless files.</li>
+      </ul>
+      <h2>Loudness and mastering</h2>
+      <ul>
+        <li>There is no universal -14 LUFS delivery target for every streaming platform or clinical playback system. Check the recipient&#x27;s current delivery specification rather than treating one loudness value as mandatory.</li>
+        <li>Preserve an unclipped, high-quality master. Measure and document integrated loudness and maximum true peak; create platform-specific versions only when a delivery specification calls for them.</li>
+        <li>LUFS describes the audio file, not the sound pressure reaching a listener. Set playback level according to the care team&#x27;s or facility&#x27;s guidance; do not use a mastering target to set a patient&#x27;s listening volume.</li>
+        <li>When helpful, include an unprocessed master alongside a clearly labeled delivery master.</li>
+      </ul>
+      <h2>Create multiple edits</h2>
+      <ul>
+        <li>Full track (3–5 minutes typical)</li>
+        <li>Short version (30–60s) for cueing or apps</li>
+        <li>Loopable micro-sections (10–40s) for repeatable background use</li>
+      </ul>
+      <h2>Stems &amp; stems packaging</h2>
+      <ul>
+        <li>Provide stems in WAV/FLAC (e.g., vocals.wav, pads.wav, perc.wav, bass.wav).</li>
+        <li>Include a stems_info.json and README describing usage, tempo (BPM), and suggested sync points.</li>
+      </ul>
+      <h2>Metadata &amp; discoverability</h2>
+      <ul>
+        <li>Include Title, Artist, ISRC (if available), Year, BPM, Genre, and descriptive tags (e.g., &#x27;preoperative waiting&#x27; or &#x27;relaxation&#x27;).</li>
+        <li>Add a short intended-use note, such as &quot;instrumental background for a waiting area; loopable.&quot; Avoid claims that a track treats a condition or is suitable for every listener.</li>
+      </ul>
+      <h2>Licensing &amp; distribution</h2>
+      <ul>
+        <li>Provide a simple license file describing allowed uses (clinical, non-commercial, redistribution rights), or contact info for licensing inquiries.</li>
+        <li>If you want to grant public clinical use, consider a permissive license or a clear per-use license.</li>
+      </ul>
+      <h2>Packaging and delivery</h2>
+      <ul>
+        <li>Zip the stems and metadata together and provide a short README and a low-bitrate preview for quick checking.</li>
+        <li>Share via cloud storage, or embed a download link on your site; include clear attribution/credits.</li>
+      </ul>
+      <h2>Clinical review and feedback</h2>
+      <ul>
+        <li>Ask clinical partners to review tracks in the intended context and iterate on tempo, timbre, transitions, and delivery.</li>
+        <li>Offer listener choice where practical, allow the track to be paused or stopped, and check accessibility and playback-device requirements with the care team.</li>
+      </ul>
+      <h2>Final delivery check</h2>
+      <ul>
+        <li>Confirm file names, metadata, license, attribution, and destination links before sharing.</li>
+        <li>Keep a copy of the exact approved master and the delivery notes for later updates.</li>
+      </ul>
+      <div class="readme-actions">
+        <a href="../assets/clinical-streaming-guide.pdf">Printable PDF</a>
+        <a href="clinical-streaming-guide.md">Markdown source</a>
+        <a href="streaming-checklist.html">Artist checklist</a>
+      </div>
+      <div class="readme-nav">
+        <a href="../apps.html">Back to Apps &amp; Scripts</a>
+        <a href="../public.html">Public Info</a>
+        <a href="../index.html">Home</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

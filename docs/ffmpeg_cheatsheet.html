@@ -28,7 +28,7 @@
       transform: translate(-50%, -50%);
       width: 450px;
       height: 450px;
-      background: url('../images/logo.png') center/contain no-repeat;
+      background: url('../images/FreeEd4MedLogo2026.png') center/contain no-repeat;
       opacity: 0.03;
       pointer-events: none;
       z-index: -1;
@@ -126,15 +126,15 @@
 <body>
   <div class="cheatsheet-header">
     <div style="display: flex; align-items: center; gap: 1rem;">
-      <img src="../images/logo.png" alt="FreeEd4Med Logo" style="height: 45px;" />
+      <img src="../images/FreeEd4MedLogo2026.png" alt="FreeEd4Med Logo" style="height: 45px;" />
       <div>
         <div style="font-size: 1.2rem; font-weight: bold;">FFmpeg Cheat Sheet</div>
-        <small>FreeEd4Med Media SuperTool v10.19</small>
+        <small>FreeEd4Med Media Station shell-script workflow v10.19</small>
       </div>
     </div>
     <div class="links">
       <a href="../donate.html">💜 Donate</a>
-      <a href="../docs/freeed_media_supertool_manual.html">Manual</a>
+      <a href="../apps.html">Apps &amp; Scripts</a>
       <a href="../index.html">← Back to Site</a>
     </div>
   </div>
@@ -202,7 +202,7 @@ ffmpeg -i master.wav -c:a aac -b:a 256k track.m4a</code></pre>
 ffmpeg -i input.wav -ar 44100 -sample_fmt s32 -c:a pcm_s24le output.wav</code></pre>
 
       <h3>2.3 Loudness Normalization</h3>
-      <pre><code><span class="syntax-comment"># Integrated loudness to -14 LUFS (streaming standard)</span>
+      <pre><code><span class="syntax-comment"># Example settings only; set targets to the recipient's current delivery specification</span>
 ffmpeg -i input.wav -af "loudnorm=I=-14:TP=-1.0:LRA=11" normalized.wav</code></pre>
 
       <h3>2.4 Extract Audio from Video</h3>
@@ -362,7 +362,7 @@ done</code></pre>
     <hr style="border-color: rgba(255,255,255,0.05); margin: 3rem 0;" />
 
     <footer style="text-align: center; color: #999; padding-bottom: 2rem;">
-      <p>FreeEd4Med Media SuperTool v10.19 — FFmpeg Cheat Sheet</p>
+      <p>FreeEd4Med Media Station shell-script workflow v10.19 — FFmpeg Cheat Sheet</p>
       <p>&copy; 2025 FreeEd4Med.org — Music for Healing</p>
       <p><a href="../donate.html" style="color: #f1c40f; text-decoration: none;">Support the mission</a></p>
     </footer>

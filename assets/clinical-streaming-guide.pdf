@@ -1,101 +1,176 @@
 %PDF-1.4
+%‚„œ”
 1 0 obj
 << /Type /Catalog /Pages 2 0 R >>
 endobj
 2 0 obj
-<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+<< /Type /Pages /Kids [5 0 R 7 0 R] /Count 2 >>
 endobj
 3 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
-endobj
-4 0 obj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
 endobj
-5 0 obj
-<< /Length 3146 >>
+4 0 obj
+<< /Length 3214 >>
 stream
 BT
-/F1 12 Tf
-50 760 Td (# How I prepare tracks for clinical streaming - MadMoozeMusic / FreeEd4Med) Tj
+/F1 11 Tf
+50 760 Td
+(How I prepare tracks for clinical streaming - MadMoozeMusic / FreeEd4Med) Tj
 0 -14 Td
-50 746 Td () Tj
+() Tj
 0 -14 Td
-50 732 Td (This short guide describes a repeatable workflow to prepare music for clinical and streaming use: exports, stems, metadata, loudness, and packaging.) Tj
+(This guide describes a repeatable workflow for preparing music assets for clinician-) Tj
 0 -14 Td
-50 718 Td () Tj
+(approved use and digital distribution. It covers exports, stems, metadata, loudness) Tj
 0 -14 Td
-50 704 Td (1\) File formats and sample rates) Tj
+(measurement, and packaging. Music is a supportive resource, not a substitute for) Tj
 0 -14 Td
-50 690 Td (   - Deliver WAV or FLAC \(lossless\) at 44.1 kHz or 48 kHz and 24-bit depth.) Tj
+(medical care; follow the care team's direction and the listener's preferences.) Tj
 0 -14 Td
-50 676 Td (   - Include one low-bitrate preview MP3 \(128-192 kbps\) for quick auditioning in apps that don't need lossless files.) Tj
+() Tj
 0 -14 Td
-50 662 Td () Tj
+(1\) File formats and sample rates) Tj
 0 -14 Td
-50 648 Td (2\) Loudness and mastering) Tj
+(* Deliver WAV or FLAC \(lossless\) at 44.1 kHz or 48 kHz and 24-bit depth.) Tj
 0 -14 Td
-50 634 Td (   - For streaming and clinical systems target a -14 LUFS \(integrated\) master as a good middle ground for calmer content; include true peak < -1 dBTP.) Tj
+(* Include one low-bitrate preview MP3 \(128-192 kbps\) for quick auditioning in apps) Tj
 0 -14 Td
-50 620 Td (   - Provide a dry master and an optional mastered version so host systems can apply consistent processing.) Tj
+(that don't need lossless files.) Tj
 0 -14 Td
-50 606 Td () Tj
+() Tj
 0 -14 Td
-50 592 Td (3\) Create multiple edits) Tj
+(2\) Loudness and mastering) Tj
 0 -14 Td
-50 578 Td (   - Full track \(3-5 minutes typical\)) Tj
+(* There is no universal -14 LUFS delivery target for every streaming platform or) Tj
 0 -14 Td
-50 564 Td (   - Short version \(30-60s\) for cueing or apps) Tj
+(clinical playback system. Check the recipient's current delivery specification rather) Tj
 0 -14 Td
-50 550 Td (   - Loopable micro-sections \(10-40s\) for repeatable background use) Tj
+(than treating one loudness value as mandatory.) Tj
 0 -14 Td
-50 536 Td () Tj
+(* Preserve an unclipped, high-quality master. Measure and document integrated loudness) Tj
 0 -14 Td
-50 522 Td (4\) Stems & stems packaging) Tj
+(and maximum true peak; create platform-specific versions only when a delivery) Tj
 0 -14 Td
-50 508 Td (   - Provide stems in WAV/FLAC \(e.g., vocals.wav, pads.wav, perc.wav, bass.wav\).) Tj
+(specification calls for them.) Tj
 0 -14 Td
-50 494 Td (   - Include a stems_info.json and README describing usage, tempo \(BPM\), and suggested sync points.) Tj
+(* LUFS describes the audio file, not the sound pressure reaching a listener. Set) Tj
 0 -14 Td
-50 480 Td () Tj
+(playback level according to the care team's or facility's guidance; do not use a) Tj
 0 -14 Td
-50 466 Td (5\) Metadata & discoverability) Tj
+(mastering target to set a patient's listening volume.) Tj
 0 -14 Td
-50 452 Td (   - Include Title, Artist, ISRC \(if you have one\), Year, BPM, Genre, and suggested tags \(e.g., 'preoperative', 'relaxation', 'pain?reduction'\).) Tj
+(* When helpful, include an unprocessed master alongside a clearly labeled delivery) Tj
 0 -14 Td
-50 438 Td (   - Add a short 'intended use' note in metadata: e.g., "Calm background for preoperative waiting, loopable".) Tj
+(master.) Tj
 0 -14 Td
-50 424 Td () Tj
+() Tj
 0 -14 Td
-50 410 Td (6\) Licensing & distribution) Tj
+(3\) Create multiple edits) Tj
 0 -14 Td
-50 396 Td (   - Provide a simple license file describing allowed uses \(clinical, non-commercial, redistribution rights\), or contact info for licensing inquiries.) Tj
+(* Full track \(3-5 minutes typical\)) Tj
 0 -14 Td
-50 382 Td (   - If you want to grant public clinical use, consider a permissive license or a clear per-use license.) Tj
+(* Short version \(30-60s\) for cueing or apps) Tj
 0 -14 Td
-50 368 Td () Tj
+(* Loopable micro-sections \(10-40s\) for repeatable background use) Tj
 0 -14 Td
-50 354 Td (7\) Packaging and delivery) Tj
+() Tj
 0 -14 Td
-50 340 Td (   - Zip the stems and metadata together and provide a short README and a low-bitrate preview for quick checking.) Tj
+(4\) Stems & stems packaging) Tj
 0 -14 Td
-50 326 Td (   - Share via cloud storage, or embed a download link on your site; include clear attribution/credits.) Tj
+(* Provide stems in WAV/FLAC \(e.g., vocals.wav, pads.wav, perc.wav, bass.wav\).) Tj
 0 -14 Td
-50 312 Td () Tj
+(* Include a stems_info.json and README describing usage, tempo \(BPM\), and suggested) Tj
 0 -14 Td
-50 298 Td (8\) Testing and feedback) Tj
+(sync points.) Tj
 0 -14 Td
-50 284 Td (   - Ask clinical partners to test the tracks in context \(e.g., preop waiting, rehab app\) and iterate on tempo, timbre, and event structure.) Tj
+() Tj
 0 -14 Td
-50 270 Td () Tj
+(5\) Metadata & discoverability) Tj
 0 -14 Td
-50 256 Td (If you want, I can produce a printable checklist PDF or a short infographic for artist distribution.) Tj
+(* Include Title, Artist, ISRC \(if available\), Year, BPM, Genre, and descriptive tags) Tj
 0 -14 Td
+(\(e.g., 'preoperative waiting' or 'relaxation'\).) Tj
+0 -14 Td
+(* Add a short intended-use note, such as "instrumental background for a waiting area;) Tj
+0 -14 Td
+(loopable." Avoid claims that a track treats a condition or is suitable for every) Tj
+0 -14 Td
+(listener.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(6\) Licensing & distribution) Tj
+0 -14 Td
+(* Provide a simple license file describing allowed uses \(clinical, non-commercial,) Tj
+0 -14 Td
+(redistribution rights\), or contact info for licensing inquiries.) Tj
+0 -14 Td
+(* If you want to grant public clinical use, consider a permissive license or a clear) Tj
+0 -14 Td
+(per-use license.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(7\) Packaging and delivery) Tj
+0 -14 Td
+(* Zip the stems and metadata together and provide a short README and a low-bitrate) Tj
 ET
 endstream
 endobj
-xref0 60000000000 65535 f 0000000009 00000 n 0000000058 00000 n 0000000115 00000 n 0000000241 00000 n 0000000311 00000 n 
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 859 >>
+stream
+BT
+/F1 11 Tf
+50 760 Td
+(preview for quick checking.) Tj
+0 -14 Td
+(* Share via cloud storage, or embed a download link on your site; include clear) Tj
+0 -14 Td
+(attribution/credits.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(8\) Clinical review and feedback) Tj
+0 -14 Td
+(* Ask clinical partners to review tracks in the intended context and iterate on tempo,) Tj
+0 -14 Td
+(timbre, transitions, and delivery.) Tj
+0 -14 Td
+(* Offer listener choice where practical, allow the track to be paused or stopped, and) Tj
+0 -14 Td
+(check accessibility and playback-device requirements with the care team.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(9\) Final delivery check) Tj
+0 -14 Td
+(* Confirm file names, metadata, license, attribution, and destination links before) Tj
+0 -14 Td
+(sharing.) Tj
+0 -14 Td
+(* Keep a copy of the exact approved master and the delivery notes for later updates.) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 6 0 R >>
+endobj
+xref
+0 8
+0000000000 65535 f
+0000000015 00000 n
+0000000064 00000 n
+0000000127 00000 n
+0000000197 00000 n
+0000003463 00000 n
+0000003589 00000 n
+0000004499 00000 n
 trailer
-<< /Size 6 /Root 1 0 R >>
+<< /Size 8 /Root 1 0 R >>
 startxref
-3509
+4625
 %%EOF

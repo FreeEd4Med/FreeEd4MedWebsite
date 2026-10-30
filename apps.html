@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <title>Apps & Scripts — FreeEd4Med</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="style.css?v=7.3" rel="stylesheet" />
+  <link href="style.css?v=7.4" rel="stylesheet" />
 </head>
 <body>
   <div class="container">
     <header class="site-header" style="display: flex; align-items: center; justify-content: space-between; gap: 2rem;">
       <div style="display: flex; align-items: center; gap: 1rem;">
-        <img src="images/logo.png" alt="FreeEd4Med Logo" class="logo" />
+        <img src="images/FreeEd4MedLogo2026.png" alt="FreeEd4Med Logo" class="logo" />
         <h1>FreeEd4Med.org</h1>
       </div>
       <nav class="navbar" role="navigation" aria-label="Main site navigation">
@@ -29,59 +29,47 @@
 
     <main class="main-content">
       <h2>Apps & Scripts — Developer resources</h2>
-      <p>This page shares scripts, small utilities, and guides that support our music-for-healing pipelines. Use or adapt but check licensing and test before production use.</p>
+      <p>Explore the FreeEd4Med desktop app, sample assets, and practical guides for preparing music for digital and clinical delivery.</p>
 
       <section class="tools-grid">
         <div class="tool-card" style="grid-column: 1 / -1;">
-          <h3>FreeEd Media SuperTool v5.0.0</h3>
-          <p>Our comprehensive suite of Python tools for music production, lyric assistance, and visualization. Runs locally on Windows, Mac, and Linux.</p>
-          <p><strong>Includes:</strong></p>
+          <h3>FreeEd4Med Media SuperTool desktop app — v5.2.1</h3>
+          <p>A cross-platform desktop app for audio and video creation, with lyric videos, visualizers, audio analysis and mastering, transcription and captions, stem separation, notation, and social-media exports.</p>
+          <p><strong>Download v5.2.1 (free, about 280–380 MB):</strong></p>
           <ul>
-            <li><strong>Lyric Assistant:</strong> AI-assisted lyric generation and rhyming.</li>
-            <li><strong>Viz Master:</strong> Audio visualization generator.</li>
-            <li><strong>Ardour Fixer:</strong> Automated project repair and cleanup.</li>
+            <li><a href="https://github.com/theruhler/supertool_installers/releases/latest/download/FreeEd4Med-SuperTool-Setup.exe" rel="noopener noreferrer">Windows (64-bit) installer</a></li>
+            <li><a href="https://github.com/theruhler/supertool_installers/releases/latest/download/FreeEd4Med-SuperTool.dmg" rel="noopener noreferrer">macOS (Apple Silicon) disk image</a></li>
+            <li><a href="https://github.com/theruhler/supertool_installers/releases/latest/download/FreeEd4Med-SuperTool-x86_64.AppImage" rel="noopener noreferrer">Linux (64-bit) AppImage</a></li>
           </ul>
-          <p><strong>Documentation & Download:</strong></p>
-          <ul>
-            <li><a href="assets/FreeEd4Med_SuperTool_v5.0.0/MANUAL.html" target="_blank"><strong>Read the User Manual (HTML)</strong></a></li>
-            <li><a href="assets/FreeEd4Med_SuperTool_v5.0.0/MANUAL.md">Read Manual (Markdown)</a></li>
-            <li><a href="assets/FreeEd4Med_SuperTool_v5.0.0/">Browse all files</a></li>
-          </ul>
-          <p><strong>Installation:</strong></p>
-          <ul>
-            <li><a href="assets/FreeEd4Med_SuperTool_v5.0.0/install_windows_wsl.bat">Windows Installer (.bat)</a></li>
-            <li><a href="assets/FreeEd4Med_SuperTool_v5.0.0/install_mac.sh">Mac Installer (.sh)</a></li>
-            <li><a href="assets/FreeEd4Med_SuperTool_v5.0.0/install_linux.sh">Linux Installer (.sh)</a></li>
-            <li><a href="assets/FreeEd4Med_SuperTool_v5.0.0/docker-compose.yml">Docker Compose</a></li>
-          </ul>
+          <p>The installers are not code-signed yet, so Windows and macOS may show a security warning on first run; the <a href="https://github.com/theruhler/supertool_installers#install" target="_blank" rel="noopener noreferrer">install steps</a> explain how to continue. Verify your download with <a href="https://github.com/theruhler/supertool_installers/releases/latest/download/SHA256SUMS.txt" rel="noopener noreferrer">SHA256SUMS.txt</a>. See the <a href="https://github.com/theruhler/supertool_installers/releases" target="_blank" rel="noopener noreferrer">releases page</a> for release notes and older versions.</p>
+          <p>The repository hosts installers only; source code is not published. Licensed CC BY-NC-ND 4.0. For questions or commercial-use permission, please <a href="contact.html">contact FreeEd4Med</a>.</p>
         </div>
 
         <div class="tool-card">
           <h3>Sample Assets</h3>
           <ul>
             <li><a href="assets/madmooze_sample_stems_demo.zip">Download sample stems (demo)</a></li>
+            <li><a href="assets/madmooze_sample_stems/README.html">Read the sample pack guide</a></li>
             <li><a href="assets/madmooze_sample_stems/stems_info.json">Stem metadata (stems_info.json)</a></li>
-            <li><a href="assets/madmooze_sample_stems/README.txt">Stems README</a></li>
+            <li><a href="assets/madmooze_sample_stems/LICENSE.txt">Demo license notes</a></li>
           </ul>
+          <p>The ZIP contains placeholder text files only; it does not contain playable audio.</p>
         </div>
 
         <div class="tool-card">
           <h3>Guides & Checklists</h3>
           <ul>
-            <li><a href="assets/streaming_checklist.txt">Streaming checklist (txt)</a></li>
-            <li><a href="assets/streaming_checklist.pdf">Streaming checklist (PDF)</a></li>
-            <li><a href="docs/clinical-streaming-guide.md">Clinical streaming guide</a> • <a href="assets/clinical-streaming-guide.pdf">PDF</a></li>
-            <li><a href="tools/make_pdfs.py">make_pdfs.py — simple PDF generator</a></li>
+            <li><a href="docs/streaming-checklist.html">Clinical and streaming delivery checklist</a> • <a href="assets/streaming_checklist.pdf">printable PDF</a></li>
+            <li><a href="docs/clinical-streaming-guide.html">Clinical music delivery guide</a> • <a href="assets/clinical-streaming-guide.pdf">printable PDF</a></li>
           </ul>
+          <p>These are production and delivery references, not clinical treatment instructions. Follow the receiving platform's technical requirements and the care team's direction for patient playback.</p>
         </div>
       </section>
-
-      <p>If you'd like these packaged as a small NPM/Pip project or Docker image for reproducible builds, I can prepare a minimal repository and README.</p>
 
     </main>
 
     <footer style="text-align: center; padding: 20px; font-size: 0.8rem; color: #666; border-top: 1px solid #eee; margin-top: 2rem;">
-      &copy; 2025 FreeEd4Med.org | Powered by <a href="https://www.interserver.net" target="_blank" rel="noopener" style="color: #666; text-decoration: underline;">InterServer</a> | <a href="legal.html" style="color: #666; text-decoration: underline;">Legal</a>
+      &copy; 2026 FreeEd4Med.org | Powered by <a href="https://www.interserver.net" target="_blank" rel="noopener" style="color: #666; text-decoration: underline;">InterServer</a> | <a href="legal.html" style="color: #666; text-decoration: underline;">Legal</a>
     </footer>
   </div>
 </body>

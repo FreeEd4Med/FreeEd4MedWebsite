@@ -11,7 +11,7 @@
   <div class="container">
     <header class="site-header" style="display: flex; align-items: center; justify-content: space-between; gap: 2rem;">
       <div style="display: flex; align-items: center; gap: 1rem;">
-        <img src="images/logo.png" alt="FreeEd4Med Logo" class="logo" />
+        <img src="images/FreeEd4MedLogo2026.png" alt="FreeEd4Med Logo" class="logo" />
         <h1>FreeEd4Med.org</h1>
       </div>
       <nav class="navbar" role="navigation" aria-label="Main site navigation">
@@ -54,7 +54,8 @@
 
       <section>
         <h3>📰 Curated Headlines</h3>
-        <div id="newsHeadlines">Loading headlines...</div>
+        <p id="headlineFeedNotice" role="status" hidden></p>
+        <div id="newsHeadlines" aria-live="polite">Loading current headlines...</div>
       </section>
     </main>
 
@@ -64,15 +65,49 @@
   </div>
 
   <script>
-    fetch("rss-headlines.php")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("newsHeadlines").innerHTML = data.trim() || "No headlines available at the moment.";
-      })
-      .catch(error => {
-        document.getElementById("newsHeadlines").innerText = "Failed to load headlines.";
-        console.error(error);
-      });
+    (async function(){
+      const container = document.getElementById("newsHeadlines");
+      try {
+        const response = await fetch("rss-headlines.php", { cache: "no-store" });
+        if (!response.ok) throw new Error(`Headlines request failed (${response.status})`);
+        const headlines = await response.json();
+        if (!Array.isArray(headlines) || headlines.length === 0) {
+          throw new Error("No current headlines are available.");
+        }
+        const list = document.createElement("ul");
+        headlines.forEach(item => {
+          if (!item || typeof item.title !== "string" || typeof item.link !== "string") return;
+          const url = new URL(item.link, location.href);
+          if (!["http:", "https:"].includes(url.protocol)) return;
+          const entry = document.createElement("li");
+          const link = document.createElement("a");
+          link.href = url.href;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.textContent = item.title;
+          entry.appendChild(link);
+          if (item.date) {
+            const date = document.createElement("small");
+            date.textContent = ` (${new Date(item.date).toLocaleDateString()})`;
+            entry.appendChild(date);
+          }
+          list.appendChild(entry);
+        });
+        if (!list.childElementCount) throw new Error("No current headlines are available.");
+        if (response.headers.get("X-Headlines-Source") === "bundled-fallback") {
+          const updatedValue = response.headers.get("X-Headlines-Updated");
+          const updated = updatedValue ? new Date(updatedValue) : null;
+          const date = !updated || Number.isNaN(updated.getTime()) ? "recently" : updated.toLocaleDateString();
+          const notice = document.getElementById("headlineFeedNotice");
+          notice.textContent = `Live sources are temporarily unavailable. Showing headlines last refreshed ${date}.`;
+          notice.hidden = false;
+        }
+        container.replaceChildren(list);
+      } catch (error) {
+        console.error("Failed to load medical headlines:", error);
+        container.textContent = "Headlines are temporarily unavailable. Please try again shortly.";
+      }
+    })();
   </script>
 </body>
 </html>

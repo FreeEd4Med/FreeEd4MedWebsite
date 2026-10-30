@@ -1,11 +1,12 @@
-Clinical Streaming — Artist Checklist (MadMoozeMusic / FreeEd4Med)
+Clinical Music Delivery - Artist Checklist (MadMoozeMusic / FreeEd4Med)
 
-1) Master: WAV/FLAC, 44.1 or 48 kHz, 24-bit
-2) Preview: MP3 (128–192 kbps)
-3) Loudness: aim for -14 LUFS integrated, true peak < -1 dBTP
-4) Stems: vocals / pads / percussion / bass — labeled clearly (e.g., 01_vocals.wav)
-5) Provide BPM (e.g., 60 BPM) and suggested sync timestamps
-6) Provide a README with intended use & licensing terms
-7) Include a small low-bitrate preview file and a zip of the stems
+1) Master: WAV or FLAC at the receiving service's requested sample rate and bit depth.
+2) Preview: include a clearly labeled compressed audition copy if useful.
+3) Loudness: there is no universal -14 LUFS delivery target. Check the recipient's current specification; measure and document integrated loudness and maximum true peak.
+4) Playback level: LUFS is not listening volume. Follow the care team's or facility's guidance for patient playback.
+5) Stems: label files clearly (for example, 01_vocals.wav, 02_pads.wav, 03_percussion.wav).
+6) Include BPM and sync points only when relevant to the intended use.
+7) Add a README with title, artist, intended use, attribution, and license/permission terms.
+8) Package the approved master, stems, metadata, and preview together; check links and filenames before delivery.
 
-Thank you — contact FreeEd4Med for integration support.
+Music is a supportive resource, not a substitute for medical care. Confirm clinical use and playback requirements with the care team.

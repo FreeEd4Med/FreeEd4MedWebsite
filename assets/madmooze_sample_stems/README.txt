@@ -1,4 +1,4 @@
-MadMooze — Sample Stems Pack (Demo)
+MadMooze - Sample Stems Pack (Demo)
 
 This small demo stems pack illustrates how to prepare and label stems for clinical/streaming use.
 
@@ -14,4 +14,6 @@ Notes for artists:
 - Include a README.txt describing the stems, intended use, and suggested tempo (BPM).
 - Provide licensing info (see LICENSE.txt) and any restrictions for clinical or app use.
 
-If you want help producing a full stems package (real audio files and zips) we can prepare a sample SAR (stems archive) and embed it on your multimedia page.
+This download contains placeholder text files only. It does not contain playable WAV stems or an MP3 mix.
+
+For the online guide, see https://www.freeed4med.org/assets/madmooze_sample_stems/README.html

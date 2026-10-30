@@ -5,13 +5,13 @@
   <meta charset="UTF-8" />
   <title>Home - FreeEd4Med</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="style.css?v=7.3" rel="stylesheet" />
+  <link href="style.css?v=7.4" rel="stylesheet" />
 </head>
 <body>
   <div class="container">
     <header class="site-header">
       <div style="display: flex; align-items: center; gap: 1rem;">
-        <img src="images/logo.png?v=4" alt="FreeEd4Med Logo" class="logo" />
+        <img src="images/FreeEd4MedLogo2026.png?v=20261030" alt="FreeEd4Med Logo" class="logo" />
         <h1>FreeEd4Med.org</h1>
       </div>
       <nav class="navbar" role="navigation" aria-label="Main site navigation">
@@ -74,51 +74,73 @@
       .ticker-item a { color: #fff; font-weight:700; text-decoration:none; font-size:1rem; }
       .ticker-item .meta { color: var(--muted); font-size:0.9rem; margin-left:10px; }
       .ticker-controls { display:flex; gap:8px; align-items:center; }
-      .ticker-dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.06); }
+      .ticker-dot { width:8px; height:8px; padding:0; border:0; border-radius:50%; background:rgba(255,255,255,0.2); cursor:pointer; }
       .ticker-dot.active { background: linear-gradient(90deg,var(--accent-1),var(--accent-2)); box-shadow:0 6px 18px rgba(122,47,245,0.12); }
+      .ticker-status { color: #fff; padding: 6px 10px; }
+      #headline-feed-note { margin: 0.4rem 0 0; color: var(--muted); font-size: 0.85rem; }
 
       @media (max-width:880px){ #news-ticker-label{display:none;} .ticker-item a{font-size:0.95rem;} }
     </style>
 
     <div id="news-ticker-wrapper">
       <div id="news-ticker-label">Medical Headlines</div>
-      <div id="news-ticker"><div class="ticker-loading">Loading headlines…</div></div>
-      <div class="ticker-controls" aria-hidden="true" id="ticker-dots"></div>
+      <div id="news-ticker" aria-live="polite" aria-atomic="true"><div class="ticker-loading">Loading current headlines…</div></div>
+      <div class="ticker-controls" id="ticker-dots"></div>
     </div>
+    <p id="headline-feed-note" role="status" hidden></p>
 
     <script>
-      // News ticker: fetches /rss-headlines.php (JSON with title/link/date), shows only recent items (server filters), rotates with dissolve and auto-refresh.
       (function(){
         const ticker = document.getElementById('news-ticker');
         const dots = document.getElementById('ticker-dots');
+        const feedNote = document.getElementById('headline-feed-note');
         let items = [];
         let idx = -1;
         let intervalId = null;
 
         function timeAgoISO(iso){
-          if (!iso) return ''; 
+          if (!iso) return '';
           const d = new Date(iso);
+          if (Number.isNaN(d.getTime())) return '';
           const ms = Date.now() - d.getTime();
           const days = Math.floor(ms / (1000*60*60*24));
           if (days === 0) return 'today';
           if (days === 1) return '1 day ago';
+          if (days < 0) return 'today';
           return days + ' days ago';
         }
 
+        function renderStatus(message){
+          ticker.replaceChildren();
+          dots.replaceChildren();
+          const status = document.createElement('div');
+          status.className = 'ticker-status';
+          status.textContent = message;
+          ticker.appendChild(status);
+        }
+
         function renderItems(list){
-          ticker.innerHTML = '';
-          dots.innerHTML = '';
-          if (!list || list.length === 0) {
-            ticker.innerHTML = '<div class="ticker-item is-visible"><span>No recent headlines available.</span></div>';
-            return;
-          }
+          ticker.replaceChildren();
+          dots.replaceChildren();
           list.forEach((it, n) => {
-            const el = document.createElement('div'); el.className = 'ticker-item';
-            el.innerHTML = `<a href="${it.link}" target="_blank" rel="noopener noreferrer">${it.title}</a><span class="meta">${timeAgoISO(it.date)}</span>`;
+            const el = document.createElement('div');
+            el.className = 'ticker-item';
+            const link = document.createElement('a');
+            link.href = it.link;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.textContent = it.title;
+            const meta = document.createElement('span');
+            meta.className = 'meta';
+            meta.textContent = timeAgoISO(it.date);
+            el.append(link, meta);
             ticker.appendChild(el);
 
-            const dot = document.createElement('div'); dot.className = 'ticker-dot'; dot.dataset.index = n;
-            dot.addEventListener('click', ()=>{ showItem(Number(dot.dataset.index)); resetInterval(); });
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.className = 'ticker-dot';
+            dot.setAttribute('aria-label', `Show headline ${n + 1}`);
+            dot.addEventListener('click', ()=>{ showItem(n); resetInterval(); });
             dots.appendChild(dot);
           });
           items = Array.from(ticker.querySelectorAll('.ticker-item'));
@@ -136,18 +158,37 @@
         function resetInterval(){ if (intervalId) clearInterval(intervalId); intervalId = setInterval(nextItem, 8000); }
 
         async function fetchHeadlines(){
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(), 12000);
           try{
-            // Fetch from our PHP proxy which aggregates Google News & ScienceDaily
-            const res = await fetch('rss-headlines.php', {cache:'no-store'});
+            const res = await fetch('rss-headlines.php', {cache:'no-store', signal:controller.signal});
+            if (!res.ok) throw new Error(`Headlines request failed (${res.status})`);
             const json = await res.json();
-            
-            if (!Array.isArray(json) || json.length === 0) {
-              renderItems([]);
-              return;
+            if (!Array.isArray(json)) throw new Error(json.error || 'Headline response was invalid');
+            if (json.length === 0) throw new Error('No current headlines are available.');
+            const validItems = json.filter(it =>
+              it && typeof it.title === 'string' && typeof it.link === 'string' &&
+              /^https?:$/.test(new URL(it.link, location.href).protocol)
+            );
+            if (validItems.length === 0) throw new Error('No current headlines are available.');
+            renderItems(validItems);
+            if (res.headers.get('X-Headlines-Source') === 'bundled-fallback') {
+              const updatedValue = res.headers.get('X-Headlines-Updated');
+              const updated = updatedValue ? new Date(updatedValue) : null;
+              const date = !updated || Number.isNaN(updated.getTime()) ? 'recently' : updated.toLocaleDateString();
+              feedNote.textContent = `Live sources are temporarily unavailable. Showing headlines last refreshed ${date}.`;
+              feedNote.hidden = false;
+            } else {
+              feedNote.textContent = '';
+              feedNote.hidden = true;
             }
-            renderItems(json);
             resetInterval();
-          }catch(e){ console.error('Failed to fetch headlines',e); renderItems([]); }
+          }catch(e){
+            console.error('Failed to fetch medical headlines:', e);
+            if (items.length === 0) renderStatus('Headlines are temporarily unavailable. Please try again shortly.');
+          }finally{
+            clearTimeout(timeoutId);
+          }
         }
 
         // initial fetch and then refresh every 5 minutes
